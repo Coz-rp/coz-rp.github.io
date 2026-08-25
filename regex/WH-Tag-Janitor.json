@@ -1,0 +1,17 @@
+{
+  "id": "7e6e30a5-a100-47ae-9f55-90b89c7a5046",
+  "scriptName": "WH - Tag Janitor",
+  "findRegex": "/<\\/?(?:roleplay_context|characters|protagonist|scenario|lore|examples|past_events|instructions|style|reasoning|challenge|dialogue_focus|npc_forge|momentum_tracker|status_board|scene_anchor|intimacy|possession|multipossession|propagation|copy_fidelity|puppetry|skinsuit|body_modes|wildcard|current_turn|diegetic(?:_html)?|style_lens|formatting|nsfw_terms|negative_constraints|sample)>\\n?/g",
+  "replaceString": "",
+  "trimStrings": [],
+  "placement": [
+    2
+  ],
+  "disabled": false,
+  "markdownOnly": false,
+  "promptOnly": false,
+  "runOnEdit": true,
+  "substituteRegex": 0,
+  "minDepth": null,
+  "maxDepth": null
+}

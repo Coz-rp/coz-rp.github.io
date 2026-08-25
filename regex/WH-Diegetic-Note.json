@@ -1,0 +1,17 @@
+{
+  "id": "78dd5c9e-aa5a-4c9b-be8b-522f3e132f96",
+  "scriptName": "WH - Diegetic Note",
+  "findRegex": "/%%note%%\\n([\\s\\S]*?)%%end%%/g",
+  "replaceString": "<div style=\"max-width: 420px; margin: 12px auto; padding: 14px 18px; border-left: 3px solid rgba(200,180,140,0.4); border-radius: 2px 8px 8px 2px; background: rgba(46,42,34,0.45); font-family: Georgia, 'Times New Roman', serif; font-style: italic; font-size: 0.9em; line-height: 1.6; color: rgba(232,222,200,0.9); white-space: pre-wrap;\">$1</div>",
+  "trimStrings": [],
+  "placement": [
+    2
+  ],
+  "disabled": false,
+  "markdownOnly": true,
+  "promptOnly": false,
+  "runOnEdit": true,
+  "substituteRegex": 0,
+  "minDepth": null,
+  "maxDepth": null
+}

@@ -1,0 +1,17 @@
+{
+  "id": "1c3c7458-19a0-4d9f-9f13-69a41e1e7306",
+  "scriptName": "WH - Prune Old Trackers",
+  "findRegex": "/\\n*<details>[\\s\\S]*?<\\/details>/g",
+  "replaceString": "",
+  "trimStrings": [],
+  "placement": [
+    2
+  ],
+  "disabled": false,
+  "markdownOnly": false,
+  "promptOnly": true,
+  "runOnEdit": false,
+  "substituteRegex": 0,
+  "minDepth": 2,
+  "maxDepth": null
+}

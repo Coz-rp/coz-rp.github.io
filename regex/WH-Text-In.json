@@ -1,0 +1,17 @@
+{
+  "id": "0b3ac47a-44d4-47bd-b1c2-4201d41b0fbf",
+  "scriptName": "WH - Text In",
+  "findRegex": "/^in: (.+)$/gm",
+  "replaceString": "<div style=\"width: fit-content; max-width: 80%; margin: 4px auto 4px 0; padding: 6px 10px; border-radius: 12px 12px 12px 3px; background: rgba(255,255,255,0.08); color: rgba(235,235,245,0.85); font-style: normal;\">$1</div>",
+  "trimStrings": [],
+  "placement": [
+    2
+  ],
+  "disabled": false,
+  "markdownOnly": true,
+  "promptOnly": false,
+  "runOnEdit": true,
+  "substituteRegex": 0,
+  "minDepth": null,
+  "maxDepth": null
+}

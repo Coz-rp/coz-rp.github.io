@@ -1,0 +1,17 @@
+{
+  "id": "52a44c1e-30dc-4819-9400-1cc538c4a80b",
+  "scriptName": "WH - Diegetic Sign",
+  "findRegex": "/%%sign%%\\n([\\s\\S]*?)%%end%%/g",
+  "replaceString": "<div style=\"width: fit-content; max-width: 85%; margin: 12px auto; padding: 12px 22px; border: 2px solid rgba(235,235,245,0.25); border-radius: 4px; background: rgba(18,18,20,0.6); text-align: center; font-size: 0.95em; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; font-style: normal; color: rgba(235,235,245,0.85); white-space: pre-wrap;\">$1</div>",
+  "trimStrings": [],
+  "placement": [
+    2
+  ],
+  "disabled": false,
+  "markdownOnly": true,
+  "promptOnly": false,
+  "runOnEdit": true,
+  "substituteRegex": 0,
+  "minDepth": null,
+  "maxDepth": null
+}

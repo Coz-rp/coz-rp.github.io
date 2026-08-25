@@ -1,6 +1,269 @@
 <!DOCTYPE html>
-<html>
-  <body>
-    <h1>Welcome to My GitHub Website!</h1>
-  </body>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coz RP — Presets & Cards</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0b0d; --bg2:#141115; --card:rgba(26,22,27,.5); --line:rgba(255,255,255,.08);
+    --ink:#f1e9ee; --mut:#a99ba3; --accent:#ff2d78; --accent2:#ff5747;
+    --grad:linear-gradient(120deg,#ff2d78,#ff5747);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:Inter,system-ui,sans-serif; line-height:1.6;
+    background-image:radial-gradient(1100px 560px at 82% -8%,rgba(255,45,120,.16),transparent),
+                     radial-gradient(820px 480px at -8% 8%,rgba(255,87,71,.10),transparent);
+    background-attachment:fixed;
+  }
+  h1,h2,h3,.brand{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);
+      background:rgba(12,11,13,.72);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{font-weight:700;font-size:1.15rem;display:flex;align-items:center;gap:9px}
+  .brand span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .brand .mark{width:18px;height:18px;flex:none;animation:spin 24s linear infinite}
+  .navlinks{display:flex;gap:22px;font-size:.92rem;color:var(--mut)}
+  .navlinks a:hover{color:var(--ink)}
+  @media(max-width:640px){.navlinks{display:none}}
+
+  /* hero + spiral */
+  header.hero{position:relative;padding:100px 0 78px;text-align:center;overflow:hidden}
+  .spiralwrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+       pointer-events:none;z-index:0}
+  .spiral{width:min(720px,125vw);height:auto;opacity:.55;animation:spin 45s linear infinite;
+       -webkit-mask:radial-gradient(circle,#000 52%,transparent 76%);
+       mask:radial-gradient(circle,#000 52%,transparent 76%)}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @media(prefers-reduced-motion:reduce){.spiral,.brand .mark{animation:none}}
+  header.hero .wrap{position:relative;z-index:1}
+  .hero h1{font-size:clamp(2.4rem,7vw,4rem);line-height:1.05}
+  .hero h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p{color:var(--mut);font-size:1.15rem;max-width:560px;margin:18px auto 0}
+  .cta{display:flex;gap:14px;justify-content:center;margin-top:34px;flex-wrap:wrap}
+  .btn{padding:12px 22px;border-radius:12px;font-weight:600;font-size:.95rem;
+       border:1px solid var(--line);transition:.15s;cursor:pointer}
+  .btn.primary{background:var(--grad);color:#12070c;border:none}
+  .btn.primary:hover{filter:brightness(1.08);transform:translateY(-1px)}
+  .btn.ghost{background:rgba(20,17,21,.5)}
+  .btn.ghost:hover{background:var(--card);border-color:var(--accent)}
+
+  /* sections */
+  section{padding:56px 0;border-top:1px solid var(--line)}
+  .eyebrow{color:var(--accent);font-size:.8rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+  section h2{font-size:1.9rem;margin:6px 0 8px}
+  section .lede{color:var(--mut);max-width:620px;margin-bottom:30px}
+
+  /* preset cards */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:720px){.grid{grid-template-columns:1fr}}
+  .pcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;
+         transition:.18s;position:relative;overflow:hidden}
+  .pcard:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .pcard .tag{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.06em;
+       padding:4px 10px;border-radius:20px;background:rgba(255,45,120,.15);color:#ff9ec2;margin-bottom:14px}
+  .pcard .tag.gem{background:rgba(255,87,71,.15);color:#ffb3a6}
+  .pcard h3{font-size:1.3rem;margin-bottom:6px}
+  .pcard .ver{color:var(--mut);font-size:.85rem}
+  .pcard p{color:var(--mut);font-size:.95rem;margin:12px 0 20px}
+  .pcard .dl{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.9rem;
+       color:var(--accent);border:1px solid var(--line);padding:9px 16px;border-radius:10px;transition:.15s}
+  .pcard .dl:hover{background:rgba(255,45,120,.12);border-color:var(--accent)}
+
+  /* companion regex callout */
+  .regexnote{margin-top:20px;background:var(--card);border:1px solid var(--line);
+       border-left:3px solid var(--accent);border-radius:12px;padding:16px 20px;color:var(--mut);font-size:.92rem}
+  .regexnote b{color:var(--ink)}
+  .regexnote a{color:var(--accent);font-weight:600}
+  .regexnote a:hover{text-decoration:underline}
+
+  /* character card grid */
+  .cardgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:720px){.cardgrid{grid-template-columns:1fr 1fr}}
+  .charcard{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+       display:flex;flex-direction:column;transition:.18s}
+  .charcard:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .charcard .art{aspect-ratio:2/3;background:linear-gradient(160deg,rgba(255,45,120,.16),rgba(255,87,71,.1));
+       display:flex;align-items:center;justify-content:center;color:var(--mut);font-size:.8rem}
+  .charcard .art img{width:100%;height:100%;object-fit:cover;display:block}
+  .charcard .meta{padding:14px 16px}
+  .charcard .cname{font-family:'Space Grotesk';font-weight:600;font-size:1.05rem}
+  .charcard .cblurb{color:var(--mut);font-size:.85rem;margin:4px 0 10px}
+  .charcard .ctags{display:flex;gap:6px;flex-wrap:wrap}
+  .charcard .ctags span{font-size:.68rem;color:#ff9ec2;background:rgba(255,45,120,.13);
+       padding:3px 8px;border-radius:12px}
+  .fineprint{color:var(--mut);font-size:.8rem;margin-top:18px;opacity:.8}
+
+  /* steps */
+  ol.steps{list-style:none;counter-reset:s;display:grid;gap:14px}
+  ol.steps li{counter-increment:s;padding:16px 18px 16px 56px;position:relative;
+       background:var(--card);border:1px solid var(--line);border-radius:12px;color:var(--mut)}
+  ol.steps li::before{content:counter(s);position:absolute;left:16px;top:14px;width:28px;height:28px;
+       border-radius:8px;background:var(--grad);color:#12070c;font-weight:700;
+       display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk'}
+  ol.steps li b{color:var(--ink)}
+
+  .about p{color:var(--mut);max-width:640px}
+  .about a.link{color:var(--accent);border-bottom:1px solid transparent}
+  .about a.link:hover{border-color:var(--accent)}
+
+  footer{border-top:1px solid var(--line);padding:36px 0;text-align:center;color:var(--mut);font-size:.85rem}
+  .badge18{display:inline-block;border:1px solid var(--line);border-radius:8px;padding:3px 9px;
+       font-size:.72rem;color:#ff9ec2;margin-bottom:10px}
+  footer a{color:var(--accent)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M 200.00 200.00 L 200.35 200.03 L 200.70 200.11 L 201.03 200.25 L 201.35 200.45 L 201.63 200.69 L 201.89 200.98 L 202.10 201.32 L 202.28 201.69 L 202.40 202.10 L 202.47 202.54 L 202.49 203.01 L 202.44 203.49 L 202.33 203.98 L 202.16 204.47 L 201.93 204.96 L 201.63 205.44 L 201.26 205.90 L 200.83 206.33 L 200.34 206.73 L 199.79 207.09 L 199.19 207.40 L 198.53 207.66 L 197.83 207.86 L 197.09 208.00 L 196.31 208.06 L 195.50 208.05 L 194.68 207.96 L 193.84 207.79 L 192.99 207.53 L 192.15 207.19 L 191.32 206.76 L 190.52 206.24 L 189.74 205.63 L 189.00 204.93 L 188.30 204.16 L 187.67 203.30 L 187.09 202.37 L 186.59 201.37 L 186.17 200.30 L 185.84 199.17 L 185.60 197.99 L 185.46 196.77 L 185.42 195.52 L 185.50 194.23 L 185.69 192.94 L 185.99 191.63 L 186.42 190.34 L 186.96 189.05 L 187.63 187.80 L 188.41 186.58 L 189.31 185.41 L 190.32 184.30 L 191.45 183.26 L 192.68 182.30 L 194.00 181.44 L 195.43 180.67 L 196.93 180.02 L 198.51 179.48 L 200.16 179.07 L 201.86 178.80 L 203.61 178.67 L 205.39 178.68 L 207.19 178.84 L 209.00 179.16 L 210.80 179.63 L 212.59 180.26 L 214.34 181.05 L 216.04 181.99 L 217.69 183.08 L 219.26 184.33 L 220.74 185.71 L 222.12 187.24 L 223.39 188.90 L 224.53 190.68 L 225.54 192.57 L 226.40 194.56 L 227.10 196.64 L 227.64 198.81 L 228.00 201.03 L 228.18 203.31 L 228.18 205.62 L 227.98 207.95 L 227.58 210.28 L 227.00 212.60 L 226.21 214.90 L 225.23 217.14 L 224.06 219.33 L 222.69 221.43 L 221.14 223.44 L 219.42 225.34 L 217.53 227.10 L 215.47 228.73 L 213.27 230.20 L 210.93 231.50 L 208.47 232.61 L 205.89 233.54 L 203.23 234.25 L 200.49 234.76 L 197.68 235.04 L 194.84 235.09 L 191.97 234.91 L 189.10 234.50 L 186.25 233.84 L 183.43 232.95 L 180.66 231.83 L 177.97 230.47 L 175.38 228.88 L 172.90 227.07 L 170.55 225.05 L 168.35 222.82 L 166.33 220.40 L 164.49 217.81 L 162.85 215.04 L 161.43 212.13 L 160.24 209.09 L 159.29 205.94 L 158.59 202.69 L 158.15 199.36 L 157.98 195.99 L 158.09 192.58 L 158.47 189.17 L 159.14 185.76 L 160.08 182.40 L 161.30 179.10 L 162.80 175.88 L 164.56 172.77 L 166.59 169.79 L 168.87 166.95 L 171.39 164.30 L 174.13 161.83 L 177.09 159.58 L 180.25 157.55 L 183.58 155.78 L 187.07 154.27 L 190.69 153.03 L 194.44 152.08 L 198.27 151.44 L 202.17 151.10 L 206.12 151.08 L 210.08 151.38 L 214.03 152.00 L 217.95 152.94 L 221.81 154.21 L 225.57 155.79 L 229.23 157.68 L 232.74 159.88 L 236.09 162.37 L 239.24 165.14 L 242.19 168.17 L 244.90 171.45 L 247.35 174.97 L 249.52 178.69 L 251.40 182.60 L 252.97 186.68 L 254.22 190.90 L 255.13 195.23 L 255.68 199.65 L 255.89 204.12 L 255.73 208.63 L 255.21 213.14 L 254.32 217.62 L 253.07 222.04 L 251.45 226.37 L 249.48 230.58 L 247.16 234.65 L 244.51 238.54 L 241.54 242.23 L 238.26 245.68 L 234.69 248.88 L 230.85 251.80 L 226.77 254.42 L 222.47 256.72 L 217.97 258.67 L 213.30 260.27 L 208.49 261.49 L 203.57 262.32 L 198.57 262.76 L 193.52 262.80 L 188.46 262.43 L 183.41 261.65 L 178.42 260.46 L 173.51 258.87 L 168.72 256.87 L 164.08 254.49 L 159.62 251.72 L 155.38 248.59 L 151.38 245.11 L 147.65 241.30 L 144.22 237.18 L 141.12 232.78 L 138.36 228.12 L 135.98 223.22 L 133.99 218.12 L 132.40 212.86 L 131.24 207.45 L 130.51 201.94 L 130.22 196.37 L 130.38 190.75 L 131.00 185.15 L 132.07 179.58 L 133.58 174.08 L 135.55 168.70 L 137.95 163.47 L 140.78 158.43 L 144.02 153.60 L 147.65 149.03 L 151.66 144.74 L 156.02 140.77 L 160.70 137.14 L 165.69 133.89 L 170.94 131.03 L 176.44 128.59 L 182.13 126.59 L 188.00 125.05 L 194.00 123.98 L 200.10 123.39 L 206.25 123.29 L 212.41 123.68 L 218.56 124.57 L 224.64 125.96 L 230.61 127.84 L 236.45 130.20 L 242.10 133.04 L 247.53 136.33 L 252.70 140.07 L 257.57 144.22 L 262.12 148.78 L 266.30 153.70 L 270.10 158.97 L 273.47 164.55 L 276.40 170.41 L 278.86 176.50 L 280.83 182.81 L 282.30 189.28 L 283.25 195.87 L 283.67 202.55 L 283.55 209.27 L 282.89 215.98 L 281.69 222.65 L 279.95 229.22 L 277.68 235.67 L 274.89 241.94 L 271.60 247.98 L 267.81 253.77 L 263.56 259.26 L 258.86 264.41 L 253.74 269.19 L 248.23 273.56 L 242.37 277.49 L 236.19 280.95 L 229.72 283.92 L 223.01 286.37 L 216.10 288.28 L 209.03 289.64 L 201.84 290.43 L 194.59 290.64 L 187.31 290.27 L 180.06 289.31 L 172.88 287.77 L 165.82 285.65 L 158.93 282.97 L 152.25 279.72 L 145.83 275.94 L 139.70 271.64 L 133.92 266.84 L 128.52 261.58 L 123.54 255.88 L 119.02 249.78 L 114.98 243.31 L 111.47 236.51 L 108.49 229.43 L 106.09 222.10 L 104.27 214.58 L 103.06 206.91 L 102.46 199.14 L 102.49 191.31 L 103.15 183.49 L 104.43 175.71 L 106.34 168.04 L 108.87 160.52 L 112.01 153.19 L 115.73 146.12 L 120.02 139.35 L 124.86 132.91 L 130.22 126.86 L 136.06 121.25 L 142.36 116.10 L 149.07 111.45 L 156.16 107.34 L 163.58 103.80 L 171.28 100.86 L 179.23 98.54 L 187.36 96.85 L 195.63 95.81 L 203.98 95.44 L 212.37 95.74 L 220.73 96.72 L 229.01 98.36 L 237.17 100.67 L 245.14 103.64 L 252.87 107.25 L 260.31 111.48 L 267.41 116.30 L 274.13 121.70 L 280.41 127.64 L 286.22 134.08 L 291.51 140.99 L 296.25 148.32 L 300.40 156.04 L 303.92 164.09 L 306.80 172.42 L 309.02 180.98 L 310.54 189.72 L 311.36 198.58 L 311.47 207.51 L 310.87 216.45 L 309.55 225.33 L 307.51 234.11 L 304.77 242.73 L 301.33 251.13 L 297.23 259.24 L 292.47 267.03 L 287.09 274.44 L 281.11 281.41 L 274.57 287.90 L 267.52 293.87 L 259.98 299.27 L 252.02 304.06 L 243.67 308.21 L 234.99 311.70 L 226.03 314.48 L 216.84 316.55 L 207.50 317.87 L 198.05 318.45 L 188.56 318.27 L 179.08 317.32 L 169.68 315.62 L 160.42 313.16 L 151.36 309.96 L 142.56 306.04 L 134.08 301.40 L 125.97 296.09 L 118.29 290.13 L 111.09 283.55 L 104.42 276.40 L 98.32 268.72 L 92.85 260.55 L 88.03 251.94 L 83.90 242.95 L 80.50 233.63 L 77.85 224.04 L 75.96 214.24 L 74.87 204.30 L 74.57 194.27 L 75.08 184.22 L 76.39 174.21 L 78.51 164.32 L 81.42 154.60 L 85.10 145.11 L 89.55 135.93 L 94.73 127.10 L 100.62 118.70 L 107.18 110.77 L 114.37 103.38 L 122.15 96.56 L 130.48 90.37 L 139.30 84.85 L 148.55 80.04 L 158.19 75.98 L 168.15 72.69 L 178.37 70.20 L 188.78 68.53 L 199.32 67.70 L 209.92 67.72 L 220.52 68.58 L 231.04 70.30 L 241.41 72.86 L 251.58 76.25 L 261.46 80.45 L 271.01 85.44 L 280.15 91.20 L 288.82 97.68 L 296.96 104.86 L 304.53 112.68 L 311.46 121.11 L 317.71 130.09 L 323.24 139.56 L 328.01 149.48 L 331.98 159.76 L 335.12 170.36 L 337.40 181.21 L 338.82 192.23 L 339.35 203.36 L 338.99 214.52 L 337.73 225.64 L 335.59 236.66 L 332.56 247.50 L 328.66 258.09 L 323.92 268.35 L 318.36 278.23 L 312.00 287.66 L 304.90 296.57 L 297.09 304.91 L 288.62 312.61 L 279.53 319.62 L 269.89 325.91 L 259.75 331.41 L 249.18 336.10 L 238.24 339.94 L 227.00 342.89 L 215.53 344.95 L 203.90 346.08 L 192.20 346.28 L 180.49 345.54 L 168.84 343.86 L 157.34 341.25 L 146.06 337.72 L 135.08 333.29 L 124.45 327.98 L 114.26 321.82 L 104.57 314.85 L 95.45 307.11 L 86.96 298.65 L 79.15 289.51 L 72.08 279.76 L 65.80 269.44 L 60.36 258.63 L 55.78 247.40 L 52.11 235.80 L 49.37 223.92 L 47.59 211.84 L 46.78 199.62 L 46.94 187.35 L 48.09 175.10 L 50.22 162.95 L 53.33 150.99 L 57.39 139.29 L 62.38 127.92 L 68.28 116.96 L 75.05 106.49 L 82.66 96.57 L 91.06 87.27 L 100.19 78.65 L 110.00 70.77 L 120.44 63.68 L 131.43 57.44 L 142.92 52.09 L 154.82 47.66 L 167.06 44.19 L 179.58 41.70 L 192.27 40.22 L 205.08 39.76 L 217.91 40.33 L 230.68 41.92 L 243.31 44.54 L 255.72 48.16 L 267.82 52.78 L 279.54 58.36 L 290.80 64.87 L 301.53 72.29 L 311.66 80.55 L 321.11 89.61 L 329.82 99.43 L 337.74 109.93 L 344.81 121.06 L 350.98 132.74 L 356.21 144.90 L 360.45 157.47 L 363.69 170.36 L 365.89 183.50 L 367.03 196.81 L 367.10 210.19 L 366.11 223.56 L 364.04 236.83 L 360.91 249.93 L 356.73 262.76 L 351.53 275.24 L 345.34 287.30 L 338.19 298.84 L 330.12 309.79 L 321.18 320.09 L 311.43 329.66 L 300.92 338.44 L 289.72 346.36 L 277.89 353.38 L 265.52 359.44 L 252.68 364.50 L 239.44 368.53 L 225.90 371.50 L 212.14 373.37 L 198.24 374.14 L 184.30 373.80 L 170.40 372.34 L 156.64 369.76 L 143.09 366.09 L 129.86 361.34 L 117.02 355.53 L 104.67 348.70 L 92.88 340.89 L 81.72 332.14 L 71.28 322.51 L 61.63 312.06 L 52.82 300.84 L 44.93 288.93 L 38.00 276.41 L 32.08 263.34 L 27.21 249.82 L 23.44 235.92 L 20.78 221.74 L 19.26 207.36 L 18.89 192.88 L 19.69 178.39 L 21.65 163.98 L 24.75 149.74 L 29.00 135.77 L 34.36 122.16 L 40.80 109.00 L 48.29 96.37 L 56.78 84.35 L 66.22 73.03 L 76.56 62.48 L 87.73 52.78 L 99.66 43.98 L 112.29 36.14 L 125.52 29.33 L 139.28 23.59 L 153.48 18.96 L 168.04 15.47 L 182.86 13.15 L 197.84 12.03 L 212.89 12.10 L 227.92 13.38 L 242.82 15.87 L 257.51 19.54 L 271.88 24.38 L 285.85 30.37 L 299.31 37.47 L 312.19 45.64 L 324.40 54.83 L 335.85 64.99 L 346.48 76.05 L 356.20 87.94 L 364.96 100.60 L 372.70 113.94 L 379.35 127.89 L 384.88 142.34 L 389.24 157.23 L 392.40 172.44 L 394.35 187.88" fill="none" stroke="#ff2d78" stroke-width="10" stroke-linecap="round"/>
+      </svg>
+      Coz<span>RP</span>
+    </div>
+    <div class="navlinks">
+      <a href="#presets">Presets</a>
+      <a href="#cards">Cards</a>
+      <a href="#setup">Setup</a>
+      <a href="#about">About</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="spiralwrap" aria-hidden="true">
+    <svg class="spiral" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="sg" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#ff2d78" stop-opacity=".95"/>
+          <stop offset="55%" stop-color="#ff2d78" stop-opacity=".4"/>
+          <stop offset="100%" stop-color="#ff5747" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <path d="M 200.00 200.00 L 200.35 200.03 L 200.70 200.11 L 201.03 200.25 L 201.35 200.45 L 201.63 200.69 L 201.89 200.98 L 202.10 201.32 L 202.28 201.69 L 202.40 202.10 L 202.47 202.54 L 202.49 203.01 L 202.44 203.49 L 202.33 203.98 L 202.16 204.47 L 201.93 204.96 L 201.63 205.44 L 201.26 205.90 L 200.83 206.33 L 200.34 206.73 L 199.79 207.09 L 199.19 207.40 L 198.53 207.66 L 197.83 207.86 L 197.09 208.00 L 196.31 208.06 L 195.50 208.05 L 194.68 207.96 L 193.84 207.79 L 192.99 207.53 L 192.15 207.19 L 191.32 206.76 L 190.52 206.24 L 189.74 205.63 L 189.00 204.93 L 188.30 204.16 L 187.67 203.30 L 187.09 202.37 L 186.59 201.37 L 186.17 200.30 L 185.84 199.17 L 185.60 197.99 L 185.46 196.77 L 185.42 195.52 L 185.50 194.23 L 185.69 192.94 L 185.99 191.63 L 186.42 190.34 L 186.96 189.05 L 187.63 187.80 L 188.41 186.58 L 189.31 185.41 L 190.32 184.30 L 191.45 183.26 L 192.68 182.30 L 194.00 181.44 L 195.43 180.67 L 196.93 180.02 L 198.51 179.48 L 200.16 179.07 L 201.86 178.80 L 203.61 178.67 L 205.39 178.68 L 207.19 178.84 L 209.00 179.16 L 210.80 179.63 L 212.59 180.26 L 214.34 181.05 L 216.04 181.99 L 217.69 183.08 L 219.26 184.33 L 220.74 185.71 L 222.12 187.24 L 223.39 188.90 L 224.53 190.68 L 225.54 192.57 L 226.40 194.56 L 227.10 196.64 L 227.64 198.81 L 228.00 201.03 L 228.18 203.31 L 228.18 205.62 L 227.98 207.95 L 227.58 210.28 L 227.00 212.60 L 226.21 214.90 L 225.23 217.14 L 224.06 219.33 L 222.69 221.43 L 221.14 223.44 L 219.42 225.34 L 217.53 227.10 L 215.47 228.73 L 213.27 230.20 L 210.93 231.50 L 208.47 232.61 L 205.89 233.54 L 203.23 234.25 L 200.49 234.76 L 197.68 235.04 L 194.84 235.09 L 191.97 234.91 L 189.10 234.50 L 186.25 233.84 L 183.43 232.95 L 180.66 231.83 L 177.97 230.47 L 175.38 228.88 L 172.90 227.07 L 170.55 225.05 L 168.35 222.82 L 166.33 220.40 L 164.49 217.81 L 162.85 215.04 L 161.43 212.13 L 160.24 209.09 L 159.29 205.94 L 158.59 202.69 L 158.15 199.36 L 157.98 195.99 L 158.09 192.58 L 158.47 189.17 L 159.14 185.76 L 160.08 182.40 L 161.30 179.10 L 162.80 175.88 L 164.56 172.77 L 166.59 169.79 L 168.87 166.95 L 171.39 164.30 L 174.13 161.83 L 177.09 159.58 L 180.25 157.55 L 183.58 155.78 L 187.07 154.27 L 190.69 153.03 L 194.44 152.08 L 198.27 151.44 L 202.17 151.10 L 206.12 151.08 L 210.08 151.38 L 214.03 152.00 L 217.95 152.94 L 221.81 154.21 L 225.57 155.79 L 229.23 157.68 L 232.74 159.88 L 236.09 162.37 L 239.24 165.14 L 242.19 168.17 L 244.90 171.45 L 247.35 174.97 L 249.52 178.69 L 251.40 182.60 L 252.97 186.68 L 254.22 190.90 L 255.13 195.23 L 255.68 199.65 L 255.89 204.12 L 255.73 208.63 L 255.21 213.14 L 254.32 217.62 L 253.07 222.04 L 251.45 226.37 L 249.48 230.58 L 247.16 234.65 L 244.51 238.54 L 241.54 242.23 L 238.26 245.68 L 234.69 248.88 L 230.85 251.80 L 226.77 254.42 L 222.47 256.72 L 217.97 258.67 L 213.30 260.27 L 208.49 261.49 L 203.57 262.32 L 198.57 262.76 L 193.52 262.80 L 188.46 262.43 L 183.41 261.65 L 178.42 260.46 L 173.51 258.87 L 168.72 256.87 L 164.08 254.49 L 159.62 251.72 L 155.38 248.59 L 151.38 245.11 L 147.65 241.30 L 144.22 237.18 L 141.12 232.78 L 138.36 228.12 L 135.98 223.22 L 133.99 218.12 L 132.40 212.86 L 131.24 207.45 L 130.51 201.94 L 130.22 196.37 L 130.38 190.75 L 131.00 185.15 L 132.07 179.58 L 133.58 174.08 L 135.55 168.70 L 137.95 163.47 L 140.78 158.43 L 144.02 153.60 L 147.65 149.03 L 151.66 144.74 L 156.02 140.77 L 160.70 137.14 L 165.69 133.89 L 170.94 131.03 L 176.44 128.59 L 182.13 126.59 L 188.00 125.05 L 194.00 123.98 L 200.10 123.39 L 206.25 123.29 L 212.41 123.68 L 218.56 124.57 L 224.64 125.96 L 230.61 127.84 L 236.45 130.20 L 242.10 133.04 L 247.53 136.33 L 252.70 140.07 L 257.57 144.22 L 262.12 148.78 L 266.30 153.70 L 270.10 158.97 L 273.47 164.55 L 276.40 170.41 L 278.86 176.50 L 280.83 182.81 L 282.30 189.28 L 283.25 195.87 L 283.67 202.55 L 283.55 209.27 L 282.89 215.98 L 281.69 222.65 L 279.95 229.22 L 277.68 235.67 L 274.89 241.94 L 271.60 247.98 L 267.81 253.77 L 263.56 259.26 L 258.86 264.41 L 253.74 269.19 L 248.23 273.56 L 242.37 277.49 L 236.19 280.95 L 229.72 283.92 L 223.01 286.37 L 216.10 288.28 L 209.03 289.64 L 201.84 290.43 L 194.59 290.64 L 187.31 290.27 L 180.06 289.31 L 172.88 287.77 L 165.82 285.65 L 158.93 282.97 L 152.25 279.72 L 145.83 275.94 L 139.70 271.64 L 133.92 266.84 L 128.52 261.58 L 123.54 255.88 L 119.02 249.78 L 114.98 243.31 L 111.47 236.51 L 108.49 229.43 L 106.09 222.10 L 104.27 214.58 L 103.06 206.91 L 102.46 199.14 L 102.49 191.31 L 103.15 183.49 L 104.43 175.71 L 106.34 168.04 L 108.87 160.52 L 112.01 153.19 L 115.73 146.12 L 120.02 139.35 L 124.86 132.91 L 130.22 126.86 L 136.06 121.25 L 142.36 116.10 L 149.07 111.45 L 156.16 107.34 L 163.58 103.80 L 171.28 100.86 L 179.23 98.54 L 187.36 96.85 L 195.63 95.81 L 203.98 95.44 L 212.37 95.74 L 220.73 96.72 L 229.01 98.36 L 237.17 100.67 L 245.14 103.64 L 252.87 107.25 L 260.31 111.48 L 267.41 116.30 L 274.13 121.70 L 280.41 127.64 L 286.22 134.08 L 291.51 140.99 L 296.25 148.32 L 300.40 156.04 L 303.92 164.09 L 306.80 172.42 L 309.02 180.98 L 310.54 189.72 L 311.36 198.58 L 311.47 207.51 L 310.87 216.45 L 309.55 225.33 L 307.51 234.11 L 304.77 242.73 L 301.33 251.13 L 297.23 259.24 L 292.47 267.03 L 287.09 274.44 L 281.11 281.41 L 274.57 287.90 L 267.52 293.87 L 259.98 299.27 L 252.02 304.06 L 243.67 308.21 L 234.99 311.70 L 226.03 314.48 L 216.84 316.55 L 207.50 317.87 L 198.05 318.45 L 188.56 318.27 L 179.08 317.32 L 169.68 315.62 L 160.42 313.16 L 151.36 309.96 L 142.56 306.04 L 134.08 301.40 L 125.97 296.09 L 118.29 290.13 L 111.09 283.55 L 104.42 276.40 L 98.32 268.72 L 92.85 260.55 L 88.03 251.94 L 83.90 242.95 L 80.50 233.63 L 77.85 224.04 L 75.96 214.24 L 74.87 204.30 L 74.57 194.27 L 75.08 184.22 L 76.39 174.21 L 78.51 164.32 L 81.42 154.60 L 85.10 145.11 L 89.55 135.93 L 94.73 127.10 L 100.62 118.70 L 107.18 110.77 L 114.37 103.38 L 122.15 96.56 L 130.48 90.37 L 139.30 84.85 L 148.55 80.04 L 158.19 75.98 L 168.15 72.69 L 178.37 70.20 L 188.78 68.53 L 199.32 67.70 L 209.92 67.72 L 220.52 68.58 L 231.04 70.30 L 241.41 72.86 L 251.58 76.25 L 261.46 80.45 L 271.01 85.44 L 280.15 91.20 L 288.82 97.68 L 296.96 104.86 L 304.53 112.68 L 311.46 121.11 L 317.71 130.09 L 323.24 139.56 L 328.01 149.48 L 331.98 159.76 L 335.12 170.36 L 337.40 181.21 L 338.82 192.23 L 339.35 203.36 L 338.99 214.52 L 337.73 225.64 L 335.59 236.66 L 332.56 247.50 L 328.66 258.09 L 323.92 268.35 L 318.36 278.23 L 312.00 287.66 L 304.90 296.57 L 297.09 304.91 L 288.62 312.61 L 279.53 319.62 L 269.89 325.91 L 259.75 331.41 L 249.18 336.10 L 238.24 339.94 L 227.00 342.89 L 215.53 344.95 L 203.90 346.08 L 192.20 346.28 L 180.49 345.54 L 168.84 343.86 L 157.34 341.25 L 146.06 337.72 L 135.08 333.29 L 124.45 327.98 L 114.26 321.82 L 104.57 314.85 L 95.45 307.11 L 86.96 298.65 L 79.15 289.51 L 72.08 279.76 L 65.80 269.44 L 60.36 258.63 L 55.78 247.40 L 52.11 235.80 L 49.37 223.92 L 47.59 211.84 L 46.78 199.62 L 46.94 187.35 L 48.09 175.10 L 50.22 162.95 L 53.33 150.99 L 57.39 139.29 L 62.38 127.92 L 68.28 116.96 L 75.05 106.49 L 82.66 96.57 L 91.06 87.27 L 100.19 78.65 L 110.00 70.77 L 120.44 63.68 L 131.43 57.44 L 142.92 52.09 L 154.82 47.66 L 167.06 44.19 L 179.58 41.70 L 192.27 40.22 L 205.08 39.76 L 217.91 40.33 L 230.68 41.92 L 243.31 44.54 L 255.72 48.16 L 267.82 52.78 L 279.54 58.36 L 290.80 64.87 L 301.53 72.29 L 311.66 80.55 L 321.11 89.61 L 329.82 99.43 L 337.74 109.93 L 344.81 121.06 L 350.98 132.74 L 356.21 144.90 L 360.45 157.47 L 363.69 170.36 L 365.89 183.50 L 367.03 196.81 L 367.10 210.19 L 366.11 223.56 L 364.04 236.83 L 360.91 249.93 L 356.73 262.76 L 351.53 275.24 L 345.34 287.30 L 338.19 298.84 L 330.12 309.79 L 321.18 320.09 L 311.43 329.66 L 300.92 338.44 L 289.72 346.36 L 277.89 353.38 L 265.52 359.44 L 252.68 364.50 L 239.44 368.53 L 225.90 371.50 L 212.14 373.37 L 198.24 374.14 L 184.30 373.80 L 170.40 372.34 L 156.64 369.76 L 143.09 366.09 L 129.86 361.34 L 117.02 355.53 L 104.67 348.70 L 92.88 340.89 L 81.72 332.14 L 71.28 322.51 L 61.63 312.06 L 52.82 300.84 L 44.93 288.93 L 38.00 276.41 L 32.08 263.34 L 27.21 249.82 L 23.44 235.92 L 20.78 221.74 L 19.26 207.36 L 18.89 192.88 L 19.69 178.39 L 21.65 163.98 L 24.75 149.74 L 29.00 135.77 L 34.36 122.16 L 40.80 109.00 L 48.29 96.37 L 56.78 84.35 L 66.22 73.03 L 76.56 62.48 L 87.73 52.78 L 99.66 43.98 L 112.29 36.14 L 125.52 29.33 L 139.28 23.59 L 153.48 18.96 L 168.04 15.47 L 182.86 13.15 L 197.84 12.03 L 212.89 12.10 L 227.92 13.38 L 242.82 15.87 L 257.51 19.54 L 271.88 24.38 L 285.85 30.37 L 299.31 37.47 L 312.19 45.64 L 324.40 54.83 L 335.85 64.99 L 346.48 76.05 L 356.20 87.94 L 364.96 100.60 L 372.70 113.94 L 379.35 127.89 L 384.88 142.34 L 389.24 157.23 L 392.40 172.44 L 394.35 187.88" fill="none" stroke="url(#sg)" stroke-width="2.2" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <div class="wrap">
+    <h1>Roleplay tools for<br><span>SillyTavern</span></h1>
+    <p>Presets and character cards for immersive, character-driven roleplay — built and tuned by Coz.</p>
+    <div class="cta">
+      <a class="btn primary" href="#presets">Browse presets</a>
+      <a class="btn ghost" href="#setup">How to install</a>
+    </div>
+  </div>
+</header>
+
+<section id="presets">
+  <div class="wrap">
+    <div class="eyebrow">Presets</div>
+    <h2>Worldhopper</h2>
+    <p class="lede">A modular Chat Completion preset for SillyTavern — toggle-based, prose-first, with a full body-metaphysics module suite. Two tuned builds for two model families.</p>
+    <div class="grid">
+
+      <div class="pcard">
+        <span class="tag">For Claude</span>
+        <h3>Worldhopper</h3>
+        <div class="ver">v0.70 · Claude Opus via OpenRouter</div>
+        <p>The flagship build. Neutral samplers, a light thinking pass for rule adherence, family-based banlist, and the full possession / propagation / puppetry / skinsuit module set.</p>
+        <a class="dl" href="presets/Worldhopper-0.70.json" download>↓ Download JSON</a>
+      </div>
+
+      <div class="pcard">
+        <span class="tag gem">For Gemini</span>
+        <h3>WH Planeswalker</h3>
+        <div class="ver">v0.70 · Gemini 3.1 Pro Preview</div>
+        <p>The Gemini fork of Worldhopper. Cooler samplers and a Register Control module that keeps Gemini's edge while reining in reflexive maximalism and player-hostile prose.</p>
+        <a class="dl" href="presets/WH-Planeswalker-0.70.json" download>↓ Download JSON</a>
+      </div>
+
+    </div>
+
+    <div class="regexnote">
+      <b>Companion regex</b> — the diegetic-HTML display scripts and tag-cleanup are <b>bundled inside each preset and import automatically</b>, so most people need nothing extra. Want them standalone (e.g. for a different preset)? <a href="https://github.com/coz-rp/coz-rp.github.io/tree/main/regex">Browse the regex pack on GitHub →</a>
+    </div>
+  </div>
+</section>
+
+<section id="cards">
+  <div class="wrap">
+    <div class="eyebrow">Character Cards</div>
+    <h2>Cards</h2>
+    <p class="lede">Original character cards for SillyTavern. Download the PNG and import it from the character panel. (This section is a template — swap in your own cards by copying a tile below.)</p>
+    <div class="cardgrid">
+
+      <a class="charcard" href="#">
+        <div class="art">Art goes here</div>
+        <div class="meta">
+          <div class="cname">Character Name</div>
+          <div class="cblurb">One-line hook about who they are.</div>
+          <div class="ctags"><span>genre</span><span>tag</span></div>
+        </div>
+      </a>
+
+      <a class="charcard" href="#">
+        <div class="art">Art goes here</div>
+        <div class="meta">
+          <div class="cname">Character Name</div>
+          <div class="cblurb">One-line hook about who they are.</div>
+          <div class="ctags"><span>genre</span><span>tag</span></div>
+        </div>
+      </a>
+
+      <a class="charcard" href="#">
+        <div class="art">Art goes here</div>
+        <div class="meta">
+          <div class="cname">Character Name</div>
+          <div class="cblurb">One-line hook about who they are.</div>
+          <div class="ctags"><span>genre</span><span>tag</span></div>
+        </div>
+      </a>
+
+    </div>
+    <p class="fineprint">Tip: host card PNGs with explicit art off-GitHub (catbox.moe, pixeldrain) and point the tile's link there; keep tamer cards in the repo if you like.</p>
+  </div>
+</section>
+
+<section id="setup">
+  <div class="wrap">
+    <div class="eyebrow">Setup</div>
+    <h2>Installing a preset</h2>
+    <p class="lede">Chat Completion presets import in seconds. You'll need SillyTavern connected to a Chat Completion source (OpenRouter, etc.).</p>
+    <ol class="steps">
+      <li>Download the preset <b>.json</b> above.</li>
+      <li>In SillyTavern, open <b>AI Response Configuration</b> (the top-left sliders icon).</li>
+      <li>Click the <b>Master Import</b> button and select the downloaded file.</li>
+      <li>Pick the new preset from the dropdown, choose your model, and you're set.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="wrap">
+    <div class="eyebrow">About</div>
+    <h2>About Coz RP</h2>
+    <p>Hi — I'm Coz. I build roleplay presets and cards for SillyTavern, focused on strong prose and living, autonomous characters. Everything here is free to use and tweak.</p>
+    <p style="margin-top:16px">Questions or feedback? <a class="link" href="#">Discord</a> · <a class="link" href="#">Contact</a> <span style="color:var(--mut)">(add your links here)</span></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="badge18">18+ · Mature content</div>
+    <div>Made by Coz · Hosted on GitHub Pages · <a href="https://github.com/coz-rp">GitHub</a></div>
+  </div>
+</footer>
+
+</body>
 </html>

@@ -1,0 +1,17 @@
+{
+  "id": "547cf467-096e-46dd-a4fd-7ba89b3ed22c",
+  "scriptName": "WH - Text Out",
+  "findRegex": "/^out: (.+)$/gm",
+  "replaceString": "<div style=\"width: fit-content; max-width: 80%; margin: 4px 0 4px auto; padding: 6px 10px; border-radius: 12px 12px 3px 12px; background: rgba(70,120,200,0.35); color: rgba(235,235,245,0.9); font-style: normal;\">$1</div>",
+  "trimStrings": [],
+  "placement": [
+    2
+  ],
+  "disabled": false,
+  "markdownOnly": true,
+  "promptOnly": false,
+  "runOnEdit": true,
+  "substituteRegex": 0,
+  "minDepth": null,
+  "maxDepth": null
+}

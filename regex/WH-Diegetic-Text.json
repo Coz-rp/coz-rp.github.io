@@ -1,0 +1,17 @@
+{
+  "id": "403c6e1a-b86f-46d2-bc78-3233d8061534",
+  "scriptName": "WH - Diegetic Text",
+  "findRegex": "/%%text\\|([^%\\n]+)%%\\n([\\s\\S]*?)%%end%%/g",
+  "replaceString": "<div style=\"max-width: 340px; margin: 10px auto; padding: 10px 12px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.10); background: rgba(18,18,20,0.55); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);\">\n  <div style=\"text-align: center; font-size: 0.72em; letter-spacing: 1.2px; text-transform: uppercase; color: rgba(235,235,245,0.55); border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 6px; margin-bottom: 8px; font-style: normal;\">$1</div>\n  <div style=\"font-size: 0.85em; line-height: 1.4; font-style: normal;\">\n$2</div>\n</div>",
+  "trimStrings": [],
+  "placement": [
+    2
+  ],
+  "disabled": false,
+  "markdownOnly": true,
+  "promptOnly": false,
+  "runOnEdit": true,
+  "substituteRegex": 0,
+  "minDepth": null,
+  "maxDepth": null
+}
