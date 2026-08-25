@@ -88,20 +88,21 @@
   .regexnote a:hover{text-decoration:underline}
 
   /* character card grid */
-  .cardgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  @media(max-width:720px){.cardgrid{grid-template-columns:1fr 1fr}}
-  .charcard{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;
-       display:flex;flex-direction:column;transition:.18s}
+  .cathead{font-family:'Space Grotesk';font-size:1.2rem;font-weight:600;margin:36px 0 16px;
+       padding-bottom:8px;border-bottom:1px solid var(--line);color:var(--ink);
+       display:flex;align-items:center;gap:10px}
+  .cathead::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);flex:none;
+       box-shadow:0 0 12px var(--accent)}
+  .cathead:first-of-type{margin-top:8px}
+  .cardgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+  .charcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;
+       display:flex;flex-direction:column;gap:4px;transition:.18s}
   .charcard:hover{border-color:var(--accent);transform:translateY(-2px)}
-  .charcard .art{aspect-ratio:2/3;background:linear-gradient(160deg,rgba(255,45,120,.16),rgba(255,87,71,.1));
-       display:flex;align-items:center;justify-content:center;color:var(--mut);font-size:.8rem}
-  .charcard .art img{width:100%;height:100%;object-fit:cover;display:block}
-  .charcard .meta{padding:14px 16px}
   .charcard .cname{font-family:'Space Grotesk';font-weight:600;font-size:1.05rem}
-  .charcard .cblurb{color:var(--mut);font-size:.85rem;margin:4px 0 10px}
-  .charcard .ctags{display:flex;gap:6px;flex-wrap:wrap}
-  .charcard .ctags span{font-size:.68rem;color:#ff9ec2;background:rgba(255,45,120,.13);
-       padding:3px 8px;border-radius:12px}
+  .charcard .cblurb{color:var(--mut);font-size:.85rem}
+  .charcard .dlpill{margin-top:10px;align-self:flex-start;font-size:.8rem;font-weight:600;color:var(--accent);
+       border:1px solid var(--line);padding:6px 13px;border-radius:8px;transition:.15s}
+  .charcard:hover .dlpill{background:rgba(255,45,120,.12);border-color:var(--accent)}
   .fineprint{color:var(--mut);font-size:.8rem;margin-top:18px;opacity:.8}
 
   /* steps */
@@ -200,38 +201,155 @@
   <div class="wrap">
     <div class="eyebrow">Character Cards</div>
     <h2>Cards</h2>
-    <p class="lede">Original character cards for SillyTavern. Download the PNG and import it from the character panel. (This section is a template — swap in your own cards by copying a tile below.)</p>
+    <p class="lede">Original SillyTavern character cards, sorted by flavor. Click a card to download the PNG, then import it from the character panel.</p>
+
+    <h3 class="cathead">RPGs</h3>
     <div class="cardgrid">
-
-      <a class="charcard" href="#">
-        <div class="art">Art goes here</div>
-        <div class="meta">
-          <div class="cname">Character Name</div>
-          <div class="cblurb">One-line hook about who they are.</div>
-          <div class="ctags"><span>genre</span><span>tag</span></div>
-        </div>
+      <a class="charcard" href="cards/rpgs/body-hopper-rpg.png" download>
+        <div class="cname">Body Hopper</div>
+        <span class="dlpill">↓ Download</span>
       </a>
 
-      <a class="charcard" href="#">
-        <div class="art">Art goes here</div>
-        <div class="meta">
-          <div class="cname">Character Name</div>
-          <div class="cblurb">One-line hook about who they are.</div>
-          <div class="ctags"><span>genre</span><span>tag</span></div>
-        </div>
+      <a class="charcard" href="cards/rpgs/college-hypnosis-rpg.png" download>
+        <div class="cname">College Hypnosis</div>
+        <span class="dlpill">↓ Download</span>
       </a>
 
-      <a class="charcard" href="#">
-        <div class="art">Art goes here</div>
-        <div class="meta">
-          <div class="cname">Character Name</div>
-          <div class="cblurb">One-line hook about who they are.</div>
-          <div class="ctags"><span>genre</span><span>tag</span></div>
-        </div>
+      <a class="charcard" href="cards/rpgs/college-possession-rpg.png" download>
+        <div class="cname">College Possession</div>
+        <span class="dlpill">↓ Download</span>
       </a>
 
+      <a class="charcard" href="cards/rpgs/costume-gun.png" download>
+        <div class="cname">Costume Gun</div>
+        <span class="dlpill">↓ Download</span>
+      </a>
+
+      <a class="charcard" href="cards/rpgs/hivemind-rpg.png" download>
+        <div class="cname">Hivemind</div>
+        <span class="dlpill">↓ Download</span>
+      </a>
+
+      <a class="charcard" href="cards/rpgs/lustful-sin.png" download>
+        <div class="cname">Lustful Sin</div>
+        <span class="dlpill">↓ Download</span>
+      </a>
+
+      <a class="charcard" href="cards/rpgs/mimic-isekai-rpg.png" download>
+        <div class="cname">Mimic Isekai</div>
+        <span class="dlpill">↓ Download</span>
+      </a>
+
+      <a class="charcard" href="cards/rpgs/multiply-rpg.png" download>
+        <div class="cname">Multiply</div>
+        <span class="dlpill">↓ Download</span>
+      </a>
+
+      <a class="charcard" href="cards/rpgs/saimin-yuugi-rpg.png" download>
+        <div class="cname">Saimin Yuugi</div>
+        <span class="dlpill">↓ Download</span>
+      </a>
+
+      <a class="charcard" href="cards/rpgs/slime-possession-rpg.png" download>
+        <div class="cname">Slime Possession</div>
+        <span class="dlpill">↓ Download</span>
+      </a>
+
+      <a class="charcard" href="cards/rpgs/snowed-in-hypnosis-rpg.png" download>
+        <div class="cname">Snowed In Hypnosis</div>
+        <span class="dlpill">↓ Download</span>
+      </a>
+
+      <a class="charcard" href="cards/rpgs/wuxia-mind-magic-rpg.png" download>
+        <div class="cname">Wuxia Mind Magic</div>
+        <span class="dlpill">↓ Download</span>
+      </a>
     </div>
-    <p class="fineprint">Tip: host card PNGs with explicit art off-GitHub (catbox.moe, pixeldrain) and point the tile's link there; keep tamer cards in the repo if you like.</p>
+
+    <h3 class="cathead">Multipossessors</h3>
+    <div class="cardgrid">
+      <a class="charcard" href="cards/multipossessors/mariko-righteous-multipossessor.png" download>
+        <div class="cname">Mariko</div>
+        <div class="cblurb">Righteous</div>
+        <span class="dlpill">↓ Download</span>
+      </a>
+
+      <a class="charcard" href="cards/multipossessors/nate-multipossessor-brother.png" download>
+        <div class="cname">Nate</div>
+        <div class="cblurb">Brother</div>
+        <span class="dlpill">↓ Download</span>
+      </a>
+
+      <a class="charcard" href="cards/multipossessors/possession-man.png" download>
+        <div class="cname">Possession</div>
+        <div class="cblurb">Man</div>
+        <span class="dlpill">↓ Download</span>
+      </a>
+
+      <a class="charcard" href="cards/multipossessors/ren-body-hopper-classmate.png" download>
+        <div class="cname">Ren</div>
+        <div class="cblurb">Body Hopper Classmate</div>
+        <span class="dlpill">↓ Download</span>
+      </a>
+
+      <a class="charcard" href="cards/multipossessors/saiko-yandere-multipossessor.png" download>
+        <div class="cname">Saiko</div>
+        <div class="cblurb">Yandere</div>
+        <span class="dlpill">↓ Download</span>
+      </a>
+
+      <a class="charcard" href="cards/multipossessors/souta-casual-multipossessor.png" download>
+        <div class="cname">Souta</div>
+        <div class="cblurb">Casual</div>
+        <span class="dlpill">↓ Download</span>
+      </a>
+
+      <a class="charcard" href="cards/multipossessors/yuto-body-hopper-friend.png" download>
+        <div class="cname">Yuto</div>
+        <div class="cblurb">Body Hopper Friend</div>
+        <span class="dlpill">↓ Download</span>
+      </a>
+    </div>
+
+    <h3 class="cathead">Hypnosluts</h3>
+    <div class="cardgrid">
+      <a class="charcard" href="cards/hypnosluts/daisy-goth-hypnoslut.png" download>
+        <div class="cname">Daisy</div>
+        <div class="cblurb">Goth</div>
+        <span class="dlpill">↓ Download</span>
+      </a>
+
+      <a class="charcard" href="cards/hypnosluts/ellie-shy-hypnoslut-gf.png" download>
+        <div class="cname">Ellie</div>
+        <div class="cblurb">Shy GF</div>
+        <span class="dlpill">↓ Download</span>
+      </a>
+
+      <a class="charcard" href="cards/hypnosluts/megan-gyaru-hypnoslut.png" download>
+        <div class="cname">Megan</div>
+        <div class="cblurb">Gyaru</div>
+        <span class="dlpill">↓ Download</span>
+      </a>
+
+      <a class="charcard" href="cards/hypnosluts/pixi-gamer-hypnoslut.png" download>
+        <div class="cname">Pixi</div>
+        <div class="cblurb">Gamer</div>
+        <span class="dlpill">↓ Download</span>
+      </a>
+
+      <a class="charcard" href="cards/hypnosluts/shelby-singer-hypnoslut.png" download>
+        <div class="cname">Shelby</div>
+        <div class="cblurb">Singer</div>
+        <span class="dlpill">↓ Download</span>
+      </a>
+
+      <a class="charcard" href="cards/hypnosluts/tessie-defiant-hypnoslut.png" download>
+        <div class="cname">Tessie</div>
+        <div class="cblurb">Defiant</div>
+        <span class="dlpill">↓ Download</span>
+      </a>
+    </div>
+    <p class="fineprint">No preview art is shown here by design. The card PNGs still live in the repo as downloads — if you want zero explicit files on GitHub, host the PNGs on catbox.moe / pixeldrain and point each card’s link there instead.</p>
   </div>
 </section>
 
@@ -254,7 +372,12 @@
     <div class="eyebrow">About</div>
     <h2>About Coz RP</h2>
     <p>Hi — I'm Coz. I build roleplay presets and cards for SillyTavern, focused on strong prose and living, autonomous characters. Everything here is free to use and tweak.</p>
-    <p style="margin-top:16px">Questions or feedback? <a class="link" href="#">Discord</a> · <a class="link" href="#">Contact</a> <span style="color:var(--mut)">(add your links here)</span></p>
+    <p style="margin-top:16px">Find all my cards on Chub and Botbooru, or send me a request for something new.</p>
+    <div class="cta" style="justify-content:flex-start;margin-top:18px">
+      <a class="btn ghost" href="https://chub.ai/users/Cozpo" target="_blank" rel="noopener">Chub ↗</a>
+      <a class="btn ghost" href="https://botbooru.com/profile/18450" target="_blank" rel="noopener">Botbooru ↗</a>
+      <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLScTdP0ukeJBbwl3_IZEEibZaoJIrZbkSu1InzZ1eL4hBVHBGw/viewform" target="_blank" rel="noopener">Request a card ↗</a>
+    </div>
   </div>
 </section>
 
