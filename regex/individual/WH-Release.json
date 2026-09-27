@@ -1,0 +1,17 @@
+{
+  "trimStrings": [],
+  "placement": [
+    1,
+    2
+  ],
+  "disabled": false,
+  "markdownOnly": true,
+  "promptOnly": false,
+  "runOnEdit": true,
+  "substituteRegex": 0,
+  "minDepth": null,
+  "maxDepth": null,
+  "scriptName": "WH - Release",
+  "findRegex": "/%%release%%[ \\t]*\\n?([\\s\\S]*?)\\n?[ \\t]*%%\\/release%%/gi",
+  "replaceString": "<div class=\"wh-release\" markdown=\"1\">\n$1\n</div>"
+}

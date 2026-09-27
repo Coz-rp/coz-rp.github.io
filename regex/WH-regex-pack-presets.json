@@ -1,0 +1,130 @@
+[
+  {
+    "scriptName": "WH - Prune Old Trackers",
+    "findRegex": "/\\n*<details>[\\s\\S]*?<\\/details>/g",
+    "replaceString": "",
+    "trimStrings": [],
+    "placement": [
+      2
+    ],
+    "disabled": false,
+    "markdownOnly": false,
+    "promptOnly": true,
+    "runOnEdit": false,
+    "substituteRegex": 0,
+    "minDepth": 2,
+    "maxDepth": null
+  },
+  {
+    "scriptName": "WH - Tag Janitor",
+    "findRegex": "/<\\/?(?:adult_content|blank_slate|body_history|body_ledger|challenge|characters|codex|content|copy_fidelity|current_turn|dialogue_focus|director|dollification|dronification|echo_protection|examples|explicit_prose|final_contrast_gate|final_legato_gate|final_teeth_gate|final_vocation_gate|formatting|gm_notebook|gravity|hive_mind|hypnosis|instructions|intimacy|judge|knowledge_limits|last_message|limp_play|lore|metaphysics|mind_control|momentum_tracker|multipossession|negative_constraints|npc_forge|past_events|perception_rewrite|pet_play|possession|propagation|protagonist|puppetry|register|reverse_vore|roleplay_context|sample|scenario|scene_anchor|segmentation|skinsuit|soul_play|status_board|story_so_far|style|style_lens|teeth|timestop|vocal_limits|vocation|diegetic(?:_html)?)>\\n?/g",
+    "replaceString": "",
+    "trimStrings": [],
+    "placement": [
+      2
+    ],
+    "disabled": false,
+    "markdownOnly": false,
+    "promptOnly": false,
+    "runOnEdit": true,
+    "substituteRegex": 0,
+    "minDepth": null,
+    "maxDepth": null
+  },
+  {
+    "scriptName": "WH - Text In",
+    "findRegex": "/^in: (.+)$/gm",
+    "replaceString": "<div style=\"width: fit-content; max-width: 80%; margin: 4px auto 4px 0; padding: 6px 10px; border-radius: 12px 12px 12px 3px; background: rgba(255,255,255,0.08); color: rgba(235,235,245,0.85); font-style: normal;\">$1</div>",
+    "trimStrings": [],
+    "placement": [
+      2
+    ],
+    "disabled": false,
+    "markdownOnly": true,
+    "promptOnly": false,
+    "runOnEdit": true,
+    "substituteRegex": 0,
+    "minDepth": null,
+    "maxDepth": null
+  },
+  {
+    "scriptName": "WH - Text Out",
+    "findRegex": "/^out: (.+)$/gm",
+    "replaceString": "<div style=\"width: fit-content; max-width: 80%; margin: 4px 0 4px auto; padding: 6px 10px; border-radius: 12px 12px 3px 12px; background: rgba(70,120,200,0.35); color: rgba(235,235,245,0.9); font-style: normal;\">$1</div>",
+    "trimStrings": [],
+    "placement": [
+      2
+    ],
+    "disabled": false,
+    "markdownOnly": true,
+    "promptOnly": false,
+    "runOnEdit": true,
+    "substituteRegex": 0,
+    "minDepth": null,
+    "maxDepth": null
+  },
+  {
+    "scriptName": "WH - Diegetic Text",
+    "findRegex": "/%%text\\|([^%\\n]+)%%\\n([\\s\\S]*?)%%end%%/g",
+    "replaceString": "<div style=\"max-width: 340px; margin: 10px auto; padding: 10px 12px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.10); background: rgba(18,18,20,0.55); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);\">\n  <div style=\"text-align: center; font-size: 0.72em; letter-spacing: 1.2px; text-transform: uppercase; color: rgba(235,235,245,0.55); border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 6px; margin-bottom: 8px; font-style: normal;\">$1</div>\n  <div style=\"font-size: 0.85em; line-height: 1.4; font-style: normal;\">\n$2</div>\n</div>",
+    "trimStrings": [],
+    "placement": [
+      2
+    ],
+    "disabled": false,
+    "markdownOnly": true,
+    "promptOnly": false,
+    "runOnEdit": true,
+    "substituteRegex": 0,
+    "minDepth": null,
+    "maxDepth": null
+  },
+  {
+    "scriptName": "WH - Diegetic Sign",
+    "findRegex": "/%%sign%%\\n([\\s\\S]*?)%%end%%/g",
+    "replaceString": "<div style=\"width: fit-content; max-width: 85%; margin: 12px auto; padding: 12px 22px; border: 2px solid rgba(235,235,245,0.25); border-radius: 4px; background: rgba(18,18,20,0.6); text-align: center; font-size: 0.95em; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; font-style: normal; color: rgba(235,235,245,0.85); white-space: pre-wrap;\">$1</div>",
+    "trimStrings": [],
+    "placement": [
+      2
+    ],
+    "disabled": false,
+    "markdownOnly": true,
+    "promptOnly": false,
+    "runOnEdit": true,
+    "substituteRegex": 0,
+    "minDepth": null,
+    "maxDepth": null
+  },
+  {
+    "scriptName": "WH - Diegetic Note",
+    "findRegex": "/%%note%%\\n([\\s\\S]*?)%%end%%/g",
+    "replaceString": "<div style=\"max-width: 420px; margin: 12px auto; padding: 14px 18px; border-left: 3px solid rgba(200,180,140,0.4); border-radius: 2px 8px 8px 2px; background: rgba(46,42,34,0.45); font-family: Georgia, 'Times New Roman', serif; font-style: italic; font-size: 0.9em; line-height: 1.6; color: rgba(232,222,200,0.9); white-space: pre-wrap;\">$1</div>",
+    "trimStrings": [],
+    "placement": [
+      2
+    ],
+    "disabled": false,
+    "markdownOnly": true,
+    "promptOnly": false,
+    "runOnEdit": true,
+    "substituteRegex": 0,
+    "minDepth": null,
+    "maxDepth": null
+  },
+  {
+    "scriptName": "WH - Diegetic Screen",
+    "findRegex": "/%%screen%%\\n([\\s\\S]*?)%%end%%/g",
+    "replaceString": "<div style=\"max-width: 460px; margin: 12px auto; padding: 12px 14px; border-radius: 6px; border: 1px solid rgba(120,220,160,0.2); background: rgba(8,12,10,0.75); font-family: 'Courier New', monospace; font-style: normal; font-size: 0.82em; line-height: 1.5; color: rgba(140,230,170,0.9); white-space: pre-wrap;\">$1</div>",
+    "trimStrings": [],
+    "placement": [
+      2
+    ],
+    "disabled": false,
+    "markdownOnly": true,
+    "promptOnly": false,
+    "runOnEdit": true,
+    "substituteRegex": 0,
+    "minDepth": null,
+    "maxDepth": null
+  }
+]
