@@ -135,6 +135,25 @@
        box-shadow:inset 0 0 24px rgba(160,100,255,.14),0 0 16px rgba(160,100,255,.12)}
   .possess::before{content:'◈ possession ◈';display:block;text-align:center;font-size:.66rem;letter-spacing:.3em;
        text-transform:uppercase;color:rgba(206,180,255,.75);margin-bottom:2px}
+  .demo + .demo{margin-top:14px}
+  .lane{margin:6px 0;padding:3px 10px;border-left:3px solid rgba(var(--h),.85);border-radius:0 8px 8px 0;background:rgba(var(--h),.08)}
+  .lane-name{display:inline-block;margin-right:6px;padding:0 8px;border-radius:999px;border:1px solid rgba(var(--h),.7);
+       background:rgba(var(--h),.2);font-size:.74rem;font-weight:600;color:var(--ink)}
+  .roster{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;padding:8px;border:1px solid var(--line);border-bottom:none;
+       border-radius:10px 10px 0 0;background:#1a171b}
+  .lcard{flex:1 1 140px;max-width:230px;display:flex;flex-direction:column;gap:1px;padding:5px 10px;border-radius:10px;
+       border:1px solid rgba(var(--h),.45);background:rgba(var(--h),.09);font-size:.8rem}
+  .lcard b{display:flex;align-items:center;gap:6px;font-size:.84rem}
+  .lcard b i{width:8px;height:8px;border-radius:50%;background:rgb(var(--h))}
+  .lcard b small{opacity:.65;font-weight:400}
+  .lcard > small{opacity:.75;font-size:.72rem}
+  .lcard.on{border-color:rgb(var(--h));box-shadow:inset 0 0 0 1px rgb(var(--h))}
+  .lcard.on > small{opacity:1}
+  .box{padding:10px 12px;border:1px solid var(--line);border-radius:0 0 10px 10px;background:#161317;color:#ddd3d8;font-size:.9rem}
+  .caret{display:inline-block;width:1px;height:1.05em;background:#ddd3d8;vertical-align:-3px;animation:blink 1.1s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+  @media (prefers-reduced-motion:reduce){.caret{animation:none}}
+  .demo .foot{color:var(--mut);font-size:.8rem;margin-top:10px}
 
   /* chips of links */
   .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
@@ -267,6 +286,29 @@
           <p><em>Dana turns from the window, halfway through telling you about her day.</em></p>
           <div class="possess"><p><em>Mid-word, she stops. Her eyes lose their focus for a heartbeat and her whole body gives a small jolt. Then she blinks, rolls her shoulders, and drops onto the couch beside you.</em></p><p><q>Where was I?</q> <em>she asks.</em></p></div>
         </div>
+      </div>
+    </div>
+
+    <div class="demo" aria-label="How your lines for several bodies, the reply, and the body roster look in the chat">
+      <div class="cap">In the chat: several bodies at once</div>
+      <div class="body">
+        <div class="msg">
+          <div class="who">Sam <span class="as">as Jess, Tori</span></div>
+          <div class="lane" style="--h:127,119,221"><span class="lane-name">Jess</span><em>leans on the bar and orders two margaritas</em></div>
+          <div class="lane" style="--h:216,90,48"><span class="lane-name">Tori</span><em>stays out on the dance floor, both hands in the air</em></div>
+        </div>
+        <div class="msg" style="margin-top:14px">
+          <div class="who">Narrator</div>
+          <p><em>The bartender sets two glasses in front of Jess and holds out the card reader. Out on the floor the song changes, and Tori's friend Bea catches her by the wrist.</em></p>
+          <p><q>You are not tapping out on me yet,</q> <em>Bea shouts over the bass.</em></p>
+        </div>
+        <div class="roster">
+          <span class="lcard" style="--h:29,158,117"><b><i></i>Sam <small>(you)</small></b><small>on the couch at home</small></span>
+          <span class="lcard on" style="--h:127,119,221"><b><i></i>Jess</b><small>writing</small></span>
+          <span class="lcard" style="--h:216,90,48"><b><i></i>Tori</b><small>dancing</small></span>
+        </div>
+        <div class="box">[Jess] <span class="caret"></span></div>
+        <div class="foot">Tap a body's card to write its next line. Bodies you give nothing stay exactly as you left them.</div>
       </div>
     </div>
 
