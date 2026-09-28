@@ -130,6 +130,10 @@
   .msg .who .as{font-size:.72rem;font-weight:600;margin-left:8px;padding:2px 9px;border-radius:10px;
        background:rgba(var(--you),.22);border:1px solid rgba(var(--you),.8);color:#a6f0d4}
   .msg p{margin:6px 0} .msg em{color:#cfc3ca} .msg q{color:#ffb38a;quotes:'"' '"'}
+  .ctlbox{margin:10px 0;padding:8px 14px 10px;border:1px solid rgba(212,83,126,.5);border-left:4px solid rgba(212,83,126,.9);
+       border-radius:0 12px 12px 0;background:rgba(212,83,126,.11)}
+  .ctlbox::before{content:'✦ control ✦';display:block;text-align:center;font-size:.66rem;letter-spacing:.3em;
+       text-transform:uppercase;color:#f4c0d1;margin-bottom:2px}
   .possess{margin:10px 0;padding:8px 14px 10px;border-radius:12px;border:1px solid rgba(178,126,255,.45);
        background:linear-gradient(135deg,rgba(118,70,230,.16),rgba(214,64,170,.10));
        box-shadow:inset 0 0 24px rgba(160,100,255,.14),0 0 16px rgba(160,100,255,.12)}
@@ -237,14 +241,12 @@
       <div class="pcard">
         <span class="tag">For Claude</span>
         <h3>Worldhopper</h3>
-        <div class="ver">v1.0 · Claude Opus or Sonnet 4.5 and newer</div>
         <p>The flagship. Neutral samplers, a banned-phrase list that targets whole families of stock prose, and last-second checks against the habits Claude slips into: "not X, but Y", chopped-up dialogue, convenient rescues, and characters who are nothing but their job.</p>
         <a class="dlbtn" href="presets/Worldhopper-1.0.json" download="Worldhopper 1.0.json">↓ Download preset</a>
       </div>
       <div class="pcard">
         <span class="tag gem">For Gemini</span>
         <h3>WH Planeswalker</h3>
-        <div class="ver">v1.0 · Gemini 3.1 Pro</div>
         <p>The Gemini build. It keeps Gemini's willingness to go dark, crude and unpredictable, and reins in its two misfires: an escalation governor so maximum intensity is a choice, and Register Control so the narrator stops piling on.</p>
         <a class="dlbtn" href="presets/WH-Planeswalker-1.0.json" download="WH Planeswalker 1.0.json">↓ Download preset</a>
       </div>
@@ -259,17 +261,21 @@
     <h2>Worldhopper Engine</h2>
     <p class="lede">The part a preset can't do. Tell it what kind of metaphysics a character uses, and it keeps the rules, the bodies and the prose straight in that character's chats. It pairs with the presets above and works with any other.</p>
 
+    <div class="note" style="margin-bottom:16px"><b>Only what you're into.</b> Every mode is opt-in, picked per character, and nothing is on until you pick it. If mind control is your thing, pick Mind Control and that's all you'll ever get: no possession rules, no body swaps, no boxes or cards for modes you didn't choose. Mix as many or as few as you like, and change them any time.</div>
+
     <div class="install">
       <div class="step">In SillyTavern, open <b>Extensions</b> → <b>Install extension</b>, and paste:</div>
       <div class="urlrow"><code id="repourl">https://github.com/Coz-rp/SillyTavern-Worldhopper</code><button type="button" id="copyurl">Copy</button></div>
-      <div class="after">Then open Extensions → Worldhopper Engine → Settings → Models and pick a connection profile for each job. Tested on SillyTavern 1.18. <a href="https://github.com/Coz-rp/SillyTavern-Worldhopper" target="_blank" rel="noopener" style="color:var(--accent)">Source and README on GitHub ↗</a></div>
+      <div class="after">Then open Extensions → Worldhopper Engine → Settings → Models and pick a connection profile for each job: a local or cheap, fast model, not your roleplay model. Tested on SillyTavern 1.18. <a href="https://github.com/Coz-rp/SillyTavern-Worldhopper" target="_blank" rel="noopener" style="color:var(--accent)">Source and README on GitHub ↗</a></div>
     </div>
+
+    <div class="note" style="margin-top:16px"><b>Keep it fast and cheap.</b> Give the Engine its own model, separate from the one you roleplay with. Its jobs are small background ones, and the Ledger runs after every single reply, so a local model (KoboldCpp, Ollama and the like) or a cheap, fast API model from the Flash, Haiku or mini tier does them well and costs next to nothing. On your big roleplay model they'd work too, but every background call would cost big-model prices, and your next reply waits for the Ledger to finish.</div>
 
     <div class="grid3">
       <div class="feat"><h3>Codex modes</h3><p>19 modes, from possession and skinsuits to hypnosis, mind control, dolls and time stop. Their rules switch on only in the chats that use them, from a lorebook the Engine installs and keeps updated.</p></div>
       <div class="feat"><h3>Body Ledger</h3><p>After each reply, a model you choose records who is in which body, whose mind was changed (and every trigger they carry), and whether you know, then feeds it back so nothing slips.</p></div>
-      <div class="feat"><h3>Strip and body roster</h3><p>Every borrowed body at a glance above the chat: teal when you're the one inside, violet when someone else is. Run several at once and each gets a colour-coded card that shows what it's doing and starts a line for it.</p></div>
-      <div class="feat"><h3>Possession moments</h3><p>Takeovers and exits get their own styled boxes in the chat, so the moment a body changes hands stands out.</p></div>
+      <div class="feat"><h3>Strip and body roster</h3><p>Every borrowed body and changed mind at a glance above the chat: teal when you're the one doing it, violet when someone else is. Run several at once and each gets a colour-coded card that shows what it's doing and starts a line for it.</p></div>
+      <div class="feat"><h3>Moment boxes</h3><p>A takeover, an absorption, someone going under, a will taking hold, time stopping: each mode's big moment gets its own styled box in the chat.</p></div>
       <div class="feat"><h3>Editor</h3><p>A rule pass flags stock phrases, "not X, but Y" framing and chopped dialogue, and a model rewrites only those lines. One tap brings the original back.</p></div>
       <div class="feat"><h3>Card tools</h3><p><b style="color:var(--ink)">Make card</b> turns a Card Builder chat into a character, modes and all. <b style="color:var(--ink)">Check card</b> reviews any card for the things that trip models up.</p></div>
     </div>
@@ -309,6 +315,25 @@
         </div>
         <div class="box">[Jess] <span class="caret"></span></div>
         <div class="foot">Tap a body's card to write its next line. Bodies you give nothing stay exactly as you left them.</div>
+      </div>
+    </div>
+
+    <div class="demo" aria-label="How mind control looks in the strip and the chat">
+      <div class="cap">In the chat: mind control</div>
+      <div class="body">
+        <div class="strip">
+          <span class="chip you"><span class="dot"></span><span><b>Vera</b><small>mind control · by you</small></span></span>
+        </div>
+        <div class="msg">
+          <div class="who">Sam</div>
+          <p><em>Across the meeting table, I catch Vera's eye and decide she wants me to have Friday off.</em></p>
+        </div>
+        <div class="msg" style="margin-top:14px">
+          <div class="who">Narrator</div>
+          <div class="ctlbox"><p><em>Vera stops halfway through the budget slide, struck by how obvious it is, and turns to you with a quick, decisive nod.</em></p></div>
+          <p><q>Before I forget: take Friday. You've earned it, and I'd rather have you rested for the launch.</q> <em>She's already typing it into her calendar, pleased with herself for thinking of it.</em></p>
+        </div>
+        <div class="foot">She wants it and argues for it in her own words, with nobody trapped inside. The Ledger remembers what you set and any trigger you planted, and only you can change it.</div>
       </div>
     </div>
 
@@ -356,17 +381,19 @@
     <details class="more">
       <summary>Or one script at a time</summary>
       <div class="chips">
-          <a class="chip" href="regex/individual/WH-Tag-Janitor.json" download="WH - Tag Janitor.json">WH - Tag Janitor</a>
-          <a class="chip" href="regex/individual/WH-Prune-Old-Trackers.json" download="WH - Prune Old Trackers.json">WH - Prune Old Trackers</a>
-          <a class="chip" href="regex/individual/WH-Text-In.json" download="WH - Text In.json">WH - Text In</a>
-          <a class="chip" href="regex/individual/WH-Text-Out.json" download="WH - Text Out.json">WH - Text Out</a>
-          <a class="chip" href="regex/individual/WH-Diegetic-Text.json" download="WH - Diegetic Text.json">WH - Diegetic Text</a>
-          <a class="chip" href="regex/individual/WH-Diegetic-Sign.json" download="WH - Diegetic Sign.json">WH - Diegetic Sign</a>
+          <a class="chip" href="regex/individual/WH-Body-lines.json" download="WH - Body lines.json">WH - Body lines</a>
           <a class="chip" href="regex/individual/WH-Diegetic-Note.json" download="WH - Diegetic Note.json">WH - Diegetic Note</a>
           <a class="chip" href="regex/individual/WH-Diegetic-Screen.json" download="WH - Diegetic Screen.json">WH - Diegetic Screen</a>
+          <a class="chip" href="regex/individual/WH-Diegetic-Sign.json" download="WH - Diegetic Sign.json">WH - Diegetic Sign</a>
+          <a class="chip" href="regex/individual/WH-Diegetic-Text.json" download="WH - Diegetic Text.json">WH - Diegetic Text</a>
+          <a class="chip" href="regex/individual/WH-Moments.json" download="WH - Moments.json">WH - Moments</a>
           <a class="chip" href="regex/individual/WH-Possession.json" download="WH - Possession.json">WH - Possession</a>
+          <a class="chip" href="regex/individual/WH-Prune-Old-Trackers.json" download="WH - Prune Old Trackers.json">WH - Prune Old Trackers</a>
           <a class="chip" href="regex/individual/WH-Release.json" download="WH - Release.json">WH - Release</a>
-          <a class="chip" href="regex/individual/WH-Stray-possession-markers.json" download="WH - Stray possession markers.json">WH - Stray possession markers</a>
+          <a class="chip" href="regex/individual/WH-Stray-markers.json" download="WH - Stray markers.json">WH - Stray markers</a>
+          <a class="chip" href="regex/individual/WH-Tag-Janitor.json" download="WH - Tag Janitor.json">WH - Tag Janitor</a>
+          <a class="chip" href="regex/individual/WH-Text-In.json" download="WH - Text In.json">WH - Text In</a>
+          <a class="chip" href="regex/individual/WH-Text-Out.json" download="WH - Text Out.json">WH - Text Out</a>
       </div>
     </details>
   </div>
@@ -379,7 +406,7 @@
     <p class="lede">Five minutes, start to finish. You'll need SillyTavern connected to a Chat Completion source (Anthropic, OpenRouter, NanoGPT, Google AI Studio and the like).</p>
     <ol class="steps">
       <li><b>Import a preset.</b> Open AI Response Configuration (the sliders icon), choose Import, and pick the file. When SillyTavern asks whether to allow the preset's regex, allow it. Pick your model as usual; the preset won't change it.</li>
-      <li><b>Install the Engine.</b> Extensions → Install extension, paste <code>https://github.com/Coz-rp/SillyTavern-Worldhopper</code>. Then, under its Settings → Models, pick a fast model for the Ledger (a local model works well) and a stronger one for notes and card reviews.</li>
+      <li><b>Install the Engine.</b> Extensions → Install extension, paste <code>https://github.com/Coz-rp/SillyTavern-Worldhopper</code>. Then, under its Settings → Models, give it its own model, separate from your roleplay one: a local model or a cheap, fast API model keeps everything quick and costs next to nothing.</li>
       <li><b>Pick a character's modes.</b> Open a character and tap the pen under Modes, or let the wand suggest some. Every section of the Engine's panel has a (?) that explains it in a few lines.</li>
       <li><b>Optional: the Card Builder.</b> Import it, build a card with it, then use Make card from the wand menu.</li>
     </ol>

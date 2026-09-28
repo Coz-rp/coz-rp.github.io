@@ -11,7 +11,7 @@
   "substituteRegex": 0,
   "minDepth": null,
   "maxDepth": null,
-  "scriptName": "WH - Stray possession markers",
-  "findRegex": "/^[ \\t]*%%\\/?(?:possession|release)%%[ \\t]*\\n?/gim",
+  "scriptName": "WH - Stray markers",
+  "findRegex": "/^[ \\t]*%%\\/?(?:possession|release|absorbed|worn|shed|trance|control|timestop|resume)%%[ \\t]*\\n?/gim",
   "replaceString": ""
 }

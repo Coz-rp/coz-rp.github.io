@@ -46,8 +46,25 @@
     "substituteRegex": 0,
     "minDepth": null,
     "maxDepth": null,
-    "scriptName": "WH - Stray possession markers",
-    "findRegex": "/^[ \\t]*%%\\/?(?:possession|release)%%[ \\t]*\\n?/gim",
+    "scriptName": "WH - Moments",
+    "findRegex": "/%%(absorbed|worn|shed|trance|control|timestop|resume)%%[ \\t]*\\n?([\\s\\S]*?)\\n?[ \\t]*%%\\/\\1%%/gi",
+    "replaceString": "<div class=\"wh-moment wh-m-$1\" markdown=\"1\">\n$2\n</div>"
+  },
+  {
+    "trimStrings": [],
+    "placement": [
+      1,
+      2
+    ],
+    "disabled": false,
+    "markdownOnly": true,
+    "promptOnly": false,
+    "runOnEdit": true,
+    "substituteRegex": 0,
+    "minDepth": null,
+    "maxDepth": null,
+    "scriptName": "WH - Stray markers",
+    "findRegex": "/^[ \\t]*%%\\/?(?:possession|release|absorbed|worn|shed|trance|control|timestop|resume)%%[ \\t]*\\n?/gim",
     "replaceString": ""
   },
   {
