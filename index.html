@@ -85,8 +85,12 @@
   .pcard .tag{align-self:flex-start;font-size:.72rem;font-weight:600;letter-spacing:.06em;
        padding:4px 10px;border-radius:20px;background:rgba(255,45,120,.15);color:#ff9ec2;margin-bottom:14px}
   .pcard .tag.gem{background:rgba(255,87,71,.15);color:#ffb3a6}
+  .pcard .tag.ds{background:rgba(120,140,255,.15);color:#c3ccff}
   .pcard h3{font-size:1.3rem;margin-bottom:6px}
   .pcard .ver{color:var(--mut);font-size:.85rem}
+  .pcard .models{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:6px}
+  .pcard .models span{flex-basis:100%;color:var(--mut);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
+  .pcard .models b{font-size:.82rem;font-weight:600;padding:3px 9px;border-radius:8px;border:1px solid var(--line)}
   .pcard p{color:var(--mut);font-size:.95rem;margin:12px 0 20px;flex:1}
   .dlbtn{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.9rem;
        color:var(--accent);border:1px solid var(--line);padding:9px 16px;border-radius:10px;transition:.15s}
@@ -236,21 +240,31 @@
   <div class="wrap">
     <div class="eyebrow">Presets</div>
     <h2>Worldhopper 1.0</h2>
-    <p class="lede">A modular Chat Completion preset: prose-first, adult-capable, and assembled from toggles you mix per chat. Two builds for two model families. Neither one touches your connection or model.</p>
-    <div class="grid">
+    <p class="lede">A modular Chat Completion preset: prose-first, adult-capable, and assembled from toggles you mix per chat. Three builds for three model families. None of them touches your connection or model.</p>
+    <div class="grid3">
       <div class="pcard">
         <span class="tag">For Claude</span>
         <h3>Worldhopper</h3>
+        <div class="models"><span>Suggested</span><b>Claude Sonnet 4.6</b><b>Claude Opus 4.6</b></div>
         <p>The flagship. Neutral samplers, a banned-phrase list that targets whole families of stock prose, and last-second checks against the habits Claude slips into: "not X, but Y", chopped-up dialogue, convenient rescues, and characters who are nothing but their job.</p>
         <a class="dlbtn" href="presets/Worldhopper-1.0.json" download="Worldhopper 1.0.json">↓ Download preset</a>
       </div>
       <div class="pcard">
         <span class="tag gem">For Gemini</span>
         <h3>WH Planeswalker</h3>
-        <p>The Gemini build. It keeps Gemini's willingness to go dark, crude and unpredictable, and reins in its two misfires: an escalation governor so maximum intensity is a choice, and Register Control so the narrator stops piling on.</p>
+        <div class="models"><span>Suggested</span><b>Gemini 3.1 Pro Preview</b></div>
+        <p>The Gemini build. It keeps Gemini's willingness to go dark, crude and unpredictable, and aims it: Register Control stops the narrator piling on, an optional governor makes maximum intensity a choice, and an Acknowledgement toggle cuts down on refusals.</p>
         <a class="dlbtn" href="presets/WH-Planeswalker-1.0.json" download="WH Planeswalker 1.0.json">↓ Download preset</a>
       </div>
+      <div class="pcard">
+        <span class="tag ds">For DeepSeek</span>
+        <h3>WH Delver</h3>
+        <div class="models"><span>Suggested</span><b>DeepSeek V4 Pro</b><b>DeepSeek V4.1 Flash</b></div>
+        <p>The DeepSeek build, and the cheapest way to run Worldhopper. It spends its effort on what DeepSeek gets wrong: a last-second check that cuts anything written for your character and holds the POV and tense, and characters who stay themselves instead of drifting into tropes.</p>
+        <a class="dlbtn" href="presets/WH-Delver-1.0.json" download="WH Delver 1.0.json">↓ Download preset</a>
+      </div>
     </div>
+    <div class="note" style="margin-bottom:12px"><b>Which one?</b> Use the build for the model you play with; each card lists the models it's tuned for. WH Delver is also the budget pick, and the one to try if Gemini keeps refusing, which happens most on free plans.</div>
     <div class="note"><b>Everything is explained inside.</b> Each preset's first block (✦ README, keep it switched off) walks through every toggle, the recommended settings and the credits. Its regex (tag cleanup, styled in-world texts and signs) is bundled and imports with it; standalone copies are under <a href="#regex">Regex</a>.</div>
   </div>
 </section>
