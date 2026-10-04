@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Coz RP — Worldhopper for SillyTavern</title>
-<meta name="description" content="Worldhopper 1.0: presets, an extension and a card builder for metaphysics roleplay in SillyTavern. Possession, body swaps, mind control, hive minds, dolls and more.">
-<meta property="og:title" content="Worldhopper 1.0 for SillyTavern">
+<meta name="description" content="Worldhopper 1.1: presets, an extension and a card builder for metaphysics roleplay in SillyTavern. Possession, body swaps, mind control, hive minds, dolls and more.">
+<meta property="og:title" content="Worldhopper 1.1 for SillyTavern">
 <meta property="og:description" content="Presets, an extension and a card builder for metaphysics roleplay: possession, body swaps, mind control and more.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://coz-rp.github.io/">
@@ -84,8 +84,14 @@
   .pcard:hover{border-color:var(--accent);transform:translateY(-2px)}
   .pcard .tag{align-self:flex-start;font-size:.72rem;font-weight:600;letter-spacing:.06em;
        padding:4px 10px;border-radius:20px;background:rgba(255,45,120,.15);color:#ff9ec2;margin-bottom:14px}
+  .pcard .pdl{margin-top:auto;align-self:stretch;justify-content:center;text-align:center;padding:9px 12px;font-size:.9rem}
   .pcard .tag.gem{background:rgba(255,87,71,.15);color:#ffb3a6}
   .pcard .tag.ds{background:rgba(120,140,255,.15);color:#c3ccff}
+  .pcard .tag.glm{background:rgba(70,200,150,.15);color:#a6ecd0}
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  @media(max-width:1000px){.grid4{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.grid4{grid-template-columns:1fr}}
+  .getpreset{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:0 0 18px}
   .pcard h3{font-size:1.3rem;margin-bottom:6px}
   .pcard .ver{color:var(--mut);font-size:.85rem}
   .pcard .models{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:6px}
@@ -225,13 +231,13 @@
     </svg>
   </div>
   <div class="wrap">
-    <div class="pill">Worldhopper 1.0</div>
+    <div class="pill">Worldhopper 1.1</div>
     <h1>Metaphysics roleplay for<br><span>SillyTavern</span></h1>
     <p>Presets, an extension and a card builder for possession, body swaps, mind control, hive minds, dolls, time stops, and every other way to take someone apart and put them back wrong.</p>
     <div class="cta">
-      <a class="btn primary" href="#presets">Get the presets</a>
+      <a class="btn primary" href="#presets">Get the preset</a>
       <a class="btn ghost" href="#engine">Install the Engine</a>
-      <a class="btn ghost" href="downloads/Worldhopper-1.0.zip" download="Worldhopper 1.0.zip">↓ Everything (.zip)</a>
+      <a class="btn ghost" href="downloads/Worldhopper-1.1.zip" download="Worldhopper 1.1.zip">↓ Everything (.zip)</a>
     </div>
   </div>
 </header>
@@ -239,33 +245,36 @@
 <section id="presets">
   <div class="wrap">
     <div class="eyebrow">Presets</div>
-    <h2>Worldhopper 1.0</h2>
-    <p class="lede">A modular Chat Completion preset: prose-first, adult-capable, and assembled from toggles you mix per chat. Three builds for three model families. None of them touches your connection or model.</p>
-    <div class="grid3">
+    <h2>Worldhopper 1.1</h2>
+    <p class="lede">A modular Chat Completion preset: prose-first, adult-capable, and assembled from toggles you mix per chat. One preset for Claude, Gemini, DeepSeek and GLM: a block meant for some models starts with a coloured dot for each of them (🟠 Claude, 🔵 Gemini, 🟢 DeepSeek, 🟣 GLM), so you switch on the ones with your colour and off the rest. Or skip that and grab your model's own preset from its card below: WH Shifter for Claude, WH Planeswalker for Gemini, WH Delver for DeepSeek or WH Nomad for GLM, each holding only its model's blocks, samplers included. Six optional Style Lenses give the narrator a voice of its own. It never touches your connection or model.</p>
+    <div class="getpreset"><a class="btn primary" href="presets/Worldhopper-1.1.json" download="Worldhopper 1.1.json">↓ Worldhopper 1.1: the flagship, every model in one</a></div>
+    <div class="grid4">
       <div class="pcard">
-        <span class="tag">For Claude</span>
-        <h3>Worldhopper</h3>
+        <span class="tag">🟠 Claude</span>
         <div class="models"><span>Suggested</span><b>Claude Sonnet 4.6</b><b>Claude Opus 4.6</b></div>
-        <p>The flagship. Neutral samplers, a banned-phrase list that targets whole families of stock prose, and last-second checks against the habits Claude slips into: "not X, but Y", chopped-up dialogue, convenient rescues, and characters who are nothing but their job.</p>
-        <a class="dlbtn" href="presets/Worldhopper-1.0.json" download="Worldhopper 1.0.json">↓ Download preset</a>
+        <p>The flagship ships set up for it. Its 🟠 blocks push back on the habits Claude slips into: convenient rescues, and a list of its own stock phrasing on top of the shared one.</p>
+        <a class="btn ghost pdl" href="presets/WH-Shifter-1.1.json" download="WH Shifter 1.1.json">↓ WH Shifter</a>
       </div>
       <div class="pcard">
-        <span class="tag gem">For Gemini</span>
-        <h3>WH Planeswalker</h3>
+        <span class="tag gem">🔵 Gemini</span>
         <div class="models"><span>Suggested</span><b>Gemini 3.1 Pro Preview</b></div>
-        <p>The Gemini build. It keeps Gemini's willingness to go dark, crude and unpredictable, and aims it: Register Control stops the narrator piling on, an optional governor makes maximum intensity a choice, and an Acknowledgement toggle cuts down on refusals.</p>
-        <a class="dlbtn" href="presets/WH-Planeswalker-1.0.json" download="WH Planeswalker 1.0.json">↓ Download preset</a>
+        <p>Its 🔵 blocks are Acknowledgement, which cuts down on refusals, and Register Control, which aims Gemini's dark streak instead of maxing out every beat. The other dotted blocks, the banned-phrase list among them, stay off.</p>
+        <a class="btn ghost pdl" href="presets/WH-Planeswalker-1.1.json" download="WH Planeswalker 1.1.json">↓ WH Planeswalker</a>
       </div>
       <div class="pcard">
-        <span class="tag ds">For DeepSeek</span>
-        <h3>WH Delver</h3>
+        <span class="tag ds">🟢 DeepSeek</span>
         <div class="models"><span>Suggested</span><b>DeepSeek V4 Pro</b><b>DeepSeek V4.1 Flash</b></div>
-        <p>The DeepSeek build, and the cheapest way to run Worldhopper. It spends its effort on what DeepSeek gets wrong: a last-second check that cuts anything written for your character and holds the POV and tense, and characters who stay themselves instead of drifting into tropes.</p>
-        <a class="dlbtn" href="presets/WH-Delver-1.0.json" download="WH Delver 1.0.json">↓ Download preset</a>
+        <p>The budget pick, and the one to try if Gemini keeps refusing. Its 🟢 blocks add a last-second check against anything written for your character and keep characters themselves, and its preset leaves out the optional blocks DeepSeek runs better without.</p>
+        <a class="btn ghost pdl" href="presets/WH-Delver-1.1.json" download="WH Delver 1.1.json">↓ WH Delver</a>
+      </div>
+      <div class="pcard">
+        <span class="tag glm">🟣 GLM</span>
+        <div class="models"><span>Suggested</span><b>GLM 5.3</b></div>
+        <p>Needs the least: its 🟣 blocks are the authorship check and the shared banned-phrase list. The plain model follows your lead closely; the thinking one takes more initiative.</p>
+        <a class="btn ghost pdl" href="presets/WH-Nomad-1.1.json" download="WH Nomad 1.1.json">↓ WH Nomad</a>
       </div>
     </div>
-    <div class="note" style="margin-bottom:12px"><b>Which one?</b> Use the build for the model you play with; each card lists the models it's tuned for. WH Delver is also the budget pick, and the one to try if Gemini keeps refusing, which happens most on free plans.</div>
-    <div class="note"><b>Everything is explained inside.</b> Each preset's first block (✦ README, keep it switched off) walks through every toggle, the recommended settings and the credits. Its regex (tag cleanup, styled in-world texts and signs) is bundled and imports with it; standalone copies are under <a href="#regex">Regex</a>.</div>
+    <div class="note" style="margin-top:16px"><b>Everything is explained inside.</b> The preset's first block (✦ README, keep it switched off) has a YOUR MODEL section with exactly what to switch and the samplers for each model, then walks through every toggle and the credits. One SillyTavern setting matters for every model: set Prompt Post-Processing to Semi-strict (no tools), so the instructions that come after the chat reach the model. Its regex (tag cleanup, styled in-world texts and signs) is bundled and imports with it; standalone copies are under <a href="#regex">Regex</a>.</div>
   </div>
 </section>
 
@@ -287,12 +296,14 @@
 
     <div class="grid3">
       <div class="feat"><h3>Codex modes</h3><p>19 modes, from possession and skinsuits to hypnosis, mind control, dolls and time stop. Their rules switch on only in the chats that use them, from a lorebook the Engine installs and keeps updated.</p></div>
-      <div class="feat"><h3>Body Ledger</h3><p>After each reply, a model you choose records who is in which body, whose mind was changed (and every trigger they carry), and whether you know, then feeds it back so nothing slips.</p></div>
-      <div class="feat"><h3>Strip and body roster</h3><p>Every borrowed body and changed mind at a glance above the chat: teal when you're the one doing it, violet when someone else is. Run several at once and each gets a colour-coded card that shows what it's doing and starts a line for it.</p></div>
+      <div class="feat"><h3>Body Ledger</h3><p>In possession-type chats, a model you choose records after each reply who is in which body and whether you know, then feeds it back so nothing slips. A body stays on it until the story lets it go.</p></div>
+      <div class="feat"><h3>Mind Book</h3><p>Hypnosis, mind control and altered perception each keep their own record: trance stages, suggestions and triggers; what a controller set in someone's will; who can't perceive whom. A trigger word you say fires on cue.</p></div>
+      <div class="feat"><h3>Strip and body roster</h3><p>Every borrowed body at a glance above the chat: teal when you're the one inside, violet when someone else is. Run several at once and each gets a colour-coded card that shows what it's doing and starts a line for it.</p></div>
       <div class="feat"><h3>Moment boxes</h3><p>A takeover, an absorption, someone going under, a will taking hold, time stopping: each mode's big moment gets its own styled box in the chat.</p></div>
-      <div class="feat"><h3>Editor</h3><p>A rule pass flags stock phrases, "not X, but Y" framing and chopped dialogue, and a model rewrites only those lines. One tap brings the original back.</p></div>
       <div class="feat"><h3>Card tools</h3><p><b style="color:var(--ink)">Make card</b> turns a Card Builder chat into a character, modes and all. <b style="color:var(--ink)">Check card</b> reviews any card for the things that trip models up.</p></div>
     </div>
+
+    <div class="note" style="margin:16px 0"><b>WH Editor.</b> Its own extension now, and it works with any setup: a rule pass flags stock phrases, "not X, but Y" framing and chopped dialogue, and a cheap model rewrites only those lines. One tap brings the original back. <a href="https://github.com/Coz-rp/SillyTavern-WH-Editor" target="_blank" rel="noopener" style="color:var(--accent)">Get it on GitHub ↗</a></div>
 
     <div class="demo" aria-label="How the strip and a possession box look in the chat">
       <div class="cap">In the chat</div>
@@ -367,7 +378,7 @@
     </div>
     <div class="cta" style="justify-content:flex-start;margin-top:22px">
       <a class="btn primary" href="builder/Metaphysics-Card-Builder.json" download="Metaphysics Card Builder.json">↓ Download the Card Builder</a>
-      <a class="btn ghost" href="presets/WH-Cardmaker-1.0.json" download="WH Cardmaker 1.0.json">↓ WH Cardmaker preset</a>
+      <a class="btn ghost" href="presets/WH-Cardmaker-1.1.json" download="WH Cardmaker 1.1.json">↓ WH Cardmaker preset</a>
     </div>
   </div>
 </section>
