@@ -79,6 +79,7 @@
   /* cards of content */
   .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
   .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .note + .grid3{margin-top:16px}
   @media(max-width:760px){.grid,.grid3{grid-template-columns:1fr}}
   .pcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;
          transition:.18s;position:relative;overflow:hidden;display:flex;flex-direction:column}
@@ -136,6 +137,8 @@
   .chip.you{border-color:rgba(var(--you),.95);background:rgba(var(--you),.22)}
   .chip .dot{width:9px;height:9px;border-radius:50%}
   .chip.npc .dot{background:rgb(var(--npc))} .chip.you .dot{background:rgb(var(--you))}
+  .strip .mlabel{flex:none;width:22px;display:flex;align-items:center;justify-content:center;font-size:15px;filter:grayscale(1) brightness(1.6);opacity:.6}
+  .chip .ico{width:14px;height:14px;flex:none} .chip.you .ico{fill:rgb(var(--you))} .chip.npc .ico{fill:rgb(var(--npc))}
   .msg{font-size:.93rem;color:#ddd3d8}
   .msg .who{font-family:'Space Grotesk';font-weight:600;margin-bottom:6px;color:var(--ink)}
   .msg .who .as{font-size:.72rem;font-weight:600;margin-left:8px;padding:2px 9px;border-radius:10px;
@@ -345,11 +348,12 @@
       </div>
     </div>
 
-    <div class="demo" aria-label="How mind control looks in the strip and the chat">
+    <div class="demo" aria-label="How mind control looks in the Mind Book bar and the chat">
       <div class="cap">In the chat: mind control</div>
       <div class="body">
         <div class="strip">
-          <span class="chip you"><span class="dot"></span><span><b>Vera</b><small>mind control · by you</small></span></span>
+          <span class="mlabel" title="Mind Book">🧠</span>
+          <span class="chip you"><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 .5 9.7 6.3 15.5 8 9.7 9.7 8 15.5 6.3 9.7 .5 8 6.3 6.3Z"/></svg><span><b>Vera</b><small>your control</small></span></span>
         </div>
         <div class="msg">
           <div class="who">Sam</div>
@@ -360,7 +364,7 @@
           <div class="ctlbox"><p><em>Vera stops halfway through the budget slide, struck by how obvious it is, and turns to you with a quick, decisive nod.</em></p></div>
           <p><q>Before I forget: take Friday. You've earned it, and I'd rather have you rested for the launch.</q> <em>She's already typing it into her calendar, pleased with herself for thinking of it.</em></p>
         </div>
-        <div class="foot">She wants it and argues for it in her own words, with nobody trapped inside. The Ledger remembers what you set and any trigger you planted, and only you can change it.</div>
+        <div class="foot">She wants it and argues for it in her own words, with nobody trapped inside. The Mind Book keeps what you set and any trigger you planted, and its bar above the chat shows who is under whose control.</div>
       </div>
     </div>
 
