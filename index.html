@@ -55,6 +55,18 @@
   @keyframes spin{to{transform:rotate(360deg)}}
   @media(prefers-reduced-motion:reduce){.spiral,.brand .mark{animation:none}}
   header.hero .wrap{position:relative;z-index:1}
+  .hero .character{display:none}
+  /* wide screens: text on the left, the character standing on the hero's bottom edge on the right, the spiral behind her */
+  @media(min-width:1100px){
+    header.hero{text-align:left;padding:48px 0 0}
+    header.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) 340px;column-gap:32px;align-items:end}
+    .hero .copy{align-self:center;padding-bottom:56px}
+    .hero p{margin-left:0}
+    .hero .cta{justify-content:flex-start}
+    .spiralwrap{justify-content:flex-end;padding-right:max(0px,calc(50vw - 660px))}
+    .hero .character{display:block;height:510px;width:auto;justify-self:center;
+      filter:drop-shadow(0 0 28px rgba(255,45,120,.35)) drop-shadow(0 10px 30px rgba(0,0,0,.6))}
+  }
   .pill{display:inline-block;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
        padding:5px 12px;border-radius:20px;border:1px solid rgba(255,45,120,.4);color:#ff9ec2;
        background:rgba(255,45,120,.10);margin-bottom:18px}
@@ -235,6 +247,7 @@
     </svg>
   </div>
   <div class="wrap">
+    <div class="copy">
     <div class="pill">Worldhopper 1.1</div>
     <h1>Metaphysics roleplay for<br><span>SillyTavern</span></h1>
     <p>Presets, an extension and a card builder for possession, body swaps, mind control, hive minds, dolls, time stops, and every other way to take someone apart and put them back wrong.</p>
@@ -243,6 +256,8 @@
       <a class="btn ghost" href="#engine">Install the Engine</a>
       <a class="btn ghost" href="downloads/Worldhopper-1.1.zip" download="Worldhopper 1.1.zip">↓ Everything (.zip)</a>
     </div>
+    </div>
+    <img class="character" src="img/character.webp" alt="" width="1000" height="1500">
   </div>
 </header>
 
