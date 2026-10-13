@@ -1,0 +1,16 @@
+{
+  "scriptName": "WH - Plan (streaming)",
+  "findRegex": "/^\\s*<plan>(?![\\s\\S]*<\\/plan>)[\\s\\S]*$/",
+  "replaceString": "<div style=\"font-size: 0.8em; font-style: italic; opacity: 0.55;\">Planning…</div>",
+  "trimStrings": [],
+  "placement": [
+    2
+  ],
+  "disabled": false,
+  "markdownOnly": true,
+  "promptOnly": false,
+  "runOnEdit": true,
+  "substituteRegex": 0,
+  "minDepth": null,
+  "maxDepth": null
+}

@@ -1,0 +1,16 @@
+{
+  "scriptName": "WH - Plan",
+  "findRegex": "/^\\s*<plan>\\s*([\\s\\S]*?)\\s*<\\/plan>\\s*/",
+  "replaceString": "<details style=\"margin: 0 0 12px; font-style: normal; font-size: 0.8em; opacity: 0.75;\"><summary style=\"cursor: pointer; font-size: 0.85em; letter-spacing: 1px; text-transform: uppercase;\">Plan</summary><div style=\"margin-top: 6px; padding: 6px 10px; border-left: 2px solid rgba(128,128,128,0.4); white-space: pre-wrap;\">$1</div></details>\n\n",
+  "trimStrings": [],
+  "placement": [
+    2
+  ],
+  "disabled": false,
+  "markdownOnly": true,
+  "promptOnly": false,
+  "runOnEdit": true,
+  "substituteRegex": 0,
+  "minDepth": null,
+  "maxDepth": null
+}

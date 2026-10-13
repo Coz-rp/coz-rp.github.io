@@ -1,0 +1,16 @@
+{
+  "scriptName": "WH - Diegetic Receipt",
+  "findRegex": "/%%receipt\\|([^%\\n]+)%%\\n([\\s\\S]*?)%%end%%/g",
+  "replaceString": "<div style=\"width: fit-content; min-width: 220px; max-width: 300px; margin: 12px auto; padding: 14px 16px; background: #fbfbf8; color: #222; box-shadow: 0 6px 22px rgba(0,0,0,0.35); font-family: ui-monospace, 'Cascadia Mono', Consolas, 'Courier New', monospace; font-style: normal; font-size: 0.78em; line-height: 1.5;\">\n<div style=\"text-align: center; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding-bottom: 6px; border-bottom: 1px dashed #999;\">$1</div>\n<div style=\"padding: 8px 0; white-space: pre-wrap; border-bottom: 1px dashed #999;\">$2</div>\n<div style=\"text-align: center; padding-top: 6px; font-size: 0.9em; color: #777;\">THANK YOU</div>\n</div>",
+  "trimStrings": [],
+  "placement": [
+    2
+  ],
+  "disabled": false,
+  "markdownOnly": true,
+  "promptOnly": false,
+  "runOnEdit": true,
+  "substituteRegex": 0,
+  "minDepth": null,
+  "maxDepth": null
+}

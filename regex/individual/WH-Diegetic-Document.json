@@ -1,0 +1,16 @@
+{
+  "scriptName": "WH - Diegetic Document",
+  "findRegex": "/%%doc\\|([^%\\n]+)%%\\n([\\s\\S]*?)%%end%%/g",
+  "replaceString": "<div style=\"max-width: 500px; margin: 12px auto; padding: 22px 26px; border-radius: 3px; background: #f4f1ea; color: #222; box-shadow: 0 6px 22px rgba(0,0,0,0.35); font-family: ui-monospace, 'Cascadia Mono', Consolas, 'Courier New', monospace; font-style: normal; font-size: 0.84em; line-height: 1.6;\">\n<div style=\"text-align: center; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding-bottom: 8px; margin-bottom: 12px; border-bottom: 1px solid #b9b2a3;\">$1</div>\n<div style=\"white-space: pre-wrap;\">$2</div>\n</div>",
+  "trimStrings": [],
+  "placement": [
+    2
+  ],
+  "disabled": false,
+  "markdownOnly": true,
+  "promptOnly": false,
+  "runOnEdit": true,
+  "substituteRegex": 0,
+  "minDepth": null,
+  "maxDepth": null
+}

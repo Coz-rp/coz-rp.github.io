@@ -1,0 +1,16 @@
+{
+  "scriptName": "WH - Scene Anchor",
+  "findRegex": "/^#{0,4} *\\**\\[?📍\\uFE0F? *([^·\\n]+?) *· *(?:🕰\\uFE0F?|🕯\\uFE0F?)? *([^,·\\n]+?)(?:, *([^·\\n]+?))? *· *(?:🗓\\uFE0F?)? *([^,·\\]\\n*]+?)(?:, *([^·\\]\\n*]+?))? *\\]?\\** *(?:\\n+ *(?:-{3,}|\\*{3,}|_{3,}) *)?$/m",
+  "replaceString": "<div style=\"display: flex; align-items: center; gap: 14px; margin: 4px 0 18px; font-style: normal; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;\">\n<span style=\"flex: 1; min-width: 12px; height: 1px; background: linear-gradient(to right, transparent, rgba(128,128,128,0.5));\"></span>\n<div style=\"display: flex; align-items: center; gap: 12px; max-width: 86%;\">\n<div style=\"flex: none; text-align: center;\"><div style=\"font-size: 1.45em; font-weight: 300; letter-spacing: -0.3px; line-height: 1.05; font-variant-numeric: tabular-nums;\">$2</div><div style=\"font-size: 0.64em; letter-spacing: 0.4px; opacity: 0.55;\">$3</div></div>\n<div style=\"flex: none; width: 1px; align-self: stretch; background: rgba(128,128,128,0.35);\"></div>\n<div style=\"min-width: 0; line-height: 1.4;\"><div style=\"font-size: 0.74em; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;\">$1</div><div style=\"font-size: 0.72em; opacity: 0.6;\">$4 <i style=\"opacity: 0.8;\">$5</i></div></div>\n</div>\n<span style=\"flex: 1; min-width: 12px; height: 1px; background: linear-gradient(to left, transparent, rgba(128,128,128,0.5));\"></span>\n</div>",
+  "trimStrings": [],
+  "placement": [
+    2
+  ],
+  "disabled": false,
+  "markdownOnly": true,
+  "promptOnly": false,
+  "runOnEdit": true,
+  "substituteRegex": 0,
+  "minDepth": null,
+  "maxDepth": null
+}

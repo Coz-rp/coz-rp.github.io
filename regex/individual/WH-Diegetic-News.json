@@ -1,0 +1,16 @@
+{
+  "scriptName": "WH - Diegetic News",
+  "findRegex": "/%%news\\|([^%\\n]+)%%\\n([^\\n]+)\\n([\\s\\S]*?)%%end%%/g",
+  "replaceString": "<div style=\"max-width: 520px; margin: 12px auto; padding: 16px 20px; border-radius: 2px; background: #ece6d6; color: #1a1a1a; box-shadow: 0 6px 22px rgba(0,0,0,0.35); font-family: Georgia, 'Times New Roman', serif; font-style: normal;\">\n<div style=\"text-align: center; font-size: 0.72em; letter-spacing: 2px; text-transform: uppercase; padding-bottom: 6px; border-bottom: 3px double #1a1a1a;\">$1</div>\n<div style=\"margin: 10px 0 8px; font-size: 1.35em; font-weight: 700; line-height: 1.2;\">$2</div>\n<div style=\"font-size: 0.88em; line-height: 1.55; text-align: justify; white-space: pre-wrap;\">$3</div>\n</div>",
+  "trimStrings": [],
+  "placement": [
+    2
+  ],
+  "disabled": false,
+  "markdownOnly": true,
+  "promptOnly": false,
+  "runOnEdit": true,
+  "substituteRegex": 0,
+  "minDepth": null,
+  "maxDepth": null
+}
