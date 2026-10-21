@@ -12,6 +12,6 @@
   "minDepth": null,
   "maxDepth": null,
   "scriptName": "WH - Moments",
-  "findRegex": "/%%(absorbed|worn|shed|trance|control|timestop|resume)%%[ \\t]*\\n?([\\s\\S]*?)\\n?[ \\t]*%%\\/\\1%%/gi",
+  "findRegex": "/%%(absorbed|worn|shed|trance|control|timestop|resume|swap|transform)%%[ \\t]*\\n?([\\s\\S]*?)\\n?[ \\t]*%%\\/\\1%%/gi",
   "replaceString": "<div class=\"wh-moment wh-m-$1\" markdown=\"1\">\n$2\n</div>"
 }

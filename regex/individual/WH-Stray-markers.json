@@ -12,6 +12,6 @@
   "minDepth": null,
   "maxDepth": null,
   "scriptName": "WH - Stray markers",
-  "findRegex": "/^[ \\t]*%%\\/?(?:possession|release|absorbed|worn|shed|trance|control|timestop|resume)%%[ \\t]*\\n?/gim",
+  "findRegex": "/^[ \\t]*%%\\/?(?:possession|release|absorbed|worn|shed|trance|control|timestop|resume|swap|transform)%%[ \\t]*\\n?/gim",
   "replaceString": ""
 }

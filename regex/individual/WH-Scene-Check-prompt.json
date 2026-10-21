@@ -1,0 +1,16 @@
+{
+  "trimStrings": [],
+  "placement": [
+    2
+  ],
+  "disabled": false,
+  "substituteRegex": 0,
+  "minDepth": null,
+  "maxDepth": null,
+  "runOnEdit": true,
+  "replaceString": "",
+  "scriptName": "WH - Scene Check (prompt)",
+  "findRegex": "/^\\s*(?:\\*\\*)?SCENE CHECK\\b[\\s\\S]*?(?=^[ \\t]*(?:\\*|\"|“|#|%%|<)|$(?![\\s\\S]))/m",
+  "markdownOnly": false,
+  "promptOnly": true
+}
