@@ -183,21 +183,58 @@
   .lane{margin:6px 0;padding:3px 10px;border-left:3px solid rgba(var(--h),.85);border-radius:0 8px 8px 0;background:rgba(var(--h),.08)}
   .lane-name{display:inline-block;margin-right:6px;padding:0 8px;border-radius:999px;border:1px solid rgba(var(--h),.7);
        background:rgba(var(--h),.2);font-size:.74rem;font-weight:600;color:var(--ink)}
-  .roster{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;padding:8px;border:1px solid var(--line);border-bottom:none;
-       border-radius:10px 10px 0 0;background:#1a171b}
-  .lcard{flex:1 1 140px;max-width:230px;display:flex;flex-direction:column;gap:1px;padding:5px 10px;border-radius:10px;
-       border:1px solid rgba(var(--h),.45);background:rgba(var(--h),.09);font-size:.8rem}
-  .lcard b{display:flex;align-items:center;gap:6px;font-size:.84rem}
-  .lcard b i{width:8px;height:8px;border-radius:50%;background:rgb(var(--h))}
-  .lcard b small{opacity:.65;font-weight:400}
-  .lcard > small{opacity:.75;font-size:.72rem}
-  .lcard.on{border-color:rgb(var(--h));box-shadow:inset 0 0 0 1px rgb(var(--h))}
-  .lcard.on > small{opacity:1}
+  /* the message box's tab per body (All, your own body, each body you run), the open one underlined in its color */
+  .tabs{display:flex;gap:2px;margin-top:16px;padding:6px 8px 0;border:1px solid var(--line);border-bottom:none;
+       border-radius:10px 10px 0 0;background:#1a171b;overflow-x:auto}
+  .tab{--h:150,150,160;display:inline-flex;align-items:center;gap:6px;flex:none;padding:3px 10px 6px;font-size:.78rem;
+       color:var(--mut);border-bottom:2px solid transparent}
+  .tab::before{content:'';width:7px;height:7px;border-radius:50%;background:rgb(var(--h))}
+  .tab small{opacity:.65}
+  .tab.on{color:var(--ink);border-bottom-color:rgb(var(--h))}
   .box{padding:10px 12px;border:1px solid var(--line);border-radius:0 0 10px 10px;background:#161317;color:#ddd3d8;font-size:.9rem}
   .caret{display:inline-block;width:1px;height:1.05em;background:#ddd3d8;vertical-align:-3px;animation:blink 1.1s steps(1) infinite}
   @keyframes blink{50%{opacity:0}}
   @media (prefers-reduced-motion:reduce){.caret{animation:none}}
   .demo .foot{color:var(--mut);font-size:.8rem;margin-top:10px}
+
+  /* The Engine's own section, in its own colors (its Reddit header's): amber, the possession glow, and teal for the
+     version, on a warmer band, with Coz already possessed beside the heading. The presets keep the pink. */
+  section.engine{--accent:#ffb547;--amber-rgb:255,176,60;--grad:linear-gradient(120deg,#ffc061,#ff9f43);
+       position:relative;padding:64px 0;border-top:1px solid rgba(var(--amber-rgb),.35);border-bottom:1px solid rgba(var(--amber-rgb),.35);
+       background:#0b0a0c;
+       background-image:radial-gradient(760px 520px at 86% 4%,rgba(var(--amber-rgb),.15),transparent 70%),
+                        radial-gradient(700px 560px at 102% 100%,rgba(var(--teal-rgb),.10),transparent 70%),
+                        radial-gradient(640px 480px at -6% 34%,rgba(var(--amber-rgb),.06),transparent 70%)}
+  section.engine + section{border-top:none}
+  .engine .eyebrow{color:var(--accent)}
+  .engine .ehead{display:grid;grid-template-columns:minmax(0,1fr) 280px;column-gap:28px;align-items:end;
+       border-bottom:1px solid rgba(var(--amber-rgb),.25);margin-bottom:28px}
+  .engine .ehead .copy{align-self:center;padding-bottom:28px}
+  .engine .elock{margin:10px 0 18px;line-height:.92;letter-spacing:-.02em}
+  .engine .elock .name{display:block;font-weight:500;font-size:clamp(1.7rem,4.4vw,2.5rem)}
+  .engine .elock .word{display:flex;align-items:baseline;gap:.22em;margin-top:4px;font-weight:700;font-size:clamp(3.2rem,10vw,5.6rem);letter-spacing:.02em}
+  .engine .elock .word b{background:linear-gradient(100deg,#ffc061,#ff9f43 60%,#ffb35c);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .engine .elock .word i{font-style:normal;background:linear-gradient(160deg,#9af2e8,#5fe0d2 60%,#2fb9ab);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .engine .ehead .lede{margin-bottom:0}
+  /* her render cuts his arm off at its right edge, so that edge fades out; she stands on the heading's bottom rule. The
+     fade is on the picture and the glow on its wrapper: a glow under the same mask gets cut off at the picture's box. */
+  .engine .ecoz{filter:drop-shadow(0 0 18px rgba(var(--amber-rgb),.16))}
+  .engine .ecoz img{display:block;width:100%;height:auto;
+       -webkit-mask:linear-gradient(to left,transparent,#000 9%);mask:linear-gradient(to left,transparent,#000 9%)}
+  @media(max-width:860px){.engine .ehead{grid-template-columns:1fr} .engine .ecoz{display:none}}
+  .engine .note::before{background:linear-gradient(var(--accent),var(--teal))}
+  .engine .install{border-color:rgba(var(--amber-rgb),.35)}
+  .engine .urlrow code{color:#ffe2b0}
+  .engine .eshot{margin:28px 0 26px}
+  .engine .eshot img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid rgba(255,255,255,.12);
+       box-shadow:0 30px 80px -30px rgba(0,0,0,.9),0 0 70px -24px rgba(var(--amber-rgb),.35)}
+  .engine .eshot figcaption{color:var(--mut);font-size:.84rem;margin-top:10px;text-align:center}
+  .engine .feat.new{border-color:rgba(var(--amber-rgb),.4)}
+  .engine .feat.new h3::after{content:'New';margin-left:8px;padding:1px 8px;border-radius:999px;vertical-align:2px;
+       font:600 .62rem Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#ffcf85;
+       border:1px solid rgba(var(--amber-rgb),.5);background:rgba(var(--amber-rgb),.12)}
+  .navlinks a.eng{color:#ffcf85} .navlinks a.eng:hover{color:#ffb547}
+  .btn.eng{border-color:rgba(255,181,71,.45);color:#ffd9a0} .btn.eng:hover{border-color:#ffb547;background:rgba(255,181,71,.10)}
 
   /* chips of links */
   .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
@@ -238,7 +275,7 @@
     </div>
     <div class="navlinks">
       <a href="#presets">Presets</a>
-      <a href="#engine">Engine</a>
+      <a class="eng" href="#engine">Engine</a>
       <a href="#builder">Card Builder</a>
       <a href="#regex">Regex</a>
       <a href="#setup">Setup</a>
@@ -268,7 +305,7 @@
     <p>Presets for any roleplay, tuned for every major model. The Worldhopper Engine extension adds possession, body swaps, mind control, hive minds, dolls, time stops, and every other way to take someone apart and put them back wrong.</p>
     <div class="cta">
       <a class="btn primary" href="#presets">Get the preset</a>
-      <a class="btn ghost" href="#engine">Install the Engine</a>
+      <a class="btn ghost eng" href="#engine">Install the Engine</a>
       <a class="btn ghost" href="downloads/Worldhopper-1.3.zip" download="Worldhopper 1.3.zip">↓ Everything (.zip)</a>
     </div>
     </div>
@@ -315,11 +352,18 @@
   </div>
 </section>
 
-<section id="engine">
+<section id="engine" class="engine">
   <div class="wrap">
-    <div class="eyebrow">Extension · 1.3.2</div>
-    <h2>Worldhopper Engine</h2>
-    <p class="lede">The part a preset can't do. Tell it what kind of metaphysics a character uses, and it keeps the rules, the bodies, and the prose straight in that character's chats. It pairs with the presets above and works with any other.</p>
+    <div class="ehead">
+      <div class="copy">
+        <div class="eyebrow">Extension · 2.0.0</div>
+        <h2 class="elock"><span class="name">Worldhopper</span><span class="word"><b>ENGINE</b><i>2.0</i></span></h2>
+        <p class="lede">The part a preset can't do. Tell it what kind of metaphysics a character uses, and it keeps the rules, the bodies, and the prose straight in that character's chats. It pairs with the presets above and works with any other.</p>
+      </div>
+      <div class="ecoz"><img src="img/engine-coz.webp" alt="" width="896" height="1344"></div>
+    </div>
+
+    <div class="note" style="margin:0 0 16px"><b>New in 2.0:</b> Stage mode, a new look for all of SillyTavern with a Board of who is where · World notes · card rules you set with a tap · quick actions to possess and release from the strip · one card per person, every part editable · and Test this card and Check the greetings.</div>
 
     <div class="note" style="margin-bottom:16px"><b>Only what you're into.</b> Every mode is opt-in, picked per character, and nothing is on until you pick it. Pick Mind Control and that's all you'll get: no possession rules, no body swaps, and no boxes or cards for modes you didn't choose. Mix as many as you like, and change them any time.</div>
 
@@ -330,20 +374,28 @@
     </div>
 
     <div class="install" style="margin-top:16px">
-      <div class="step"><b>On Lumiverse?</b> The Engine has a Lumiverse version too (1.0.0), with the same Codex modes, Body Ledger, Mind Book, checks, and Check card. In Lumiverse, open <b>Extensions</b> → <b>Add Extension</b>, paste the same URL under <b>Install from Source</b>, and set <b>Branch</b> to <b>lumiverse</b>.</div>
+      <div class="step"><b>On Lumiverse?</b> The Engine has a Lumiverse version too (1.0.0), with the same Codex modes, Body Ledger, Mind Book, checks, and Check card; Stage mode and the rest of 2.0 are SillyTavern-only for now. In Lumiverse, open <b>Extensions</b> → <b>Add Extension</b>, paste the same URL under <b>Install from Source</b>, and set <b>Branch</b> to <b>lumiverse</b>.</div>
       <div class="after">Then open the Worldhopper tab in the drawer → Settings → Models and pick a connection for its jobs. Installed that way, Lumiverse's Update button keeps it current. You can also download it, unzip it into Lumiverse's data/extensions folder, and press Import Local, but a copy installed that way won't update itself. <a href="https://github.com/Coz-rp/SillyTavern-Worldhopper/tree/lumiverse" target="_blank" rel="noopener" style="color:var(--accent)">Source and README on GitHub ↗</a></div>
       <div class="cta" style="justify-content:flex-start;margin-top:12px"><a class="btn ghost" href="https://github.com/Coz-rp/SillyTavern-Worldhopper/archive/refs/heads/lumiverse.zip">↓ Download for Lumiverse</a></div>
     </div>
 
     <div class="note" style="margin-top:16px"><b>Keep it fast and cheap.</b> Give the Engine its own model, separate from the one you roleplay with. Its jobs are small, and the Ledger runs after every reply, so a local model (KoboldCpp, Ollama, and the like) or a cheap, fast API model (Flash, Haiku, or mini tier) does them well for next to nothing. Your big roleplay model would work too, but at big-model prices, and your next reply would wait for it.</div>
 
+    <figure class="eshot">
+      <img src="img/engine-stage.webp" alt="Stage mode on a wide screen: the Board pulled down over the top of the chat, with Sam at home and Jess, Tori, Bea, and Dev at the party, and the Body Ledger open as a sheet on the right" width="1600" height="1191" loading="lazy">
+      <figcaption>Stage mode: the Board of who is where, pulled down over the chat, and the Body Ledger as a sheet.</figcaption>
+    </figure>
+
     <div class="grid3">
+      <div class="feat new"><h3>Stage mode</h3><p>An optional new look for all of SillyTavern. The story reads as narration with each speaker's face beside their lines, dividers keep the story's time, and a Board shows who is where. Off until you switch it on, with or without Moonlit Echoes.</p></div>
+      <div class="feat new"><h3>World notes</h3><p>Kept beside the Ledger after every reply: things that matter and who holds them, who knows what about the powers, where everyone is and what they have on, and the story's clock.</p></div>
+      <div class="feat new"><h3>Card rules</h3><p>How a card's power works, as a few taps instead of paragraphs: how the rider gets in, whether the host is awake inside, what they remember after. It can read them from the card and trim the prose they replace.</p></div>
       <div class="feat"><h3>Codex modes</h3><p>21 modes, from possession and skinsuits to hypnosis, mind control, dolls, and time stop. Their rules switch on only in the chats that use them, from a lorebook the Engine installs and keeps updated.</p></div>
-      <div class="feat"><h3>Body Ledger</h3><p>In possession-type chats, a model you choose records after each reply who is in which body and whether you know, then feeds it back so nothing slips. A body stays on it until the story lets it go.</p></div>
+      <div class="feat"><h3>Body Ledger</h3><p>In possession-type chats, a model you choose records after each reply who is in which body and whether you know, then feeds it back so nothing slips. Everyone gets a card, and every part of it can be edited.</p></div>
       <div class="feat"><h3>Mind Book</h3><p>Hypnosis, mind control, and altered perception each keep their own record: trance stages, suggestions, and triggers; what a controller set in someone's will; who can't perceive whom. A trigger word you say fires on cue.</p></div>
-      <div class="feat"><h3>Strip and body roster</h3><p>Every borrowed body at a glance above the chat: teal when you're the one inside, violet when someone else is. Run several at once and each gets a color-coded card that shows what it's doing and starts a line for it.</p></div>
+      <div class="feat"><h3>Strip and tabs</h3><p>Every borrowed body at a glance above the chat, with a tap to possess or release. Run several at once and the message box gets a tab per body: write in it as "I", and it's that body doing it.</p></div>
       <div class="feat"><h3>Moment boxes</h3><p>A takeover, an absorption, someone going under, a will taking hold, time stopping: each mode's big moment gets its own styled box in the chat.</p></div>
-      <div class="feat"><h3>Card tools</h3><p><b style="color:var(--ink)">Make card</b> turns a Card Builder chat into a character, modes and all. <b style="color:var(--ink)">Check card</b> reviews any card for the things that trip models up.</p></div>
+      <div class="feat"><h3>Card tools</h3><p><b style="color:var(--ink)">Make card</b> turns a Card Builder chat into a character, modes and all. <b style="color:var(--ink)">Check card</b> reviews any card, and can test its first replies and every greeting.</p></div>
     </div>
 
     <div class="note" style="margin:16px 0"><b>WH Editor 1.2.0.</b> Its own extension now, and it works with any setup: a rule pass flags stock phrases, "not X, but Y" framing, and chopped dialogue, and a cheap model rewrites only those lines. One tap brings the original back. <a href="https://github.com/Coz-rp/SillyTavern-WH-Editor" target="_blank" rel="noopener" style="color:var(--accent)">Get it on GitHub ↗</a></div>
@@ -363,7 +415,7 @@
       </div>
     </div>
 
-    <div class="demo" aria-label="How your lines for several bodies, the reply, and the body roster look in the chat">
+    <div class="demo" aria-label="How your lines for several bodies, the reply, and the message box's tab per body look in the chat">
       <div class="cap">In the chat: several bodies at once</div>
       <div class="body">
         <div class="msg">
@@ -376,13 +428,14 @@
           <p><em>The bartender sets two glasses in front of Jess and holds out the card reader. Out on the floor the song changes, and Tori's friend Bea catches her by the wrist.</em></p>
           <p><q>You are not tapping out on me yet,</q> <em>Bea shouts over the bass.</em></p>
         </div>
-        <div class="roster">
-          <span class="lcard" style="--h:29,158,117"><b><i></i>Sam <small>(you)</small></b><small>on the couch at home</small></span>
-          <span class="lcard on" style="--h:127,119,221"><b><i></i>Jess</b><small>writing</small></span>
-          <span class="lcard" style="--h:216,90,48"><b><i></i>Tori</b><small>dancing</small></span>
+        <div class="tabs">
+          <span class="tab">All</span>
+          <span class="tab" style="--h:29,158,117">Sam <small>(you)</small></span>
+          <span class="tab on" style="--h:127,119,221">Jess</span>
+          <span class="tab" style="--h:216,90,48">Tori</span>
         </div>
-        <div class="box">[Jess] <span class="caret"></span></div>
-        <div class="foot">Tap a body's card to write its next line. Bodies you give nothing stay exactly as you left them.</div>
+        <div class="box">I tip the bartender and slide a margarita over to Tori<span class="caret"></span></div>
+        <div class="foot">A tab per body on the message box, each with its own draft; Send sends them all. Bodies you give nothing stay exactly as you left them.</div>
       </div>
     </div>
 
