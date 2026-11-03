@@ -1,0 +1,16 @@
+{
+  "scriptName": "WH - OOC Clear",
+  "findRegex": "/[(\\[]{1,2}\\s*OOC\\s*:\\s*clear directions?\\s*[.!]?\\s*[)\\]]{1,2}/i",
+  "replaceString": "$0{{setvar::wh_ooc_head::}}{{setvar::wh_ooc_foot::}}{{setvar::wh_ooc1::}}{{setvar::wh_ooc2::}}{{setvar::wh_ooc3::}}{{setvar::wh_ooc4::}}{{setvar::wh_ooc5::}}{{setvar::wh_ooc6::}}{{setvar::wh_ooc7::}}{{setvar::wh_ooc8::}}",
+  "trimStrings": [],
+  "placement": [
+    1
+  ],
+  "disabled": false,
+  "markdownOnly": false,
+  "promptOnly": false,
+  "runOnEdit": false,
+  "substituteRegex": 0,
+  "minDepth": null,
+  "maxDepth": null
+}

@@ -1,0 +1,16 @@
+{
+  "scriptName": "WH - Dialogue Flat",
+  "findRegex": "/<say\\s+([a-z]+)\\s+flat\\s*>\\s*[\"“]?([\\s\\S]*?)[\"”]?\\s*<\\/say>/gi",
+  "replaceString": "<font color=\"$1\"><span style=\"letter-spacing: 0.6px; font-weight: 500;\">&quot;$2&quot;</span></font>",
+  "trimStrings": [],
+  "placement": [
+    2
+  ],
+  "disabled": false,
+  "markdownOnly": true,
+  "promptOnly": false,
+  "runOnEdit": true,
+  "substituteRegex": 0,
+  "minDepth": null,
+  "maxDepth": null
+}

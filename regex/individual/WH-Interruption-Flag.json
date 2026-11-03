@@ -1,0 +1,16 @@
+{
+  "scriptName": "WH - Interruption Flag",
+  "findRegex": "/(?:\\b(?:phone|cell|mobile|screen)\\b[^.!?\\n]{0,40}?\\b(?:buzz|vibrat|ring|chim|ping|lights? up|lit up)\\w*|\\b(?:text|message|notification)s?\\b[^.!?\\n]{0,30}?\\b(?:arriv\\w*|pops? up|popped up|pings?|pinged|comes in|came in)|\\bknock\\w*\\b[^.!?\\n]{0,30}?\\b(?:door|window)|\\b(?:door|window)\\b[^.!?\\n]{0,20}?\\bknock\\w*|\\bdoorbell|\\bdoor\\b[^.!?\\n]{0,20}?\\b(?:bursts?|bangs?|banged|flies|flew)\\s+open|\\b(?:burst|bursts|barges?|barged)\\s+in(?:to)?\\b)/i",
+  "replaceString": "$0{{setvar::wh_interrupt::Your last reply brought something in from outside the scene (a phone going off, a message, a knock, someone bursting in). Unless the user or the story had set it up, this reply lets it pass with nobody answering or remarking on it, and brings nothing else in from outside.}}{{addvar::wh_caught::Interruption: $0<br>}}{{setvar::wh_caught_any::x^}}",
+  "trimStrings": [],
+  "placement": [
+    2
+  ],
+  "disabled": false,
+  "markdownOnly": false,
+  "promptOnly": true,
+  "runOnEdit": false,
+  "substituteRegex": 0,
+  "minDepth": null,
+  "maxDepth": 1
+}

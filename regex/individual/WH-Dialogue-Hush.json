@@ -1,0 +1,16 @@
+{
+  "scriptName": "WH - Dialogue Hush",
+  "findRegex": "/<say\\s+([a-z]+)\\s+hush\\s*>\\s*[\"“]?([\\s\\S]*?)[\"”]?\\s*<\\/say>/gi",
+  "replaceString": "<font color=\"$1\"><span style=\"font-size: 0.88em; opacity: 0.78;\">&quot;$2&quot;</span></font>",
+  "trimStrings": [],
+  "placement": [
+    2
+  ],
+  "disabled": false,
+  "markdownOnly": true,
+  "promptOnly": false,
+  "runOnEdit": true,
+  "substituteRegex": 0,
+  "minDepth": null,
+  "maxDepth": null
+}

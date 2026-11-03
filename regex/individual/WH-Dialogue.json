@@ -1,0 +1,16 @@
+{
+  "scriptName": "WH - Dialogue",
+  "findRegex": "/<say\\s+([a-z]+)\\s*>\\s*[\"“]?([\\s\\S]*?)[\"”]?\\s*<\\/say>/gi",
+  "replaceString": "<font color=\"$1\">&quot;$2&quot;</font>",
+  "trimStrings": [],
+  "placement": [
+    2
+  ],
+  "disabled": false,
+  "markdownOnly": true,
+  "promptOnly": false,
+  "runOnEdit": true,
+  "substituteRegex": 0,
+  "minDepth": null,
+  "maxDepth": null
+}

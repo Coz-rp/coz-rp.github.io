@@ -1,0 +1,16 @@
+{
+  "scriptName": "WH - Reply Flags (clear)",
+  "findRegex": "/^/",
+  "replaceString": "{{setvar::wh_interrupt::}}{{setvar::wh_stock::}}{{setvar::wh_stock_note::}}{{setvar::wh_names::}}{{setvar::wh_names_note::}}{{setvar::wh_ending::}}{{setvar::wh_caught::}}{{setvar::wh_caught_any::}}",
+  "trimStrings": [],
+  "placement": [
+    2
+  ],
+  "disabled": false,
+  "markdownOnly": false,
+  "promptOnly": true,
+  "runOnEdit": false,
+  "substituteRegex": 0,
+  "minDepth": null,
+  "maxDepth": 1
+}

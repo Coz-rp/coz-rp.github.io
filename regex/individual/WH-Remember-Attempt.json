@@ -1,0 +1,16 @@
+{
+  "scriptName": "WH - Remember Attempt",
+  "findRegex": "/^\\s*(?:<plan>[\\s\\S]*?<\\/plan>\\s*)?(?:#{0,4} *\\*{0,2}\\[?📍[^\\n]*\\n+(?:[ \\t]*(?:-{3,}|\\*{3,}|_{3,})[ \\t]*\\n+)?)?((?:[^{}:\\n]|:(?!:)){1,240})/",
+  "replaceString": "$0{{setvar::wh_tried::Your last attempt began: $1}}",
+  "trimStrings": [],
+  "placement": [
+    2
+  ],
+  "disabled": false,
+  "markdownOnly": false,
+  "promptOnly": false,
+  "runOnEdit": false,
+  "substituteRegex": 0,
+  "minDepth": null,
+  "maxDepth": null
+}

@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Coz RP — Worldhopper for SillyTavern</title>
-<meta name="description" content="Worldhopper 1.3: roleplay presets for SillyTavern on any model, plus the Worldhopper Engine extension and a card builder for metaphysics roleplay: possession, body swaps, mind control, hive minds, dolls, and more.">
-<meta property="og:title" content="Worldhopper 1.3 for SillyTavern">
+<meta name="description" content="Worldhopper 1.4: roleplay presets for SillyTavern on any model, plus the Worldhopper Engine extension and a card builder for metaphysics roleplay: possession, body swaps, mind control, hive minds, dolls, and more.">
+<meta property="og:title" content="Worldhopper 1.4 for SillyTavern">
 <meta property="og:description" content="Roleplay presets for SillyTavern on any model, plus an extension and a card builder for metaphysics roleplay: possession, body swaps, mind control, and more.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://coz-rp.github.io/">
@@ -197,8 +197,27 @@
   @media (prefers-reduced-motion:reduce){.caret{animation:none}}
   .demo .foot{color:var(--mut);font-size:.8rem;margin-top:10px}
 
-  /* The Engine's own section, in its own colors (its Reddit header's): amber, the possession glow, and teal for the
-     version, on a warmer band, with Coz already possessed beside the heading. The presets keep the pink. */
+  /* The presets' own band, built like the Engine's below: its Reddit header's pink night sky, with Coz on the moon beside
+     the heading. The moon's bottom sits on the heading's rule. */
+  section.presets{--pk-rgb:255,134,192;position:relative;padding:64px 0;border-top:1px solid rgba(var(--pk-rgb),.3);
+       background:#0d0a14;
+       background-image:radial-gradient(760px 520px at 86% 4%,rgba(var(--pk-rgb),.17),transparent 70%),
+                        radial-gradient(700px 560px at 102% 100%,rgba(var(--teal-rgb),.08),transparent 70%),
+                        radial-gradient(640px 480px at -6% 34%,rgba(124,92,255,.10),transparent 70%)}
+  .presets .eyebrow{color:#ff86c0}
+  .presets .phead{display:grid;grid-template-columns:minmax(0,1fr) 370px;column-gap:24px;align-items:end;
+       border-bottom:1px solid rgba(var(--pk-rgb),.25);margin-bottom:28px}
+  .presets .phead .copy{align-self:center;padding-bottom:28px}
+  .presets .plock{margin:10px 0 18px;line-height:.92;letter-spacing:-.02em}
+  .presets .plock .name{display:block;font-weight:500;font-size:clamp(1.7rem,4.4vw,2.5rem)}
+  .presets .plock .word{display:block;margin-top:4px;font-weight:700;font-size:clamp(3.2rem,10vw,5.6rem);letter-spacing:.02em}
+  .presets .plock .word b{background:linear-gradient(100deg,#ff9fce,#ff6fb2 55%,#7fe6e3);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .presets .phead .lede{margin-bottom:0}
+  .presets .pcoz img{display:block;width:100%;height:auto}
+  @media(max-width:860px){.presets .phead{grid-template-columns:1fr} .presets .pcoz{display:none}}
+  .presets .note::before{background:linear-gradient(#ff86c0,var(--teal))}
+  /* The Engine's own section, in its own colors (its Reddit header's): amber, the possession glow, and teal, on a warmer
+     band, with Coz already possessed beside the heading. */
   section.engine{--accent:#ffb547;--amber-rgb:255,176,60;--grad:linear-gradient(120deg,#ffc061,#ff9f43);
        position:relative;padding:64px 0;border-top:1px solid rgba(var(--amber-rgb),.35);border-bottom:1px solid rgba(var(--amber-rgb),.35);
        background:#0b0a0c;
@@ -214,7 +233,6 @@
   .engine .elock .name{display:block;font-weight:500;font-size:clamp(1.7rem,4.4vw,2.5rem)}
   .engine .elock .word{display:flex;align-items:baseline;gap:.22em;margin-top:4px;font-weight:700;font-size:clamp(3.2rem,10vw,5.6rem);letter-spacing:.02em}
   .engine .elock .word b{background:linear-gradient(100deg,#ffc061,#ff9f43 60%,#ffb35c);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .engine .elock .word i{font-style:normal;background:linear-gradient(160deg,#9af2e8,#5fe0d2 60%,#2fb9ab);-webkit-background-clip:text;background-clip:text;color:transparent}
   .engine .ehead .lede{margin-bottom:0}
   /* her render cuts his arm off at its right edge, so that edge fades out; she stands on the heading's bottom rule. The
      fade is on the picture and the glow on its wrapper: a glow under the same mask gets cut off at the picture's box. */
@@ -300,52 +318,57 @@
   </div>
   <div class="wrap">
     <div class="copy">
-    <div class="pill">Worldhopper 1.3</div>
+    <div class="pill">Worldhopper 1.4</div>
     <h1>Roleplay for<br><span>SillyTavern</span></h1>
     <p>Presets for any roleplay, tuned for every major model. The Worldhopper Engine extension adds possession, body swaps, mind control, hive minds, dolls, time stops, and every other way to take someone apart and put them back wrong.</p>
     <div class="cta">
       <a class="btn primary" href="#presets">Get the preset</a>
       <a class="btn ghost eng" href="#engine">Install the Engine</a>
-      <a class="btn ghost" href="downloads/Worldhopper-1.3.zip" download="Worldhopper 1.3.zip">↓ Everything (.zip)</a>
+      <a class="btn ghost" href="downloads/Worldhopper-1.4.zip" download="Worldhopper 1.4.zip">↓ Everything (.zip)</a>
     </div>
     </div>
     <img class="character" src="img/character.webp" alt="" width="1000" height="1500">
   </div>
 </header>
 
-<section id="presets">
+<section id="presets" class="presets">
   <div class="wrap">
-    <div class="eyebrow">Presets</div>
-    <h2>Worldhopper 1.3</h2>
-    <p class="lede" style="margin-bottom:14px">A modular Chat Completion preset: prose-first, adult-capable, and assembled from toggles you mix per chat. One preset for Claude, Gemini, DeepSeek, GLM, Kimi, and MiMo: a block meant for some models starts with a mark for each of them (✴️ Claude, ♊ Gemini, 🐋 DeepSeek, 🧭 GLM, 🌙 Kimi, 🌾 MiMo), so you switch on the ones with your model's mark and off the rest.</p>
+    <div class="phead">
+      <div class="copy">
+        <div class="eyebrow">Presets · 1.4</div>
+        <h2 class="plock"><span class="name">Worldhopper</span><span class="word"><b>PRESETS</b></span></h2>
+        <p class="lede">A modular Chat Completion preset: prose-first, adult-capable, and assembled from toggles you mix per chat. One preset for Claude, Gemini, DeepSeek, GLM, Kimi, and MiMo: a block meant for some models starts with a mark for each of them (✴️ Claude, ♊ Gemini, 🐋 DeepSeek, 🧭 GLM, 🌙 Kimi, 🌾 MiMo), so you switch on the ones with your model's mark and off the rest.</p>
+      </div>
+      <div class="pcoz"><img src="img/presets-coz.webp" alt="" width="1285" height="1284"></div>
+    </div>
     <p class="lede"><b>Or skip that</b> and grab your model's own preset below. Each holds only its model's blocks, samplers included, and none of them touch your connection or model.</p>
-    <div class="note" style="margin:0 0 18px"><b>New in 1.3:</b> characters that each sound like themselves · ✚ Write {{user}} Too for co-writing · ✚ Lines & Veils for your hard limits · reply lengths that mean what they say · replies that end where you can react, and OOC that sticks · and the new WH - Scene Check regex, which cleans up reasoning that leaks into a reply.</div>
-    <div class="getpreset"><a class="btn primary" href="presets/Worldhopper-1.3.json" download="Worldhopper 1.3.json">↓ Worldhopper 1.3: the flagship, every model in one</a></div>
+    <div class="note" style="margin:0 0 18px"><b>New in 1.4:</b> Prose Habits in place of the banned lists, so the model gets what to write instead · people you walk away from stay behind and keep living · a who's-here line in ✚ Scene Anchor, which is now on by default · ✚ Swipe Feedback, so a swipe tries something different · ✚ OOC Memory, so standing directions stick · new options: ➃ POV: Hybrid, ✚ Dialogue Delivery, ✚ Montage, ✚ In Media Res, two Senses, and the Farce and Eerie lenses · ✚ Slutty Prose and Style Lens: Smut are now one block, ✚ Style Lens: Coz, so switch it on if you used them · and ✚ Lines & Veils is gone, so save your lists if you filled them in.</div>
+    <div class="getpreset"><a class="btn primary" href="presets/Worldhopper-1.4.json" download="Worldhopper 1.4.json">↓ Worldhopper 1.4: the flagship, every model in one</a></div>
     <div class="grid5">
       <div class="pcard big">
         <h3>✴️ WH Shifter</h3>
         <p class="for"><span>Claude Sonnet 4.6</span> · <span>Opus 4.6</span> · <span>Sonnet 5.5</span> · <span>Opus 5.5</span></p>
-        <a class="btn ghost pdl" href="presets/WH-Shifter-1.3.json" download="WH Shifter 1.3.json">↓ Download</a>
+        <a class="btn ghost pdl" href="presets/WH-Shifter-1.4.json" download="WH Shifter 1.4.json">↓ Download</a>
       </div>
       <div class="pcard big">
         <h3>♊ WH Planeswalker</h3>
         <p class="for"><span>Gemini 4 Argon</span> · <span>3.1 Pro Preview</span> · <span>Gemma 4 31B</span></p>
-        <a class="btn ghost pdl" href="presets/WH-Planeswalker-1.3.json" download="WH Planeswalker 1.3.json">↓ Download</a>
+        <a class="btn ghost pdl" href="presets/WH-Planeswalker-1.4.json" download="WH Planeswalker 1.4.json">↓ Download</a>
       </div>
       <div class="pcard">
         <h3>🐋 WH Delver</h3>
         <p class="for"><span>DeepSeek V4 Pro</span> · <span>V4.1 Flash</span></p>
-        <a class="btn ghost pdl" href="presets/WH-Delver-1.3.json" download="WH Delver 1.3.json">↓ Download</a>
+        <a class="btn ghost pdl" href="presets/WH-Delver-1.4.json" download="WH Delver 1.4.json">↓ Download</a>
       </div>
       <div class="pcard">
         <h3>🧭 WH Nomad</h3>
         <p class="for"><span>GLM 5.3</span></p>
-        <a class="btn ghost pdl" href="presets/WH-Nomad-1.3.json" download="WH Nomad 1.3.json">↓ Download</a>
+        <a class="btn ghost pdl" href="presets/WH-Nomad-1.4.json" download="WH Nomad 1.4.json">↓ Download</a>
       </div>
       <div class="pcard">
         <h3>🌙🌾 WH Pilgrim</h3>
         <p class="for"><span>Kimi K3</span> · <span>MiMo V2.6 Pro</span></p>
-        <a class="btn ghost pdl" href="presets/WH-Pilgrim-1.3.json" download="WH Pilgrim 1.3.json">↓ Download</a>
+        <a class="btn ghost pdl" href="presets/WH-Pilgrim-1.4.json" download="WH Pilgrim 1.4.json">↓ Download</a>
       </div>
     </div>
     <div class="note" style="margin-top:16px"><b>Everything is explained inside</b>, in the preset's first block (✦ README, keep it off). One setting matters for every model: set Prompt Post-Processing to Semi-strict (no tools). The regex comes bundled; standalone copies are under <a href="#regex">Regex</a>.</div>
@@ -356,8 +379,8 @@
   <div class="wrap">
     <div class="ehead">
       <div class="copy">
-        <div class="eyebrow">Extension · 2.0.0</div>
-        <h2 class="elock"><span class="name">Worldhopper</span><span class="word"><b>ENGINE</b><i>2.0</i></span></h2>
+        <div class="eyebrow">Extension · 2.0.1</div>
+        <h2 class="elock"><span class="name">Worldhopper</span><span class="word"><b>ENGINE</b></span></h2>
         <p class="lede">The part a preset can't do. Tell it what kind of metaphysics a character uses, and it keeps the rules, the bodies, and the prose straight in that character's chats. It pairs with the presets above and works with any other.</p>
       </div>
       <div class="ecoz"><img src="img/engine-coz.webp" alt="" width="896" height="1344"></div>
@@ -488,13 +511,13 @@
     <p class="lede">You normally need none of this: the presets carry their regex, and the Engine installs its own. If styled texts or possession boxes don't show up, import these under Extensions → Regex → Import. Importing a script you already have does no harm.</p>
     <div class="grid">
       <div class="pcard">
-        <span class="tag">22 scripts</span>
+        <span class="tag">37 scripts</span>
         <h3>Preset pack</h3>
         <p>Tag cleanup, tracker pruning, the scene clock, the folded plan, and the styling for in-world texts, computer screens, emails, posts, papers, signs, and notes.</p>
         <a class="dlbtn" href="regex/WH-regex-pack-presets.json" download="WH regex pack (presets).json">↓ Download pack</a>
       </div>
       <div class="pcard">
-        <span class="tag gem">5 scripts</span>
+        <span class="tag gem">6 scripts</span>
         <h3>Engine pack</h3>
         <p>The possession and release boxes, and the cleanup for a marker left unclosed.</p>
         <a class="dlbtn" href="regex/WH-regex-pack-engine.json" download="WH regex pack (engine).json">↓ Download pack</a>
@@ -504,6 +527,13 @@
       <summary>Or one script at a time</summary>
       <div class="chips">
           <a class="chip" href="regex/individual/WH-Body-lines.json" download="WH - Body lines.json">WH - Body lines</a>
+          <a class="chip" href="regex/individual/WH-Caught-Line.json" download="WH - Caught Line.json">WH - Caught Line</a>
+          <a class="chip" href="regex/individual/WH-Dialogue.json" download="WH - Dialogue.json">WH - Dialogue</a>
+          <a class="chip" href="regex/individual/WH-Dialogue-Flat.json" download="WH - Dialogue Flat.json">WH - Dialogue Flat</a>
+          <a class="chip" href="regex/individual/WH-Dialogue-Hush.json" download="WH - Dialogue Hush.json">WH - Dialogue Hush</a>
+          <a class="chip" href="regex/individual/WH-Dialogue-Shaky.json" download="WH - Dialogue Shaky.json">WH - Dialogue Shaky</a>
+          <a class="chip" href="regex/individual/WH-Dialogue-Shout.json" download="WH - Dialogue Shout.json">WH - Dialogue Shout</a>
+          <a class="chip" href="regex/individual/WH-Dialogue-prompt.json" download="WH - Dialogue prompt.json">WH - Dialogue prompt</a>
           <a class="chip" href="regex/individual/WH-Diegetic-Document.json" download="WH - Diegetic Document.json">WH - Diegetic Document</a>
           <a class="chip" href="regex/individual/WH-Diegetic-Email.json" download="WH - Diegetic Email.json">WH - Diegetic Email</a>
           <a class="chip" href="regex/individual/WH-Diegetic-Mac.json" download="WH - Diegetic Mac.json">WH - Diegetic Mac</a>
@@ -516,16 +546,25 @@
           <a class="chip" href="regex/individual/WH-Diegetic-Terminal.json" download="WH - Diegetic Terminal.json">WH - Diegetic Terminal</a>
           <a class="chip" href="regex/individual/WH-Diegetic-Text.json" download="WH - Diegetic Text.json">WH - Diegetic Text</a>
           <a class="chip" href="regex/individual/WH-Diegetic-Windows.json" download="WH - Diegetic Windows.json">WH - Diegetic Windows</a>
+          <a class="chip" href="regex/individual/WH-Ending-Flag.json" download="WH - Ending Flag.json">WH - Ending Flag</a>
+          <a class="chip" href="regex/individual/WH-Interruption-Flag.json" download="WH - Interruption Flag.json">WH - Interruption Flag</a>
           <a class="chip" href="regex/individual/WH-Moments.json" download="WH - Moments.json">WH - Moments</a>
+          <a class="chip" href="regex/individual/WH-Name-Flag.json" download="WH - Name Flag.json">WH - Name Flag</a>
+          <a class="chip" href="regex/individual/WH-OOC-Clear.json" download="WH - OOC Clear.json">WH - OOC Clear</a>
+          <a class="chip" href="regex/individual/WH-OOC-Memory.json" download="WH - OOC Memory.json">WH - OOC Memory</a>
+          <a class="chip" href="regex/individual/WH-Place.json" download="WH - Place.json">WH - Place</a>
           <a class="chip" href="regex/individual/WH-Plan.json" download="WH - Plan.json">WH - Plan</a>
           <a class="chip" href="regex/individual/WH-Plan-prompt.json" download="WH - Plan prompt.json">WH - Plan prompt</a>
           <a class="chip" href="regex/individual/WH-Plan-streaming.json" download="WH - Plan streaming.json">WH - Plan streaming</a>
           <a class="chip" href="regex/individual/WH-Possession.json" download="WH - Possession.json">WH - Possession</a>
           <a class="chip" href="regex/individual/WH-Prune-Old-Trackers.json" download="WH - Prune Old Trackers.json">WH - Prune Old Trackers</a>
           <a class="chip" href="regex/individual/WH-Release.json" download="WH - Release.json">WH - Release</a>
+          <a class="chip" href="regex/individual/WH-Remember-Attempt.json" download="WH - Remember Attempt.json">WH - Remember Attempt</a>
+          <a class="chip" href="regex/individual/WH-Reply-Flags-clear.json" download="WH - Reply Flags clear.json">WH - Reply Flags clear</a>
           <a class="chip" href="regex/individual/WH-Scene-Anchor.json" download="WH - Scene Anchor.json">WH - Scene Anchor</a>
           <a class="chip" href="regex/individual/WH-Scene-Check.json" download="WH - Scene Check.json">WH - Scene Check</a>
           <a class="chip" href="regex/individual/WH-Scene-Check-prompt.json" download="WH - Scene Check prompt.json">WH - Scene Check prompt</a>
+          <a class="chip" href="regex/individual/WH-Stock-Phrase-Flag.json" download="WH - Stock Phrase Flag.json">WH - Stock Phrase Flag</a>
           <a class="chip" href="regex/individual/WH-Stray-markers.json" download="WH - Stray markers.json">WH - Stray markers</a>
           <a class="chip" href="regex/individual/WH-Tag-Janitor.json" download="WH - Tag Janitor.json">WH - Tag Janitor</a>
           <a class="chip" href="regex/individual/WH-Text-In.json" download="WH - Text In.json">WH - Text In</a>

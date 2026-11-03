@@ -1,0 +1,16 @@
+{
+  "scriptName": "WH - Dialogue (prompt)",
+  "findRegex": "/<\\/?say\\b[^>]*>/gi",
+  "replaceString": "",
+  "trimStrings": [],
+  "placement": [
+    2
+  ],
+  "disabled": false,
+  "markdownOnly": false,
+  "promptOnly": true,
+  "runOnEdit": true,
+  "substituteRegex": 0,
+  "minDepth": 12,
+  "maxDepth": null
+}

@@ -1,0 +1,16 @@
+{
+  "scriptName": "WH - Caught Line",
+  "findRegex": "/(?!{{getvar::wh_caught_on}})(?!{{getvar::wh_caught_any}})$/",
+  "replaceString": "\n\n<details style=\"margin-top: 14px; font-style: normal; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; opacity: 0.75;\"><summary style=\"cursor: pointer; font-size: 0.72em; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;\">Caught last turn</summary><div style=\"margin-top: 6px; font-size: 0.78em; line-height: 1.5; opacity: 0.85;\">{{getvar::wh_caught}}</div></details>",
+  "trimStrings": [],
+  "placement": [
+    2
+  ],
+  "disabled": false,
+  "markdownOnly": true,
+  "promptOnly": false,
+  "runOnEdit": false,
+  "substituteRegex": 1,
+  "minDepth": null,
+  "maxDepth": 0
+}

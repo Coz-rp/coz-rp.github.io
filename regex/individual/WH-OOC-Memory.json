@@ -1,0 +1,16 @@
+{
+  "scriptName": "WH - OOC Memory",
+  "findRegex": "/[(\\[]{1,2}\\s*OOC\\s*:(?!\\s*clear directions?\\b)\\s*((?:[^{}\\n:()\\[\\]]|:(?!:)|\\([^(){}\\n]*\\))+?)(?<![?\\s])\\s*[)\\]]{1,2}/gi",
+  "replaceString": "$0{{setvar::wh_ooc8::{{getvar::wh_ooc7}}}}{{setvar::wh_ooc7::{{getvar::wh_ooc6}}}}{{setvar::wh_ooc6::{{getvar::wh_ooc5}}}}{{setvar::wh_ooc5::{{getvar::wh_ooc4}}}}{{setvar::wh_ooc4::{{getvar::wh_ooc3}}}}{{setvar::wh_ooc3::{{getvar::wh_ooc2}}}}{{setvar::wh_ooc2::{{getvar::wh_ooc1}}}}{{setvar::wh_ooc1::- $1}}{{setvar::wh_ooc_head::<ooc_memory>\nDirections <USER> has given out of character in this chat, oldest first. Keep following the ones that still apply: a one-time request has already been done, a later direction replaces an earlier one it conflicts with, and the story never mentions any of this.}}{{setvar::wh_ooc_foot::</ooc_memory>}}",
+  "trimStrings": [],
+  "placement": [
+    1
+  ],
+  "disabled": false,
+  "markdownOnly": false,
+  "promptOnly": false,
+  "runOnEdit": false,
+  "substituteRegex": 0,
+  "minDepth": null,
+  "maxDepth": null
+}

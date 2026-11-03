@@ -1,0 +1,16 @@
+{
+  "scriptName": "WH - Ending Flag",
+  "findRegex": "/\\?[\"”'’*_)\\s]*(?:<\\/say>[\"”'’*_)\\s]*)?(?:<details[\\s\\S]*)?$/",
+  "replaceString": "$0{{setvar::wh_ending::Your last reply ended on a question. End this one on something someone says or does that isn't a question.}}{{addvar::wh_caught::Ended on a question<br>}}{{setvar::wh_caught_any::x^}}",
+  "trimStrings": [],
+  "placement": [
+    2
+  ],
+  "disabled": false,
+  "markdownOnly": false,
+  "promptOnly": true,
+  "runOnEdit": false,
+  "substituteRegex": 0,
+  "minDepth": null,
+  "maxDepth": 1
+}

@@ -1,0 +1,16 @@
+{
+  "scriptName": "WH - Name Flag",
+  "findRegex": "/\\b(Elara|Elias|Kael|Kaelen|Kira|Lyra|Liora|Nova|Astra|Jax|Vesper|Ember|Silas|Aria|Zephyr|Seraphina|Cassian|Lucien|Lysander|Malachi|Valerius|Alastair|Thorne|Vance|Voss|Vane|Blackwood|Ashworth|Hargreaves|Marcus|Elena|Priya|Chloe|Maya)\\b(?![\\s\\S]*\\b\\1\\b)/g",
+  "replaceString": "$0{{setvar::wh_names_note::Names that language models give by default came up in your last reply. Keep any the card or the user introduced, and give anyone new a different name:}}{{addvar::wh_names::$0,}}{{addvar::wh_caught::Default name: $0<br>}}{{setvar::wh_caught_any::x^}}",
+  "trimStrings": [],
+  "placement": [
+    2
+  ],
+  "disabled": false,
+  "markdownOnly": false,
+  "promptOnly": true,
+  "runOnEdit": false,
+  "substituteRegex": 0,
+  "minDepth": null,
+  "maxDepth": 1
+}
