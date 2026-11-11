@@ -1,0 +1,116 @@
+[
+ {
+  "pkg": "Outrider Heavy",
+  "href": "outrider/files/Outrider-Heavy/Chat-Completion/Outrider-Heavy-CC.json",
+  "folder": "Chat Completion",
+  "name": "Outrider Heavy CC.json"
+ },
+ {
+  "pkg": "Outrider Heavy",
+  "href": "outrider/files/Outrider-Heavy/koboldcpp/Gemma-4-31B.kcpps",
+  "folder": "koboldcpp",
+  "name": "Gemma 4 31B.kcpps"
+ },
+ {
+  "pkg": "Outrider Heavy",
+  "href": "outrider/files/Outrider-Heavy/README.md",
+  "folder": "",
+  "name": "README.md"
+ },
+ {
+  "pkg": "Outrider Heavy",
+  "href": "outrider/files/Outrider-Heavy/sysprompt/Outrider-Heavy-System-Prompt.json",
+  "folder": "sysprompt",
+  "name": "Outrider Heavy - System Prompt.json"
+ },
+ {
+  "pkg": "Outrider Heavy",
+  "href": "outrider/files/Outrider-Heavy/templates/Gemma-4-WH.json",
+  "folder": "templates",
+  "name": "Gemma 4 WH.json"
+ },
+ {
+  "pkg": "Outrider Heavy",
+  "href": "outrider/files/Outrider-Heavy/TextGen-Settings/Outrider-Heavy-Samplers.json",
+  "folder": "TextGen Settings",
+  "name": "Outrider Heavy - Samplers.json"
+ },
+ {
+  "pkg": "Outrider",
+  "href": "outrider/files/Outrider/koboldcpp/Gemma-4-12B.kcpps",
+  "folder": "koboldcpp",
+  "name": "Gemma 4 12B.kcpps"
+ },
+ {
+  "pkg": "Outrider",
+  "href": "outrider/files/Outrider/koboldcpp/Gemma-4-E4B.kcpps",
+  "folder": "koboldcpp",
+  "name": "Gemma 4 E4B.kcpps"
+ },
+ {
+  "pkg": "Outrider",
+  "href": "outrider/files/Outrider/koboldcpp/Llama-3.1-8B.kcpps",
+  "folder": "koboldcpp",
+  "name": "Llama 3.1 8B.kcpps"
+ },
+ {
+  "pkg": "Outrider",
+  "href": "outrider/files/Outrider/koboldcpp/Mistral-Nemo-12B.kcpps",
+  "folder": "koboldcpp",
+  "name": "Mistral Nemo 12B.kcpps"
+ },
+ {
+  "pkg": "Outrider",
+  "href": "outrider/files/Outrider/koboldcpp/Mistral-Small-3.2-24B.kcpps",
+  "folder": "koboldcpp",
+  "name": "Mistral Small 3.2 24B.kcpps"
+ },
+ {
+  "pkg": "Outrider",
+  "href": "outrider/files/Outrider/koboldcpp/Qwen3.5-9B.kcpps",
+  "folder": "koboldcpp",
+  "name": "Qwen3.5-9B.kcpps"
+ },
+ {
+  "pkg": "Outrider",
+  "href": "outrider/files/Outrider/koboldcpp/Qwen3.8-27B.kcpps",
+  "folder": "koboldcpp",
+  "name": "Qwen3.8-27B.kcpps"
+ },
+ {
+  "pkg": "Outrider",
+  "href": "outrider/files/Outrider/README.md",
+  "folder": "",
+  "name": "README.md"
+ },
+ {
+  "pkg": "Outrider",
+  "href": "outrider/files/Outrider/sysprompt/Outrider-System-Prompt.json",
+  "folder": "sysprompt",
+  "name": "Outrider - System Prompt.json"
+ },
+ {
+  "pkg": "Outrider",
+  "href": "outrider/files/Outrider/templates/ChatML-WH-Qwen.json",
+  "folder": "templates",
+  "name": "ChatML WH Qwen.json"
+ },
+ {
+  "pkg": "Outrider",
+  "href": "outrider/files/Outrider/templates/Gemma-4-WH.json",
+  "folder": "templates",
+  "name": "Gemma 4 WH.json"
+ },
+ {
+  "pkg": "Outrider",
+  "href": "outrider/files/Outrider/TextGen-Settings/Outrider-Mistral-Samplers.json",
+  "folder": "TextGen Settings",
+  "name": "Outrider Mistral - Samplers.json"
+ },
+ {
+  "pkg": "Outrider",
+  "href": "outrider/files/Outrider/TextGen-Settings/Outrider-Samplers.json",
+  "folder": "TextGen Settings",
+  "name": "Outrider - Samplers.json"
+ }
+]

@@ -1,0 +1,8 @@
+{
+ "contextsize": 32768,
+ "batchsize": 1024,
+ "quantkv": "q8_0",
+ "noshift": true,
+ "swapadding": 1024,
+ "jinja": true
+}

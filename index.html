@@ -216,6 +216,54 @@
   .presets .pcoz img{display:block;width:100%;height:auto}
   @media(max-width:860px){.presets .phead{grid-template-columns:1fr} .presets .pcoz{display:none}}
   .presets .note::before{background:linear-gradient(#ff86c0,var(--teal))}
+  /* Outrider's band, the local-model presets, in its Reddit header's colors: racetrack green, cream, and a little coral,
+     with Coz as a racer beside the heading. She stands on the heading's rule like the other two. */
+  section.outrider{--accent:#8fe8ad;--gr-rgb:126,224,160;--grad:linear-gradient(120deg,#b4f3c8,#6fd898);
+       position:relative;padding:64px 0;border-top:1px solid rgba(var(--gr-rgb),.3);
+       background:#08100b;
+       background-image:radial-gradient(760px 520px at 86% 4%,rgba(var(--gr-rgb),.13),transparent 70%),
+                        radial-gradient(700px 560px at 102% 100%,rgba(255,117,102,.07),transparent 70%),
+                        radial-gradient(640px 480px at -6% 34%,rgba(var(--gr-rgb),.06),transparent 70%)}
+  .outrider .eyebrow{color:var(--accent)}
+  .outrider .ohead{display:grid;grid-template-columns:minmax(0,1fr) 270px;column-gap:28px;align-items:end;
+       border-bottom:1px solid rgba(var(--gr-rgb),.25);margin-bottom:28px}
+  .outrider .ohead .copy{align-self:center;padding-bottom:28px}
+  .outrider .olock{margin:10px 0 18px;line-height:.92;letter-spacing:-.02em}
+  .outrider .olock .name{display:block;font-weight:500;font-size:clamp(1.7rem,4.4vw,2.5rem)}
+  .outrider .olock .word{display:block;margin-top:4px;font-weight:700;font-size:clamp(3.2rem,10vw,5.6rem);letter-spacing:.02em}
+  .outrider .olock .word b{background:linear-gradient(100deg,#fdf8ee,#b4f3c8 55%,#6fd898);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .outrider .ohead .lede{margin-bottom:0}
+  .outrider .ocoz{filter:drop-shadow(0 0 18px rgba(var(--gr-rgb),.14))}
+  .outrider .ocoz img{display:block;width:100%;height:auto}
+  @media(max-width:860px){.outrider .ohead{grid-template-columns:1fr} .outrider .ocoz{display:none}}
+  .outrider .note::before{background:linear-gradient(var(--accent),#ff7566)}
+  .outrider .pcard:hover,.outrider .chips .chip:hover{border-color:rgba(var(--gr-rgb),.55)}
+  .outrider .pcard .tag{background:rgba(255,117,102,.14);color:#ffb3a8}
+  .outrider .pcard p{margin:10px 0 0} .outrider .pcard p.for{flex:none;margin-top:0}
+  .outrider .pcard p.for a{border-bottom:1px dotted rgba(255,255,255,.3)} .outrider .pcard p.for a:hover{color:var(--ink)}
+  .outrider h3.sub[id]{scroll-margin-top:76px} .outrider .pcard .pdl{margin-top:20px}
+  /* what it does, as a plain two-column list: no boxes, so it doesn't read as more preset cards */
+  .oticks{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:9px 32px;margin:26px 2px 0;color:var(--mut);font-size:.95rem}
+  .oticks li{position:relative;padding-left:22px}
+  .oticks li::before{content:'';position:absolute;left:2px;top:.5em;width:9px;height:5px;border-left:2px solid var(--accent);
+       border-bottom:2px solid var(--accent);transform:rotate(-45deg)}
+  @media(max-width:760px){.oticks{grid-template-columns:1fr}}
+  .outrider .ogroup{margin-top:16px;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+  .outrider .ogroup + .chips{margin-top:8px}
+  .outrider h3.sub{font-size:1.2rem;margin:34px 0 6px}
+  .outrider p.sub{color:var(--mut);font-size:.92rem;margin-bottom:14px;max-width:640px}
+  .outrider ol.steps li::before{background:var(--grad)}
+  .otable{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+  .otable table{width:100%;min-width:760px;border-collapse:collapse;font-size:.84rem}
+  .otable th{text-align:left;font:600 .7rem Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);
+       padding:12px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+  .otable td{padding:10px 10px;border-bottom:1px solid var(--line);color:var(--mut);white-space:nowrap}
+  .otable tr:last-child td{border-bottom:none}
+  .otable td:first-child{color:var(--ink);font-weight:600} .otable th:first-child,.otable td:first-child{padding-left:16px}
+  .otable td b{color:var(--accent);font-weight:600}
+  .navlinks a.out{color:#b4f3c8} .navlinks a.out:hover{color:#8fe8ad}
+  .navlinks a.pre{color:#ffa8d2} .navlinks a.pre:hover{color:#ff86c0}
+  .btn.out{border-color:rgba(126,224,160,.45);color:#c9f6d8} .btn.out:hover{border-color:#8fe8ad;background:rgba(126,224,160,.10)}
   /* The Engine's own section, in its own colors (its Reddit header's): amber, the possession glow, and teal, on a warmer
      band, with Coz already possessed beside the heading. */
   section.engine{--accent:#ffb547;--amber-rgb:255,176,60;--grad:linear-gradient(120deg,#ffc061,#ff9f43);
@@ -292,7 +340,8 @@
       Coz<span>RP</span>
     </div>
     <div class="navlinks">
-      <a href="#presets">Presets</a>
+      <a class="pre" href="#presets">WH Presets</a>
+      <a class="out" href="#outrider">Outrider</a>
       <a class="eng" href="#engine">Engine</a>
       <a href="#builder">Card Builder</a>
       <a href="#regex">Regex</a>
@@ -324,6 +373,7 @@
     <div class="cta">
       <a class="btn primary" href="#presets">Get the preset</a>
       <a class="btn ghost eng" href="#engine">Install the Engine</a>
+      <a class="btn ghost out" href="#outrider">Outrider, for local models</a>
       <a class="btn ghost" href="downloads/Worldhopper-1.4.zip" download="Worldhopper 1.4.zip">↓ Everything (.zip)</a>
     </div>
     </div>
@@ -335,7 +385,7 @@
   <div class="wrap">
     <div class="phead">
       <div class="copy">
-        <div class="eyebrow">Presets · 1.4</div>
+        <div class="eyebrow">For Cloud Models · 1.4</div>
         <h2 class="plock"><span class="name">Worldhopper</span><span class="word"><b>PRESETS</b></span></h2>
         <p class="lede">A modular Chat Completion preset: prose-first, adult-capable, and assembled from toggles you mix per chat. One preset for Claude, Gemini, DeepSeek, GLM, Kimi, and MiMo: a block meant for some models starts with a mark for each of them (✴️ Claude, ♊ Gemini, 🐋 DeepSeek, 🧭 GLM, 🌙 Kimi, 🌾 MiMo), so you switch on the ones with your model's mark and off the rest.</p>
       </div>
@@ -372,6 +422,101 @@
       </div>
     </div>
     <div class="note" style="margin-top:16px"><b>Everything is explained inside</b>, in the preset's first block (✦ README, keep it off). One setting matters for every model: set Prompt Post-Processing to Semi-strict (no tools). The regex comes bundled; standalone copies are under <a href="#regex">Regex</a>.</div>
+  </div>
+</section>
+
+<section id="outrider" class="outrider">
+  <div class="wrap">
+    <div class="ohead">
+      <div class="copy">
+        <div class="eyebrow">For Local Models · 1.0</div>
+        <h2 class="olock"><span class="name">Outrider</span><span class="word"><b>PRESETS</b></span></h2>
+        <p class="lede">Roleplay presets for the models you run on your own graphics card: Gemma, Mistral, Llama, and Qwen, in Text Completion with KoboldCpp. They're small on purpose. A local model follows a short prompt in plain sentences far more closely than a long one, so that's what it gets.</p>
+      </div>
+      <div class="ocoz"><img src="img/outrider-coz.webp" alt="" width="864" height="1344"></div>
+    </div>
+    <div class="grid">
+      <div class="pcard">
+        <span class="tag">About 730 tokens</span>
+        <h3>Outrider</h3>
+        <p class="for">For small models, <a href="#outrider-models">listed below</a></p>
+        <p>A short set of plain rules that small and mid-size models actually follow. The download has the system prompt, both sampler presets, the two templates, a KoboldCpp config per model, and the setup guide.</p>
+        <a class="btn primary pdl" href="outrider/Outrider-1.0.zip" download="Outrider 1.0.zip">↓ Download Outrider 1.0</a>
+      </div>
+      <div class="pcard">
+        <span class="tag">About 4,070 tokens</span>
+        <h3>Outrider Heavy</h3>
+        <p class="for">For large models, <a href="#outrider-models">listed below</a></p>
+        <p>A much larger rule set, compressed, for models that can carry it. The download has the system prompt, the sampler preset, a Chat Completion version with every block as a switch, the template, the KoboldCpp config, and the setup guide.</p>
+        <a class="btn primary pdl" href="outrider/Outrider-Heavy-1.0.zip" download="Outrider Heavy 1.0.zip">↓ Download Outrider Heavy 1.0</a>
+      </div>
+    </div>
+
+    <ul class="oticks">
+      <li>No scene header, trackers, or styled boxes.</li>
+      <li>It doesn't write for your character.</li>
+      <li>It keeps your story's point of view and tense.</li>
+      <li>Explicit wording is sent only once you go there.</li>
+      <li>Bans and samplers run in KoboldCpp, at no token cost.</li>
+      <li>Thinking is off, so replies start right away.</li>
+    </ul>
+
+    <h3 class="sub" id="outrider-models">Pick your model</h3>
+    <p class="sub">Each row is what to select in SillyTavern for that model. The card sizes are estimates.</p>
+    <div class="otable">
+      <table>
+        <thead><tr><th>Model</th><th>Card</th><th>System prompt</th><th>Sampler preset</th><th>Instruct template</th><th>Context template</th><th>Context</th></tr></thead>
+        <tbody>
+          <tr><td>Gemma 4 31B</td><td>24 GB and up</td><td><b>Outrider Heavy</b></td><td>Outrider Heavy</td><td>Gemma 4 WH *</td><td>Gemma 4</td><td>32K</td></tr>
+          <tr><td>Gemma 4 12B</td><td>12 to 16 GB</td><td><b>Outrider</b></td><td>Outrider</td><td>Gemma 4 WH *</td><td>Gemma 4</td><td>16K</td></tr>
+          <tr><td>Gemma 4 E4B</td><td>6 to 8 GB</td><td><b>Outrider</b></td><td>Outrider</td><td>Gemma 4</td><td>Gemma 4</td><td>16K</td></tr>
+          <tr><td>Mistral Small 3.2 24B</td><td>16 to 24 GB</td><td><b>Outrider</b></td><td>Outrider Mistral</td><td>Mistral V7-Tekken</td><td>Mistral V7-Tekken</td><td>16K</td></tr>
+          <tr><td>Mistral Nemo 12B</td><td>8 to 12 GB</td><td><b>Outrider</b></td><td>Outrider Mistral</td><td>Mistral V3-Tekken</td><td>Mistral V3-Tekken</td><td>16K</td></tr>
+          <tr><td>Llama 3.1 8B</td><td>6 to 8 GB</td><td><b>Outrider</b></td><td>Outrider</td><td>Llama 3 Instruct</td><td>Llama 3 Instruct</td><td>16K</td></tr>
+          <tr><td>Qwen3.5-9B</td><td>8 to 12 GB</td><td><b>Outrider</b></td><td>Outrider</td><td>ChatML WH Qwen *</td><td>ChatML</td><td>16K</td></tr>
+          <tr><td>Qwen3.8-27B</td><td>24 GB</td><td><b>Outrider</b></td><td>Outrider</td><td>ChatML WH Qwen *</td><td>ChatML</td><td>16K</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="sub" style="margin-top:10px">* Comes in the download's templates folder. The others ship with SillyTavern.</p>
+
+    <h3 class="sub" style="margin-bottom:14px">Setting it up</h3>
+    <ol class="steps">
+      <li><b>Start KoboldCpp</b> with your model's config from the <code>koboldcpp</code> folder: Load Config, then pick your model file. On a smaller card, lower the context there and in SillyTavern to match.</li>
+      <li><b>Connect SillyTavern</b> to KoboldCpp under Text Completion.</li>
+      <li><b>Open Advanced Formatting</b> (the A icon). Import the file in the <code>sysprompt</code> folder as the System Prompt, pick the Instruct and Context templates from your model's row, and turn Instruct Mode on.</li>
+      <li><b>Import the sampler preset</b> your row names, from <code>TextGen Settings</code>. When SillyTavern asks whether to allow its regex scripts, allow them: they turn the explicit wording on and off.</li>
+    </ol>
+
+    <div class="note" style="margin-top:16px"><b>Built on stock models, not finetunes.</b> A finetune should work with its base model's row. There are no jailbreaks, so a stock model that refuses something will still refuse it. One tip: put lorebook entries after the character card, or the model rereads most of the prompt every turn.</div>
+    <details class="more">
+      <summary>Or one file at a time</summary>
+      <div class="ogroup">Outrider Heavy</div>
+      <div class="chips">
+          <a class="chip" href="outrider/files/Outrider-Heavy/Chat-Completion/Outrider-Heavy-CC.json" download="Outrider Heavy CC.json">Chat Completion / Outrider Heavy CC.json</a>
+          <a class="chip" href="outrider/files/Outrider-Heavy/koboldcpp/Gemma-4-31B.kcpps" download="Gemma 4 31B.kcpps">koboldcpp / Gemma 4 31B.kcpps</a>
+          <a class="chip" href="outrider/files/Outrider-Heavy/README.md" download="README.md">README.md</a>
+          <a class="chip" href="outrider/files/Outrider-Heavy/sysprompt/Outrider-Heavy.json" download="Outrider Heavy.json">sysprompt / Outrider Heavy.json</a>
+          <a class="chip" href="outrider/files/Outrider-Heavy/templates/Gemma-4-WH.json" download="Gemma 4 WH.json">templates / Gemma 4 WH.json</a>
+          <a class="chip" href="outrider/files/Outrider-Heavy/TextGen-Settings/Outrider-Heavy.json" download="Outrider Heavy.json">TextGen Settings / Outrider Heavy.json</a>
+      </div>
+      <div class="ogroup">Outrider</div>
+      <div class="chips">
+          <a class="chip" href="outrider/files/Outrider/koboldcpp/Gemma-4-12B.kcpps" download="Gemma 4 12B.kcpps">koboldcpp / Gemma 4 12B.kcpps</a>
+          <a class="chip" href="outrider/files/Outrider/koboldcpp/Gemma-4-E4B.kcpps" download="Gemma 4 E4B.kcpps">koboldcpp / Gemma 4 E4B.kcpps</a>
+          <a class="chip" href="outrider/files/Outrider/koboldcpp/Llama-3.1-8B.kcpps" download="Llama 3.1 8B.kcpps">koboldcpp / Llama 3.1 8B.kcpps</a>
+          <a class="chip" href="outrider/files/Outrider/koboldcpp/Mistral-Nemo-12B.kcpps" download="Mistral Nemo 12B.kcpps">koboldcpp / Mistral Nemo 12B.kcpps</a>
+          <a class="chip" href="outrider/files/Outrider/koboldcpp/Mistral-Small-3.2-24B.kcpps" download="Mistral Small 3.2 24B.kcpps">koboldcpp / Mistral Small 3.2 24B.kcpps</a>
+          <a class="chip" href="outrider/files/Outrider/koboldcpp/Qwen3.5-9B.kcpps" download="Qwen3.5-9B.kcpps">koboldcpp / Qwen3.5-9B.kcpps</a>
+          <a class="chip" href="outrider/files/Outrider/koboldcpp/Qwen3.8-27B.kcpps" download="Qwen3.8-27B.kcpps">koboldcpp / Qwen3.8-27B.kcpps</a>
+          <a class="chip" href="outrider/files/Outrider/README.md" download="README.md">README.md</a>
+          <a class="chip" href="outrider/files/Outrider/sysprompt/Outrider.json" download="Outrider.json">sysprompt / Outrider.json</a>
+          <a class="chip" href="outrider/files/Outrider/templates/ChatML-WH-Qwen.json" download="ChatML WH Qwen.json">templates / ChatML WH Qwen.json</a>
+          <a class="chip" href="outrider/files/Outrider/templates/Gemma-4-WH.json" download="Gemma 4 WH.json">templates / Gemma 4 WH.json</a>
+          <a class="chip" href="outrider/files/Outrider/TextGen-Settings/Outrider-Mistral.json" download="Outrider Mistral.json">TextGen Settings / Outrider Mistral.json</a>
+          <a class="chip" href="outrider/files/Outrider/TextGen-Settings/Outrider.json" download="Outrider.json">TextGen Settings / Outrider.json</a>
+      </div>
+    </details>
   </div>
 </section>
 

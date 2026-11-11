@@ -1,0 +1,419 @@
+{
+    "temp": 0.8,
+    "temperature_last": false,
+    "top_p": 1,
+    "top_k": 0,
+    "top_a": 0,
+    "tfs": 1,
+    "epsilon_cutoff": 0,
+    "eta_cutoff": 0,
+    "typical_p": 1,
+    "min_p": 0.05,
+    "rep_pen": 1,
+    "rep_pen_range": 0,
+    "rep_pen_decay": 0,
+    "rep_pen_slope": 1,
+    "no_repeat_ngram_size": 0,
+    "penalty_alpha": 0,
+    "num_beams": 1,
+    "length_penalty": 1,
+    "min_length": 0,
+    "encoder_rep_pen": 1,
+    "freq_pen": 0,
+    "presence_pen": 0,
+    "skew": 0,
+    "do_sample": true,
+    "early_stopping": false,
+    "dynatemp": false,
+    "min_temp": 0,
+    "max_temp": 2,
+    "dynatemp_exponent": 1,
+    "smoothing_factor": 0,
+    "smoothing_curve": 1,
+    "dry_allowed_length": 2,
+    "dry_multiplier": 0.8,
+    "dry_base": 1.75,
+    "dry_sequence_breakers": "[\"\\n\", \":\", \"\\\"\", \"*\", \"·\", \"[\", \"]\", \"📍\", \"🕰\", \"🗓\", \"👥\", \"#\"]",
+    "dry_penalty_last_n": 0,
+    "add_bos_token": true,
+    "ban_eos_token": false,
+    "skip_special_tokens": true,
+    "mirostat_mode": 0,
+    "mirostat_tau": 5,
+    "mirostat_eta": 0.1,
+    "guidance_scale": 1,
+    "negative_prompt": "",
+    "grammar_string": "",
+    "json_schema": null,
+    "json_schema_allow_empty": false,
+    "banned_tokens": "\"lets out a\"\n\"let out a\"\n\"a sharp,\"\n\"her heat\"\n\"center of her\"\n\"jagged\"\n\"heavy thud\"\n\"reach his eyes\"\n\"reach her eyes\"\n\"reach their eyes\"\n\"ghost of a smile\"\n\"unhurried\"\n\"for a long moment\"\n\"breath catches\"\n\"breath catching\"\n\"breath hitches\"\n\"breath hitching\"\n\"weight of it\"\n\"something shifts\"\n\"something shifted\"\n\"shiver down\"\n\"shivers down\"\n\"a low hum\"\n\"knuckles\"\n\"mask of\"\n\"flicker of\"\n\"predatory\"\n\"ragged\"\n\"dull thud\"\n\"wet heat\"\n\"((OOC\"\n\"(OOC\"",
+    "sampler_priority": [
+        "repetition_penalty",
+        "presence_penalty",
+        "frequency_penalty",
+        "dry",
+        "temperature",
+        "dynamic_temperature",
+        "quadratic_sampling",
+        "top_n_sigma",
+        "top_k",
+        "top_p",
+        "typical_p",
+        "epsilon_cutoff",
+        "eta_cutoff",
+        "tfs",
+        "top_a",
+        "min_p",
+        "adaptive_p",
+        "mirostat",
+        "xtc",
+        "encoder_repetition_penalty",
+        "no_repeat_ngram"
+    ],
+    "samplers": [
+        "penalties",
+        "dry",
+        "top_n_sigma",
+        "top_k",
+        "typ_p",
+        "tfs_z",
+        "typical_p",
+        "xtc",
+        "top_p",
+        "adaptive_p",
+        "min_p",
+        "temperature"
+    ],
+    "samplers_priorities": [
+        "dry",
+        "penalties",
+        "no_repeat_ngram",
+        "temperature",
+        "top_nsigma",
+        "top_p_top_k",
+        "top_a",
+        "min_p",
+        "tfs",
+        "eta_cutoff",
+        "epsilon_cutoff",
+        "typical_p",
+        "quadratic",
+        "xtc"
+    ],
+    "ignore_eos_token": false,
+    "spaces_between_special_tokens": true,
+    "speculative_ngram": false,
+    "sampler_order": [
+        5,
+        6,
+        0,
+        1,
+        2,
+        3,
+        4
+    ],
+    "logit_bias": [],
+    "xtc_threshold": 0.1,
+    "xtc_probability": 0,
+    "nsigma": 0,
+    "min_keep": 0,
+    "extensions": {
+        "regex_scripts": [
+            {
+                "id": "1c3c7458-19a0-4d9f-9f13-69a41e1e7306",
+                "scriptName": "WH - Prune Old Trackers",
+                "findRegex": "/\\n*<details>[\\s\\S]*?<\\/details>/g",
+                "replaceString": "",
+                "trimStrings": [],
+                "placement": [
+                    2
+                ],
+                "disabled": false,
+                "markdownOnly": false,
+                "promptOnly": true,
+                "runOnEdit": false,
+                "substituteRegex": 0,
+                "minDepth": 2,
+                "maxDepth": null
+            },
+            {
+                "id": "0baa91ab-7bb3-422b-aa82-140c0ed3de63",
+                "scriptName": "WH - Reply Flags (clear)",
+                "findRegex": "/^/",
+                "replaceString": "{{setvar::wh_interrupt::}}{{setvar::wh_stock::}}{{setvar::wh_stock_note::}}{{setvar::wh_names::}}{{setvar::wh_names_note::}}{{setvar::wh_ending::}}{{setvar::wh_caught::}}{{setvar::wh_caught_any::}}",
+                "trimStrings": [],
+                "placement": [
+                    2
+                ],
+                "disabled": false,
+                "markdownOnly": false,
+                "promptOnly": true,
+                "runOnEdit": false,
+                "substituteRegex": 0,
+                "minDepth": null,
+                "maxDepth": 1
+            },
+            {
+                "id": "ba779b49-ab1f-4cf5-a780-4ef12fb0ced2",
+                "scriptName": "WH - Interruption Flag",
+                "findRegex": "/(?:\\b(?:phone|cell|mobile|screen)\\b[^.!?\\n]{0,40}?\\b(?:buzz|vibrat|ring|chim|ping|lights? up|lit up)\\w*|\\b(?:text|message|notification)s?\\b[^.!?\\n]{0,30}?\\b(?:arriv\\w*|pops? up|popped up|pings?|pinged|comes in|came in)|\\bknock\\w*\\b[^.!?\\n]{0,30}?\\b(?:door|window)|\\b(?:door|window)\\b[^.!?\\n]{0,20}?\\bknock\\w*|\\bdoorbell|\\bdoor\\b[^.!?\\n]{0,20}?\\b(?:bursts?|bangs?|banged|flies|flew)\\s+open|\\b(?:burst|bursts|barges?|barged)\\s+in(?:to)?\\b)/i",
+                "replaceString": "$0{{setvar::wh_interrupt::Your last reply brought something in from outside the scene (a phone going off, a message, a knock, someone bursting in). Unless the user or the story had set it up, this reply lets it pass with nobody answering or remarking on it, and brings nothing else in from outside.}}{{addvar::wh_caught::Interruption: $0<br>}}{{setvar::wh_caught_any::x^}}",
+                "trimStrings": [],
+                "placement": [
+                    2
+                ],
+                "disabled": false,
+                "markdownOnly": false,
+                "promptOnly": true,
+                "runOnEdit": false,
+                "substituteRegex": 0,
+                "minDepth": null,
+                "maxDepth": 1
+            },
+            {
+                "id": "1bd14077-7f83-4017-9e6f-a350925d0b95",
+                "scriptName": "WH - Stock Phrase Flag",
+                "findRegex": "/(\\bhusk(?:y|ily)\\b|\\bthroat(?:y|ily)\\b|\\bguttural\\b|\\bvelvet(?:y)? (?:voice|tone|murmur|whisper|purr|drawl)\\b|\\bvoice (?:like|of|was|is|all) velvet\\b|\\bvi[sc]e(?:-like| grip)\\b|\\b(?:like|tight as) a vise\\b|\\b(?:like|hot as) a furnace\\b|\\bcallou?sed\\b|\\bunadulterated\\b|\\bstructural integrity\\b|\\bnails bit(?:e|es|ing)\\b|shiver(?:s|ed)? (?:ran |runs |running |went |goes |crawl\\w* )?down (?:his|her|their|my|your|its) spine|breath (?:she|he|they|I|you) (?:didn't|did not|hadn't) know (?:she|he|they|I|you) (?:was|were|had been) holding|(?:his|her|their|my|your|its) breath (?:hitch|catch)\\w*|breath (?:hitched|caught) in (?:his|her|their|my|your|its) throat|\\bbreathy\\b|\\bsomething \\w+ (?:in|behind) (?:his|her|their|my|your|its) (?:eyes|voice|gaze)\\b|\\ba glint in (?:his|her|their|my|your|its) eyes?|\\bpupils? (?:blown|dilat\\w*)|eyes blown wide|\\b(?:couldn't|could not|can't|cannot) help but\\b|\\bdespite (?:himself|herself|themselves|myself|yourself)\\b|white-knuckled|knuckles (?:whiten\\w*|white)|\\bmuscle (?:jump|tick|twitch)\\w* in (?:his|her|their|my|your|its) jaw|\\bjaw (?:ticks|ticked|ticking)\\b|\\bopen(?:s|ed) (?:his|her|their|my|your|its) mouth,? (?:then )?(?:clos|shut)\\w* it|\\bhuff(?:s|ed)? (?:out )?a (?:soft |small |quiet |short )?laugh|\\bghost of a smile\\b|\\bcard(?:s|ed|ing) (?:his|her|their|my|your|its) fingers through\\b|\\b(?:makes|made|lets out|let out) a (?:small|soft|strangled|low|quiet|little) (?:sound|noise)\\b|\\b(?:washed|washes|crashed|crashes|flooded|floods) (?:over|through) (?:him|her|them|me|you)\\b|\\bsomething (?:deep )?(?:inside|in) (?:him|her|them|me|you) (?:broke|breaks|shifted|shifts|cracked|cracks|stirred|stirs)\\b|\\bsomething shift(?:s|ed)\\b|\\bbefore (?:she|he|they|I|you) (?:could|can) stop (?:himself|herself|themselves|myself|yourself)\\b|\\b(?:caught|catches) (?:himself|herself|themselves|myself|yourself) \\w+ing\\b|\\ba lump in (?:his|her|their|my|your|its) throat|\\bheart in (?:his|her|their|my|your|its) throat|\\bknot in (?:his|her|their|my|your|its) (?:stomach|gut)|\\bpool(?:s|ed|ing) (?:low )?in (?:his|her|their|my|your|its) (?:gut|belly|stomach)|\\btuck(?:s|ed)? (?:a strand of |a lock of )?(?:his|her|their|my|your|its) hair behind (?:his|her|their|my|your|its) ear|\\btilt(?:s|ed)? (?:his|her|their|my|your|its) head\\b|\\bheart hammer\\w*|\\bswallow(?:s|ed) hard\\b|\\bfor a long moment\\b|\\bsaid quietly\\b|\\bsays quietly\\b|\\bvoice (?:barely|just) above a whisper|\\bbarely a whisper\\b|\\beyes never leaving\\b|\\bsmile that (?:didn't|doesn't|did not) reach (?:his|her|their|my|your|its) eyes|\\b(?:smile|smirk) (?:playing|tugging|tugged|played|plays|tugs) (?:at|on) (?:his|her|their|my|your|its) (?:lips|mouth)|\\blow chuckle\\b|\\ba low rumble\\b|\\bthe air (?:was |is |hung |hangs |grew |grows )?(?:thick|heavy) with\\b|\\b(?:the )?silence (?:stretched|stretches|settled|settles)\\b|\\bthe world (?:seemed to |seems to )?(?:fell|falls|fall) away\\b|\\bthe world seem(?:s|ed) to \\w+|\\blike a physical (?:thing|blow|weight|presence|force|touch)\\b|\\bozone\\b|\\bpetrichor\\b|\\bdust motes\\b|\\bmetallic tang\\b|\\b(?:smells?|smelled) (?:like|of) (?:cedar|sandalwood|cardamom)\\b|\\b(?:a dog|dogs) bark(?:s|ed|ing)? (?:somewhere|in the distance)|\\bsomewhere,? (?:a|an|someone)\\b|\\bin the distance,\\b|\\bdistant siren\\b|\\b(?:hung|hangs|hanging) (?:in the air|between them)\\b|\\b(?:sat|sits) between them\\b|\\bthat lands\\b|\\btestament to\\b|\\btapestry of\\b|\\bsymphony of\\b|\\bdance as old as time\\b|\\bsomething primal\\b|\\bpredatory (?:grin|smile|smirk|look)\\b|\\bferal (?:grin|smile)\\b|\\bheat pool\\w*|\\bwet heat\\b|\\bministrations\\b|\\bimpossibly \\w+|\\b(?:after|for) a beat\\b|\\ba beat (?:passes|later|of silence)\\b|\\banother beat\\b|\\breckless abandon\\b|\\bsilent invitation\\b|\\bunhurried(?:ly)?\\b|\\bseductive(?:ly)? purr|\\bpurr(?:s|ed)? seductively|\\bsmirk(?:s|ed|ing)? playfully|\\bmischievous glint|\\bglint of mischief|\\bsparkl\\w+ with mischief|\\bthe ritual of\\b|\\bthe (?:kind|sort) of \\w+ (?:that|you|who)\\b|\\bthe weight of (?:it|the moment|that|this|everything|what|his words|her words)\\b|\\bthe sound of (?:him|her|them|me|you)\\b|\\bthe shape of (?:it|the moment|things)\\b|\\bnot (?:unwelcome|unkind|unpleasant)\\b|\\band bad decisions\\b|\\b(?:you|little) (?:gremlin|goblin)\\b|\\bfeeling seen\\b|\\bfeeling heard\\b|\\bundeniable connection\\b|\\bweaponi[sz]ed\\b|\\bshort-circuit\\w*|\\bload-bearing\\b|\\brecalibrat\\w+|\\bfiled (?:that|it|this) away\\b|\\bnoted and shelved\\b|\\b(?:is|was|are) doing something to\\b|\\bsa(?:ys|id) it simply\\b|\\ba (?:mix|mixture|blend) of \\w+ and \\w+\\b|\\b(?:electric|crackling) tension\\b|\\btension crackl\\w+|\\bpalpable\\b|\\bmaybe, just maybe\\b|\\bever the \\w+\\b|\\bfor now, that (?:was|is) enough\\b|\\bcouldn't shake the feeling\\b|\\bfor what felt like an eternity\\b|\\ba newfound sense of\\b|\\bready to face whatever\\b|\\ba (?:wave|surge|rush|flood) of (?:\\w+ )?(?:relief|desire|guilt|pleasure|emotion|panic|fear|arousal|lust|warmth|pride|shame|anger|tenderness|affection)\\b|\\bsomehow\\b|\\bhalf[- ]expect\\w*|\\bmore than anything\\b|\\bthere's something about\\b|\\bthere's a specific kind of\\b|\\b(?:this|that) matters\\b|\\bearns? its (?:keep|place)\\b|\\bin short,|\\bhere's the (?:thing|deal|part|truth)\\b|\\breal talk\\b|\\bhonest answer\\b|\\bbottom line\\b|\\byour call\\.|\\bwhat do you want to do\\?|\\bso,? what now\\?|\\bit sounds like you're\\b|\\bthat's (?:completely |totally )?valid\\b|\\byou don't have to answer that\\b|\\bhow are you holding up\\b|\\bI notice you're\\b|\\bwhich, honestly\\b|\\bbest night of my life\\b|\\bnot a question\\.|\\bnobody's ever (?:said|done) that\\b|\\bno one's ever (?:said|done) that\\b|\\b(?:nobody|no one)'s ever really seen me\\b|\\byou really see me\\b|\\bmost people wouldn't\\b|\\byou're not like (?:other|anyone)\\b)(?![\\s\\S]*\\1)/gi",
+                "replaceString": "$0{{setvar::wh_stock_note::Stock phrasing from your last reply, to leave out of this one:}}{{addvar::wh_stock::\"$0\",}}{{addvar::wh_caught::Stock phrase: \"$0\"<br>}}{{setvar::wh_caught_any::x^}}",
+                "trimStrings": [],
+                "placement": [
+                    2
+                ],
+                "disabled": false,
+                "markdownOnly": false,
+                "promptOnly": true,
+                "runOnEdit": false,
+                "substituteRegex": 0,
+                "minDepth": null,
+                "maxDepth": 1
+            },
+            {
+                "id": "830e03a3-8326-4c8d-adc0-f5f6384be842",
+                "scriptName": "WH - Name Flag",
+                "findRegex": "/\\b(Elara|Elias|Kael|Kaelen|Kira|Lyra|Liora|Nova|Astra|Jax|Vesper|Ember|Silas|Aria|Zephyr|Seraphina|Cassian|Lucien|Lysander|Malachi|Valerius|Alastair|Thorne|Vance|Voss|Vane|Blackwood|Ashworth|Hargreaves|Marcus|Elena|Priya|Chloe|Maya)\\b(?![\\s\\S]*\\b\\1\\b)/g",
+                "replaceString": "$0{{setvar::wh_names_note::Names that language models give by default came up in your last reply. Keep any the card or the user introduced, and give anyone new a different name:}}{{addvar::wh_names::$0,}}{{addvar::wh_caught::Default name: $0<br>}}{{setvar::wh_caught_any::x^}}",
+                "trimStrings": [],
+                "placement": [
+                    2
+                ],
+                "disabled": false,
+                "markdownOnly": false,
+                "promptOnly": true,
+                "runOnEdit": false,
+                "substituteRegex": 0,
+                "minDepth": null,
+                "maxDepth": 1
+            },
+            {
+                "id": "ae13ad1a-47e2-4805-be57-020d44fb5f4c",
+                "scriptName": "WH - Ending Flag",
+                "findRegex": "/\\?[\"”'’*_)\\s]*(?:<\\/say>[\"”'’*_)\\s]*)?(?:<details[\\s\\S]*)?$/",
+                "replaceString": "$0{{setvar::wh_ending::Your last reply ended on a question. End this one on something someone says or does that isn't a question.}}{{addvar::wh_caught::Ended on a question<br>}}{{setvar::wh_caught_any::x^}}",
+                "trimStrings": [],
+                "placement": [
+                    2
+                ],
+                "disabled": false,
+                "markdownOnly": false,
+                "promptOnly": true,
+                "runOnEdit": false,
+                "substituteRegex": 0,
+                "minDepth": null,
+                "maxDepth": 1
+            },
+            {
+                "id": "9c0c1007-d972-4ecf-a8fc-7e68cab4d634",
+                "scriptName": "WH - OOC Clear",
+                "findRegex": "/[(\\[]{1,2}\\s*OOC\\s*:\\s*clear directions?\\s*[.!]?\\s*[)\\]]{1,2}/i",
+                "replaceString": "$0{{setvar::wh_ooc_head::}}{{setvar::wh_ooc_foot::}}{{setvar::wh_ooc1::}}{{setvar::wh_ooc2::}}{{setvar::wh_ooc3::}}{{setvar::wh_ooc4::}}{{setvar::wh_ooc5::}}{{setvar::wh_ooc6::}}{{setvar::wh_ooc7::}}{{setvar::wh_ooc8::}}",
+                "trimStrings": [],
+                "placement": [
+                    1
+                ],
+                "disabled": false,
+                "markdownOnly": false,
+                "promptOnly": false,
+                "runOnEdit": false,
+                "substituteRegex": 0,
+                "minDepth": null,
+                "maxDepth": null
+            },
+            {
+                "id": "47594671-5d94-493e-b3c4-3421901504cf",
+                "scriptName": "WH - OOC Memory",
+                "findRegex": "/[(\\[]{1,2}\\s*OOC\\s*:(?!\\s*clear directions?\\b)\\s*((?:[^{}\\n:()\\[\\]]|:(?!:)|\\([^(){}\\n]*\\))+?)(?<![?\\s])\\s*[)\\]]{1,2}/gi",
+                "replaceString": "$0{{setvar::wh_ooc8::{{getvar::wh_ooc7}}}}{{setvar::wh_ooc7::{{getvar::wh_ooc6}}}}{{setvar::wh_ooc6::{{getvar::wh_ooc5}}}}{{setvar::wh_ooc5::{{getvar::wh_ooc4}}}}{{setvar::wh_ooc4::{{getvar::wh_ooc3}}}}{{setvar::wh_ooc3::{{getvar::wh_ooc2}}}}{{setvar::wh_ooc2::{{getvar::wh_ooc1}}}}{{setvar::wh_ooc1::- $1}}{{setvar::wh_ooc_head::<ooc_memory>\nDirections <USER> has given out of character in this chat, oldest first. Keep following the ones that still apply: a one-time request has already been done, a later direction replaces an earlier one it conflicts with, and the story never mentions any of this.}}{{setvar::wh_ooc_foot::</ooc_memory>}}",
+                "trimStrings": [],
+                "placement": [
+                    1
+                ],
+                "disabled": false,
+                "markdownOnly": false,
+                "promptOnly": false,
+                "runOnEdit": false,
+                "substituteRegex": 0,
+                "minDepth": null,
+                "maxDepth": null
+            },
+            {
+                "id": "7e6e30a5-a100-47ae-9f55-90b89c7a5046",
+                "scriptName": "WH - Tag Janitor",
+                "findRegex": "/<\\/?(?:CHAR|USER|adult_content|altered_perception|blank_slate|body_history|body_ledger|body_swap|card_rules|challenge|characters|co_writing|codex|consistency|copy_fidelity|current_turn|dialogue_delivery|dialogue_focus|director|dollification|dronification|echo_protection|examples|final_authorship_gate|explicit_prose|final_contrast_gate|final_interruption_gate|final_legato_gate|final_teeth_gate|final_vocation_gate|formatting|gm_notebook|gravity|group_turn|hive_mind|how_people_talk|hypnosis|impersonation_turn|in_media_res|instructions|intimacy|intimacy_draws|judge|knowledge_limits|last_message|limp_play|lore|metaphysics|metaphysics_check|mind_book|mind_control|model_tells|momentum_tracker|multipossession|negative_constraints|npc_forge|past_events|perception_rewrite|pet_play|possession|propagation|prose_habits|protagonist|puppetry|reasoning_guide|register|reverse_vore|roleplay_context|sample|scenario|scene_anchor|segmentation|skinsuit|soul_play|status_board|story_so_far|style|style_lens|swipe_feedback|teeth|timestop|transformation|vocal_limits|vocation|world_notes|diegetic(?:_html)?|adult|rules|echo|talk|habits|knowledge|npc|job|anchor|boxes|sex|vocal|turn|impersonate|contrast|interruption|legato|exits|shoptalk|draws|heat|swipe|reason|format)>\\n?/g",
+                "replaceString": "",
+                "trimStrings": [],
+                "placement": [
+                    2
+                ],
+                "disabled": false,
+                "markdownOnly": false,
+                "promptOnly": false,
+                "runOnEdit": true,
+                "substituteRegex": 0,
+                "minDepth": null,
+                "maxDepth": null
+            },
+            {
+                "id": "16468055-dfd8-4f0f-9fdc-8acf8a6327d7",
+                "scriptName": "WH - Dialogue (prompt)",
+                "findRegex": "/<\\/?say\\b[^>]*>/gi",
+                "replaceString": "",
+                "trimStrings": [],
+                "placement": [
+                    2
+                ],
+                "disabled": false,
+                "markdownOnly": false,
+                "promptOnly": true,
+                "runOnEdit": true,
+                "substituteRegex": 0,
+                "minDepth": 12,
+                "maxDepth": null
+            },
+            {
+                "id": "c4bc1c46-fa59-499f-8178-09dfd29fd4f4",
+                "scriptName": "WH - Dialogue",
+                "findRegex": "/<say\\s+([a-z]+)\\s*>\\s*[\"“]?([\\s\\S]*?)[\"”]?\\s*<\\/say>/gi",
+                "replaceString": "<font color=\"$1\">&quot;$2&quot;</font>",
+                "trimStrings": [],
+                "placement": [
+                    2
+                ],
+                "disabled": false,
+                "markdownOnly": true,
+                "promptOnly": false,
+                "runOnEdit": true,
+                "substituteRegex": 0,
+                "minDepth": null,
+                "maxDepth": null
+            },
+            {
+                "id": "46eac128-30f5-4332-bf85-42c84513ce06",
+                "scriptName": "WH - Dialogue Shout",
+                "findRegex": "/<say\\s+([a-z]+)\\s+shout\\s*>\\s*[\"“]?([\\s\\S]*?)[\"”]?\\s*<\\/say>/gi",
+                "replaceString": "<font color=\"$1\"><span style=\"font-size: 1.14em; font-weight: 800;\">&quot;$2&quot;</span></font>",
+                "trimStrings": [],
+                "placement": [
+                    2
+                ],
+                "disabled": false,
+                "markdownOnly": true,
+                "promptOnly": false,
+                "runOnEdit": true,
+                "substituteRegex": 0,
+                "minDepth": null,
+                "maxDepth": null
+            },
+            {
+                "id": "bf767695-b13a-4071-a58b-a7d03d754a3b",
+                "scriptName": "WH - Dialogue Hush",
+                "findRegex": "/<say\\s+([a-z]+)\\s+hush\\s*>\\s*[\"“]?([\\s\\S]*?)[\"”]?\\s*<\\/say>/gi",
+                "replaceString": "<font color=\"$1\"><span style=\"font-size: 0.88em; opacity: 0.78;\">&quot;$2&quot;</span></font>",
+                "trimStrings": [],
+                "placement": [
+                    2
+                ],
+                "disabled": false,
+                "markdownOnly": true,
+                "promptOnly": false,
+                "runOnEdit": true,
+                "substituteRegex": 0,
+                "minDepth": null,
+                "maxDepth": null
+            },
+            {
+                "id": "621032f7-4bc5-4025-9708-a8aa8d91bcad",
+                "scriptName": "WH - Dialogue Shaky",
+                "findRegex": "/<say\\s+([a-z]+)\\s+shaky\\s*>\\s*[\"“]?([\\s\\S]*?)[\"”]?\\s*<\\/say>/gi",
+                "replaceString": "<font color=\"$1\"><span style=\"letter-spacing: 1.2px; opacity: 0.88;\">&quot;$2&quot;</span></font>",
+                "trimStrings": [],
+                "placement": [
+                    2
+                ],
+                "disabled": false,
+                "markdownOnly": true,
+                "promptOnly": false,
+                "runOnEdit": true,
+                "substituteRegex": 0,
+                "minDepth": null,
+                "maxDepth": null
+            },
+            {
+                "id": "3540db41-afed-4d41-a75a-62bb3e28354f",
+                "scriptName": "WH - Dialogue Flat",
+                "findRegex": "/<say\\s+([a-z]+)\\s+flat\\s*>\\s*[\"“]?([\\s\\S]*?)[\"”]?\\s*<\\/say>/gi",
+                "replaceString": "<font color=\"$1\"><span style=\"letter-spacing: 0.6px; font-weight: 500;\">&quot;$2&quot;</span></font>",
+                "trimStrings": [],
+                "placement": [
+                    2
+                ],
+                "disabled": false,
+                "markdownOnly": true,
+                "promptOnly": false,
+                "runOnEdit": true,
+                "substituteRegex": 0,
+                "minDepth": null,
+                "maxDepth": null
+            },
+            {
+                "trimStrings": [],
+                "disabled": false,
+                "markdownOnly": false,
+                "promptOnly": true,
+                "runOnEdit": false,
+                "substituteRegex": 0,
+                "id": "5d4a6a64-dc0e-49d4-b746-2d99789367da",
+                "scriptName": "WH - Heat (clear)",
+                "findRegex": "/^/",
+                "replaceString": "{{setvar::wh_heat::}}",
+                "placement": [
+                    1,
+                    2
+                ],
+                "minDepth": 6,
+                "maxDepth": 6
+            },
+            {
+                "trimStrings": [],
+                "disabled": false,
+                "markdownOnly": false,
+                "promptOnly": true,
+                "runOnEdit": false,
+                "substituteRegex": 0,
+                "id": "984df4ce-e4c4-47c7-a2e0-33ffcbc90685",
+                "scriptName": "WH - Heat Flag",
+                "findRegex": "/\\b(?:cocks?|dicks?|puss(?:y|ies)|clit\\w*|cunts?|cum(?:s|ming|med)?|orgasm\\w*|nipples?|tits?|breasts?|blowjob|handjob|hard-on|erection|panties|naked|nude|undress\\w*|moan(?:s|ed|ing)?|thrust(?:s|ed|ing)?|straddl\\w+|grop(?:e|es|ed|ing)|lick(?:s|ed|ing)?|suck(?:s|ed|ing)?|grind(?:s|ing)? (?:against|on|down|into)|strip(?:s|ped|ping)? (?:off|down|out of|her|him|you)|between (?:her|his|your|their|my) (?:legs|thighs)|(?:her|his|your|their|my) (?:top|shirt|bra|pants|jeans|skirt|dress|clothes|underwear) off|fuck(?:s|ed|ing)? (?:her|him|you|me|them)\\b|make (?:her|him|you|me) cum|spread(?:s|ing)? (?:her|his|your|their|my) (?:legs|thighs)|(?:push|slid|slide|sink|eas)(?:e|es|s|ed|ing)? (?:into|inside) (?:(?:him|you|me)\\b|her(?=\\s*(?:[.,;!?*\\\"]|$)|\\s+(?:slow|hard|deep|again|and|from|until|while|with)))|hand (?:up|down|under|inside) (?:her|his|your|their|my) (?:shirt|skirt|dress|top|pants|jeans|shorts|underwear)|rid(?:e|es|ing) (?:her|him|you|me)\\b(?!\\s+(?:about|to|home|for))|round two)\\b/i",
+                "replaceString": "$0{{setvar::wh_heat::x}}",
+                "placement": [
+                    1
+                ],
+                "minDepth": null,
+                "maxDepth": 5
+            }
+        ]
+    },
+    "adaptive_target": -0.01,
+    "adaptive_decay": 0.9,
+    "rep_pen_size": 0,
+    "genamt": 450,
+    "max_length": 16384
+}
