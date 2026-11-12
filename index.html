@@ -254,10 +254,10 @@
   .outrider p.sub{color:var(--mut);font-size:.92rem;margin-bottom:14px;max-width:640px}
   .outrider ol.steps li::before{background:var(--grad)}
   .otable{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--card)}
-  .otable table{width:100%;min-width:760px;border-collapse:collapse;font-size:.84rem}
+  .otable table{width:100%;min-width:760px;border-collapse:collapse;font-size:.82rem}
   .otable th{text-align:left;font:600 .7rem Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);
-       padding:12px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
-  .otable td{padding:10px 10px;border-bottom:1px solid var(--line);color:var(--mut);white-space:nowrap}
+       padding:12px 6px;border-bottom:1px solid var(--line);white-space:nowrap}
+  .otable td{padding:10px 6px;border-bottom:1px solid var(--line);color:var(--mut);white-space:nowrap}
   .otable tr:last-child td{border-bottom:none}
   .otable td:first-child{color:var(--ink);font-weight:600} .otable th:first-child,.otable td:first-child{padding-left:16px}
   .otable td b{color:var(--accent);font-weight:600}
@@ -468,14 +468,14 @@
       <table>
         <thead><tr><th>Model</th><th>Card</th><th>System prompt</th><th>Sampler preset</th><th>Instruct template</th><th>Context template</th><th>Context</th></tr></thead>
         <tbody>
-          <tr><td>Gemma 4 31B</td><td>24 GB and up</td><td><b>Outrider Heavy</b></td><td>Outrider Heavy</td><td>Gemma 4 WH *</td><td>Gemma 4</td><td>32K</td></tr>
-          <tr><td>Gemma 4 12B</td><td>12 to 16 GB</td><td><b>Outrider</b></td><td>Outrider</td><td>Gemma 4 WH *</td><td>Gemma 4</td><td>16K</td></tr>
-          <tr><td>Gemma 4 E4B</td><td>6 to 8 GB</td><td><b>Outrider</b></td><td>Outrider</td><td>Gemma 4</td><td>Gemma 4</td><td>16K</td></tr>
-          <tr><td>Mistral Small 3.2 24B</td><td>16 to 24 GB</td><td><b>Outrider</b></td><td>Outrider Mistral</td><td>Mistral V7-Tekken</td><td>Mistral V7-Tekken</td><td>16K</td></tr>
-          <tr><td>Mistral Nemo 12B</td><td>8 to 12 GB</td><td><b>Outrider</b></td><td>Outrider Mistral</td><td>Mistral V3-Tekken</td><td>Mistral V3-Tekken</td><td>16K</td></tr>
-          <tr><td>Llama 3.1 8B</td><td>6 to 8 GB</td><td><b>Outrider</b></td><td>Outrider</td><td>Llama 3 Instruct</td><td>Llama 3 Instruct</td><td>16K</td></tr>
-          <tr><td>Qwen3.5-9B</td><td>8 to 12 GB</td><td><b>Outrider</b></td><td>Outrider</td><td>ChatML WH Qwen *</td><td>ChatML</td><td>16K</td></tr>
-          <tr><td>Qwen3.8-27B</td><td>24 GB</td><td><b>Outrider</b></td><td>Outrider</td><td>ChatML WH Qwen *</td><td>ChatML</td><td>16K</td></tr>
+          <tr><td>Gemma 4 31B</td><td>24 GB and up</td><td><b>Outrider Heavy</b></td><td>Outrider Heavy - Samplers</td><td>Gemma 4 WH *</td><td>Gemma 4</td><td>32K</td></tr>
+          <tr><td>Gemma 4 12B</td><td>12 to 16 GB</td><td><b>Outrider</b></td><td>Outrider - Samplers</td><td>Gemma 4 WH *</td><td>Gemma 4</td><td>16K</td></tr>
+          <tr><td>Gemma 4 E4B</td><td>6 to 8 GB</td><td><b>Outrider</b></td><td>Outrider - Samplers</td><td>Gemma 4</td><td>Gemma 4</td><td>16K</td></tr>
+          <tr><td>Mistral Small 3.2 24B</td><td>16 to 24 GB</td><td><b>Outrider</b></td><td>Outrider Mistral - Samplers</td><td>Mistral V7-Tekken</td><td>Mistral V7-Tekken</td><td>16K</td></tr>
+          <tr><td>Mistral Nemo 12B</td><td>8 to 12 GB</td><td><b>Outrider</b></td><td>Outrider Mistral - Samplers</td><td>Mistral V3-Tekken</td><td>Mistral V3-Tekken</td><td>16K</td></tr>
+          <tr><td>Llama 3.1 8B</td><td>6 to 8 GB</td><td><b>Outrider</b></td><td>Outrider - Samplers</td><td>Llama 3 Instruct</td><td>Llama 3 Instruct</td><td>16K</td></tr>
+          <tr><td>Qwen3.5-9B</td><td>8 to 12 GB</td><td><b>Outrider</b></td><td>Outrider - Samplers</td><td>ChatML WH Qwen *</td><td>ChatML</td><td>16K</td></tr>
+          <tr><td>Qwen3.8-27B</td><td>24 GB</td><td><b>Outrider</b></td><td>Outrider - Samplers</td><td>ChatML WH Qwen *</td><td>ChatML</td><td>16K</td></tr>
         </tbody>
       </table>
     </div>
@@ -485,7 +485,7 @@
     <ol class="steps">
       <li><b>Start KoboldCpp</b> with your model's config from the <code>koboldcpp</code> folder: Load Config, then pick your model file. On a smaller card, lower the context there and in SillyTavern to match.</li>
       <li><b>Connect SillyTavern</b> to KoboldCpp under Text Completion.</li>
-      <li><b>Open Advanced Formatting</b> (the A icon). Import the file in the <code>sysprompt</code> folder as the System Prompt, pick the Instruct and Context templates from your model's row, and turn Instruct Mode on.</li>
+      <li><b>Open Advanced Formatting</b> (the A icon). Import the System Prompt file from the <code>sysprompt</code> folder, pick the Instruct and Context templates from your model's row, and turn Instruct Mode on.</li>
       <li><b>Import the sampler preset</b> your row names, from <code>TextGen Settings</code>. When SillyTavern asks whether to allow its regex scripts, allow them: they turn the explicit wording on and off.</li>
     </ol>
 
@@ -497,9 +497,9 @@
           <a class="chip" href="outrider/files/Outrider-Heavy/Chat-Completion/Outrider-Heavy-CC.json" download="Outrider Heavy CC.json">Chat Completion / Outrider Heavy CC.json</a>
           <a class="chip" href="outrider/files/Outrider-Heavy/koboldcpp/Gemma-4-31B.kcpps" download="Gemma 4 31B.kcpps">koboldcpp / Gemma 4 31B.kcpps</a>
           <a class="chip" href="outrider/files/Outrider-Heavy/README.md" download="README.md">README.md</a>
-          <a class="chip" href="outrider/files/Outrider-Heavy/sysprompt/Outrider-Heavy.json" download="Outrider Heavy.json">sysprompt / Outrider Heavy.json</a>
+          <a class="chip" href="outrider/files/Outrider-Heavy/sysprompt/Outrider-Heavy-System-Prompt.json" download="Outrider Heavy - System Prompt.json">sysprompt / Outrider Heavy - System Prompt.json</a>
           <a class="chip" href="outrider/files/Outrider-Heavy/templates/Gemma-4-WH.json" download="Gemma 4 WH.json">templates / Gemma 4 WH.json</a>
-          <a class="chip" href="outrider/files/Outrider-Heavy/TextGen-Settings/Outrider-Heavy.json" download="Outrider Heavy.json">TextGen Settings / Outrider Heavy.json</a>
+          <a class="chip" href="outrider/files/Outrider-Heavy/TextGen-Settings/Outrider-Heavy-Samplers.json" download="Outrider Heavy - Samplers.json">TextGen Settings / Outrider Heavy - Samplers.json</a>
       </div>
       <div class="ogroup">Outrider</div>
       <div class="chips">
@@ -511,11 +511,11 @@
           <a class="chip" href="outrider/files/Outrider/koboldcpp/Qwen3.5-9B.kcpps" download="Qwen3.5-9B.kcpps">koboldcpp / Qwen3.5-9B.kcpps</a>
           <a class="chip" href="outrider/files/Outrider/koboldcpp/Qwen3.8-27B.kcpps" download="Qwen3.8-27B.kcpps">koboldcpp / Qwen3.8-27B.kcpps</a>
           <a class="chip" href="outrider/files/Outrider/README.md" download="README.md">README.md</a>
-          <a class="chip" href="outrider/files/Outrider/sysprompt/Outrider.json" download="Outrider.json">sysprompt / Outrider.json</a>
+          <a class="chip" href="outrider/files/Outrider/sysprompt/Outrider-System-Prompt.json" download="Outrider - System Prompt.json">sysprompt / Outrider - System Prompt.json</a>
           <a class="chip" href="outrider/files/Outrider/templates/ChatML-WH-Qwen.json" download="ChatML WH Qwen.json">templates / ChatML WH Qwen.json</a>
           <a class="chip" href="outrider/files/Outrider/templates/Gemma-4-WH.json" download="Gemma 4 WH.json">templates / Gemma 4 WH.json</a>
-          <a class="chip" href="outrider/files/Outrider/TextGen-Settings/Outrider-Mistral.json" download="Outrider Mistral.json">TextGen Settings / Outrider Mistral.json</a>
-          <a class="chip" href="outrider/files/Outrider/TextGen-Settings/Outrider.json" download="Outrider.json">TextGen Settings / Outrider.json</a>
+          <a class="chip" href="outrider/files/Outrider/TextGen-Settings/Outrider-Mistral-Samplers.json" download="Outrider Mistral - Samplers.json">TextGen Settings / Outrider Mistral - Samplers.json</a>
+          <a class="chip" href="outrider/files/Outrider/TextGen-Settings/Outrider-Samplers.json" download="Outrider - Samplers.json">TextGen Settings / Outrider - Samplers.json</a>
       </div>
     </details>
   </div>
